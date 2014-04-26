@@ -1,0 +1,163 @@
+#bild{
+	position: relative;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	margin-left: 15px;
+}
+
+#einfach{
+	margin-left: 520px;
+	margin-top: 20px;
+	
+}
+
+#schnelle{
+	margin-left: 670px;
+	margin-top: 20px;
+}
+
+#Praktikumssuche{
+	margin-left: 830px;
+	margin-top: 20px;
+}
+
+#werbung{
+	position: absolute;
+	font: bold 34px "Century Schoolbook", Georgia, Times, serif;
+	color: #333;
+	line-height: 90%;
+	margin: .2em 0 .4em 0;
+	letter-spacing: -2px;	
+	text-transform: uppercase;
+	
+}
+
+h1{
+	padding: 35px;
+	padding-bottom: 35px;
+	font-size:45px;
+	text-transform: uppercase;
+	color: #424040;
+	margin-top: 50px;
+	font-style: italic;
+}
+
+.haupttext{
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	color:#111;
+	padding-left: 70px;
+	
+}
+
+
+
+ol{
+	padding-top: 120px;
+	padding-left: 20px;
+}
+
+
+
+form{
+	font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+	color:#111;
+	padding-left: 70px;
+	padding-top: 100px;
+}
+
+.eingabeformular{
+	font-family: arial;
+	margin:40px;
+	right: 40px;
+	font-style: italic;
+}
+
+#verschieben1{
+	margin-left: 54px;
+}
+
+#verschieben2{
+	margin-left: 21px;
+}
+
+#verschieben3{
+	margin-left: 53px;
+}
+
+#verschieben4{
+	margin-left: 52px;
+}
+
+
+*{ margin-top: 0px; 
+   padding: 0px; 
+   }
+ 
+#nav {
+     font-family: arial, sans-serif;
+     position: relative;
+     width: 1400px;
+     height:56px;
+     font-size:18px;
+     color:#999;
+     margin: 0px auto;
+     margin-top: 300px;
+   	 margin-left: 175px;
+   	 padding: 40px;
+}
+ 
+#nav ul {
+     list-style-type: none;
+}
+ 
+#nav ul li {
+     float: left;
+     position: relative;
+}
+ 
+#nav ul li a {
+     text-align: center;
+     border-right:3px solid #BBB5B5;
+     padding:35px;
+     display:block;
+     text-decoration:none;
+     color:#424040;
+}
+ 
+#nav ul li ul {
+     display: none
+}
+ 
+#nav ul li:hover ul {
+     display: block;
+     position: absolute;
+}
+ 
+#nav ul li:hover ul li a {
+     display:block;
+     background:#12aeef;
+     color:#ffffff;
+     width: 110px;
+     text-align: center;
+     border-bottom: 1px solid #f2f2f2;
+     border-right: none;
+}
+ 
+#nav ul li:hover ul li a:hover {
+     background:#6dc7ec;
+     color:#fff;
+}
+
+
+.haupttext {
+
+	padding-top: 5px;
+	background: #feffff; /* Old browsers */
+background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 53%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(53%,#ddf1f9)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* IE10+ */
+background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 53%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ddf1f9',GradientType=0 ); /* IE6-9 */
+}
