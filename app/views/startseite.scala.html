@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>T.E.D. Startseite</title>
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css"
+	href="/assets/stylesheets/main.css">
+	 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 </head>
 <body>
 	<img id="bild" alt="Logo" src="./images/LogoFertig.jpg">
-
+	<h1>TED</h1>
 	<div id="nav">
 		<ul>
 			<li class="first"><a href=”#”>Home</a></li>
@@ -29,44 +31,40 @@
 
 
 
-	<h1>Jobbörse Startseite</h1>
+	<h2>Praktikumsbörse Startseite</h2>
 	<div class="haupttext">
-	<p>Hier finden sie die besten Job-Angebote</p>
+		<p>Hier finden sie die besten Praktikums-Angebote</p>
 
-	<form >
-		<input type="email" placeholder="email"="email">
-		<input type="password" placeholder="password" name="passwort">
-		<input type="submit" value="anmelden">
-	</form>
-	<br>
-	<p>zum registrien, klicken sie bitte auf den folgenden Link
-	<p>
-	<ul>
-		<li><a href="">Bewerber<a></li>
-		<li><a href="">Unternehmen<a></li>
-	</ul>
+		<form action="/login/unternehmen" method="POST">
+			<input type="email" placeholder="email" name="email" > <input
+				type="password" placeholder="password" name="password"> <input
+				type="submit" value="anmelden">
+		</form>
 
 
-
-	<h4>T.E.D Praktikas aus Leidenschaft</h4>
-	<p>T.E.D ist ein unabhängiges Jobportal für Praktikanten.</p>
-	<p>Suchen Sie ein Praktikumsplatz? Dann sind sie genau richtig
-		hier.</p>
-	<p>Hier gibt es zahlreiche Stellen von weltweit bekannten
-		Unternehmen.</p>
-	
-	
-	
-	
+		<a href="">registrieren<a> 
+		<br>
+		<a href="">	<p>Jobs suchen</p></a>
 
 
-		<p>
-			<a href="http://www.facebook.com">Folgen sie uns auf Facebook</a>
-		</p>
-		<p>
-			<a href="http://www.twitter.com">Folgen sie uns auf Twitter</a>
-		</p>
+			<h4>T.E.D Praktikums Portal</h4>
+			<p>T.E.D ist ein unabhängiges Jobportal für Praktikanten.</p>
+			<p>Suchen Sie ein Praktikumsplatz? Dann sind sie genau richtig
+				hier.</p>
+			<p>Hier gibt es zahlreiche Stellen von weltweit bekannten
+				Unternehmen.</p>
 
+
+
+
+
+
+			<p>
+				<a href="http://www.facebook.com">Folgen sie uns auf Facebook</a>
+			</p>
+			<p>
+				<a href="http://www.twitter.com">Folgen sie uns auf Twitter</a>
+			</p>
 	</div>
 
 
