@@ -11,9 +11,8 @@ GET 	/registrierung					controllers.Application.register()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
-<<<<<<< HEAD
+
 POST	/Registrierung/xyz			controllers.Registrierung.register()
-=======
 
 
 #login
@@ -23,4 +22,3 @@ POST	/login/unternehmen						controllers.Login.anmeldenUnternehmen()
 
 #Stellen auschreiben
 GET		/stelleerstellen					controllers.Stellenverwaltung.auschreiben()
->>>>>>> branch 'master' of https://github.com/Engin32/PraktikumsProtal.git
