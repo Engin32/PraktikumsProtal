@@ -3,22 +3,23 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
-GET		/startseite					controllers.Application.startseite()
+GET     /                           	controllers.Application.index()
+GET		/startseite						controllers.Application.startseite()
 GET		/bewerbungstipps				controllers.Application.tipps()
 GET 	/registrierung					controllers.Application.register()
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file             	    controllers.Assets.at(path="/public", file)
 
-POST	/Registrierung/xyz			controllers.Registrierung.register()
 
+POST	/Registrierung/xyz				controllers.Registrierung.register()
 
 #login
-POST	/login/unternehmen						controllers.Login.anmeldenUnternehmen()
+POST	/login/unternehmen				controllers.Login.anmeldenUnternehmen()
 
-#Afterlogin
 
 #Stellen auschreiben
-GET		/stelleerstellen					controllers.Stellenverwaltung.auschreiben()
+GET		/stelleerstellen				controllers.Stellenverwaltung.auschreiben()
+
+
