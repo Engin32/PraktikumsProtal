@@ -21,3 +21,13 @@ POST	/login/unternehmen						controllers.Login.anmeldenUnternehmen()
 
 #Stellen auschreiben
 GET		/stelleerstellen					controllers.Stellenverwaltung.auschreiben()
+
+
+#Impressum
+GET    /Impressum					controllers.Application.impressum()
+
+#Kontakt
+GET    /Kontakt						controllers.Application.kontakt()
+
+#Suche
+GET    /Suche						controllers.Application.suche()

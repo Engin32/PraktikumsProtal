@@ -21,25 +21,18 @@
 	margin-top: 20px;
 }
 
-#werbung{
-	position: absolute;
-	font: bold 34px "Century Schoolbook", Georgia, Times, serif;
-	color: #333;
-	line-height: 90%;
-	margin: .2em 0 .4em 0;
-	letter-spacing: -2px;	
-	text-transform: uppercase;
-	
-}
+
 
 h1{
+	font-family: 'Russo One', 'sans-serif';
 	padding: 35px;
 	padding-bottom: 35px;
 	font-size:45px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	color: #424040;
-	margin-top: 50px;
-	font-style: italic;
+	margin-top: 85px;
+	margin-left:28px;
+	/*font-style: italic;*/
 }
 
 .haupttext{
@@ -96,13 +89,12 @@ form{
 #nav {
      font-family: arial, sans-serif;
      position: relative;
-     width: 1400px;
+     width: 1500px;
      height:56px;
      font-size:18px;
      color:#999;
      margin: 0px auto;
-     margin-top: 300px;
-   	 margin-left: 175px;
+   	 margin-left: 10px;
    	 padding: 40px;
 }
  
@@ -122,6 +114,7 @@ form{
      display:block;
      text-decoration:none;
      color:#424040;
+     width: 165px;
 }
  
 #nav ul li ul {
@@ -137,7 +130,7 @@ form{
      display:block;
      background:#12aeef;
      color:#ffffff;
-     width: 110px;
+     width: 166px;
      text-align: center;
      border-bottom: 1px solid #f2f2f2;
      border-right: none;
@@ -149,15 +142,46 @@ form{
 }
 
 
-.haupttext {
+body {
 
-	padding-top: 5px;
-	background: #feffff; /* Old browsers */
-background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 53%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(53%,#ddf1f9)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* IE10+ */
-background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 53%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ddf1f9',GradientType=0 ); /* IE6-9 */
+	background: #feffff; 
+	background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 53%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(53%,#ddf1f9)); 
+	background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 53%); 
+	background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 53%); /* IE10+ */
+	background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 53%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#ddf1f9',GradientType=0 ); /* IE6-9 */
+	font-family:  font-family: arial, sans-serif;
+	font-size: 18px;
+	color:#111;
+	width: 1700px;
 }
+
+#TED{
+	text-align: center;
+	font-family: 'Rock Salt', 'cursive';
+	font-size: 80px;
+	color: #12aeef;
+	margin-top:30px;
+}
+
+#werbung{
+	text-align: center;
+	font-family: 'Rock Salt', 'cursive';
+	font-size: 80px;
+	color: #12aeef;
+	margin-top:10px;
+}
+
+h2{
+	text-align: center;
+	font-family: 'Rock Salt', 'cursive';
+	font-size: 30px;
+	color: #12aeef;
+	margin-top:10px;
+	margin-bottom: 110px;
+	
+}
+
+

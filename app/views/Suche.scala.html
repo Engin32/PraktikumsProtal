@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css"
-	href="/assets/stylesheets/main.css">
-<link href='http://fonts.googleapis.com/css?family=Russo+One'
-	rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Rock+Salt'
-	rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css"
-	href="/assets/stylesheets/Suche.css">
 
-<script type="text/javascript"
-	src="/assests/javascripts/jquery-1.9.0.min.js)">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/Suche.css">
+
+<script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
+
+ <script type="text/javascript">
+	$(function() {
+
+ 		$("#sucheverfeinernformular").hide();
+ 	});
 	
-	function aufruf(){
-  			
- $(document).ready(function() {
-    $('#sucheverfeinern').hide();
-})};
-  
-  
-  
-  
-  
-  
-  
-  
-  </script>
+	
+	function sucheverf(){
+		$("#sucheverfeinernformular").slideDown();
+	}
+ </script>
+ 
 </head>
 <body>
 	<h1 id="TED">TED</h1>
@@ -37,20 +31,20 @@
 
 	<div id="nav">
 		<ul>
-			<li class="first"><a href=”#”>Home</a></li>
-			<li><a href=”#”>Suche</a></li>
-			<li><a href=”#”>Tipps und Tricks</a>
+			<li class="first"><a href=â#â>Home</a></li>
+			<li><a href=â#â>Suche</a></li>
+			<li><a href=â#â>Tipps und Tricks</a>
 				<ul>
-					<li><a href=”#”>Bewerbung</a></li>
+					<li><a href=â#â>Bewerbung</a></li>
 				</ul></li>
-			<li><a href=”#”>Alle Unternehmen</a></li>
-			<li><a href=”#”>Über Uns</a>
+			<li><a href=â#â>Alle Unternehmen</a></li>
+			<li><a href=â#â>Ãber Uns</a>
 
 				<ul>
-					<li><a href=”#”>T.E.D</a></li>
-					<li><a href=”#”>Impressum</a></li>
+					<li><a href=â#â>T.E.D</a></li>
+					<li><a href=â#â>Impressum</a></li>
 				</ul></li>
-			<li><a href=”#”>Kontakt</a></li>
+			<li><a href=â#â>Kontakt</a></li>
 		</ul>
 	</div>
 
@@ -76,7 +70,7 @@
 
 		<div id="sucheverfeinern">
 			<p>
-				<a href="#" onclick="">Suche verfeinern</a>
+				<a href="#" onclick="sucheverf()">Suche verfeinern</a>
 			</p>
 		</div>
 
@@ -96,13 +90,15 @@
 				</select> Unternhemen <input id="input2" type="text"
 					placeholder="Name des Unternehmen">
 			<p id="text1">
-				Unternehmensgröße <select id="select3">
+				Unternehmensgröße <select id="select3">
+					<option>beliebig</option>
 					<option>kleines Unternehmen</option>
 					<option>mittelständisches Unternehmen</option>
-					<option>großes Unternhemn</option>
+					<option>groÃes Unternhemn</option>
 
 
 				</select> Dauer <select id="select4">
+					<option>beliebig</option>
 					<option>3</option>
 					<option>6</option>
 					<option>8</option>
@@ -110,16 +106,8 @@
 				</select>
 			</p>
 			<p id="text1">
-				Anfangsdatum <input id="input3" type="date">
+				Anfangsdatum <input id="input3" type="date" placeholder="TT.MM.JJJJ">
 			</p>
-
-
-
-
-
-
-
-
 
 		</div>
 
@@ -132,15 +120,6 @@
 
 
 	</form>
-
-
-
-
-
-
-
-
-
 
 
 </body>
