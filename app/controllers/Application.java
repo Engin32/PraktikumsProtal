@@ -21,6 +21,5 @@ public class Application extends Controller {
     	return ok(bewerbungstipps.render());
     }
     
-    
 
 }
