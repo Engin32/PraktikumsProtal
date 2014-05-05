@@ -16,6 +16,7 @@ GET     /assets/*file             	    controllers.Assets.at(path="/public", fil
 #registrierung
 POST	/Registrierung/xyz				controllers.Registrierung.register()
 GET		/registrieren					controllers.Application.register()
+
 #suchen
 GET		/suche 							controllers.Application.suche()
 
@@ -25,5 +26,9 @@ POST	/login/unternehmen				controllers.Login.anmeldenUnternehmen()
 
 #Stellen auschreiben
 GET		/stelleerstellen				controllers.Stellenverwaltung.auschreiben()
+
+
+
+
 
 

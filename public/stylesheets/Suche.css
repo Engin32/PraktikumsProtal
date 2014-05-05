@@ -1,0 +1,116 @@
+@CHARSET "ISO-8859-1";
+
+#text1{
+	font-size: 25px;
+}
+
+
+
+form p input{
+	margin-right: 180px;
+	margin-left:20px;
+	font-size: 25px;
+	font-family:  font-family: arial, sans-serif;
+}
+
+#input1{
+	width: 400px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+}
+
+#input2{
+	width: 400px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+}
+
+#input3{
+	width: 380px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+	margin-left: 83px;
+}
+
+
+
+#select{
+	margin-left: 20px;
+	font-size: 25px;
+	width: 420px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+	
+}
+
+#select2{
+	margin-left: 123px;
+	margin-right:123px;
+	font-size: 25px;
+	width: 400px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+}
+
+#select3{
+	margin-left: 20px;
+	margin-right: 210px;
+	font-size: 25px;
+	width: 400px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+}
+
+#select4{
+	margin-left: 20px;
+	font-size: 25px;
+	width: 420px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+}
+
+option{
+	border-radius: 25px;
+	border-style: none;
+	text-align: center;
+	font-family:  font-family: arial, sans-serif;
+	color: #424040;
+	
+}
+
+#button1{
+	margin-top: 200px;
+	width:350px;
+	padding:15px;
+	font-size:25px;
+	border-radius:25px;
+	margin-left: 550px;
+	background-color: #12aeef;
+	color: #ffffff;
+}
+
+#sucheverfeinern{
+	margin-left: 945px;
+	font-size: 20px;
+}
+
+a{
+	text-decoration: blink;
+	text-decoration: underline;
+	color: #12aeef;
+}
+
+a:hover{
+	color: #424040;
+}
+
+#sucheverfeinernformular{
+	margin-top: 150px;
+}

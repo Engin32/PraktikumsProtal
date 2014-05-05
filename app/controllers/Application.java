@@ -2,7 +2,6 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
-
 import views.html.*;
 
 public class Application extends Controller {
@@ -25,6 +24,7 @@ public class Application extends Controller {
     	return ok(ure.render());
     }
     
+
     public static Result suche(){
     	return ok(Suche.render());
     }
@@ -38,5 +38,8 @@ public class Application extends Controller {
     }
   
     
+
+ 
+
     
 }
