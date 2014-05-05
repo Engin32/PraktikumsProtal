@@ -37,7 +37,9 @@ public class Application extends Controller {
     	return ok(Kontakt.render());
     }
   
-    
+    public static Result firmenzeiger(){
+    	return ok(firmenzeiger.render());
+    }
 
  
 
