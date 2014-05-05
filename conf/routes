@@ -33,3 +33,4 @@ GET    /Kontakt						controllers.Application.kontakt()
 
 #Suche
 GET    /Suche						controllers.Application.suche()
+
