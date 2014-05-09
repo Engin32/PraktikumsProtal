@@ -20,7 +20,7 @@ public class Application extends Controller {
     	return ok(bewerbungstipps.render());
     }
     
-    public static Result register(){
+    public static Result register1(){
     	return ok(ure.render());
     }
     

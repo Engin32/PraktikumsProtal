@@ -32,12 +32,16 @@ public class Registrierung extends Controller {
 		Connection con;
 
 		try {
+			
+		
 
 			Class.forName("com.mysql.jdbc.Driver");
+			
+			System.out.println("hier");
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
 			System.out.println("alles in Ordnung");
-
+			con.setAutoCommit(false);
 			PreparedStatement ps = con
 					.prepareStatement("insert into Praktikumsportal.Adresse values(?,?,?,?,?,?)");
 
@@ -48,7 +52,10 @@ public class Registrierung extends Controller {
 			ps.setString(5, plz);
 			ps.setString(6, bld);
 			
+			ps.execute();
+			
 			System.out.println("In db eingefügt");
+			con.commit();
 
 			return ok("test");
 
