@@ -8,8 +8,9 @@
 
 <script type="text/javascript">
 function ausgeben() {
+	
 	var eingabefeld = document.getElementById("name");	    //Hier wird zuerst die eingabe gelesen
-	var url = "/firmensuchen" + escape(eingabefeld.value);  //Hier wird entschieden an welchen servelt es geschickt wird
+	var url = "/firmensuchen?unternehmen=" + escape(eingabefeld.value);  //Hier wird entschieden an welchen servelt es geschickt wird
 	var req;												//ein request wird definiert
 	if (window.XMLHttpRequest) {							//Geprüft ob Browser XMLHttpRequest unterstützt
 		req = new XMLHttpRequest();							//wenn ja dann wird eins erzeugt und req zugewiesen
@@ -26,6 +27,7 @@ function ausgeben() {
 	};
 	req.open("GET", url, true); //request wrid geöffnet Get gibt requestmethode, url wo wollen wir es schicken, true synchron
 	req.send(null);				// request satement wird geschickt
+	
 }
 
 
@@ -64,10 +66,17 @@ function ausgeben() {
 
 
 <form>
-<p>Hier bitte Unternehmensnamen eingeben: <input type="text" placeholder="Unternehmen" name="name"></p>
+<p>Hier bitte Unternehmensnamen eingeben: <input type="text"  name="unternehmen" id="name" onkeyup="ausgeben()"></p>
 </form>
 
 <div id="ergebnis"></div>
+
+<p>
+					<a href="http://www.facebook.com">Folgen sie uns auf Facebook</a>
+				</p>
+				<p>
+					<a href="http://www.twitter.com">Folgen sie uns auf Twitter</a>
+				</p>
 
 
 
