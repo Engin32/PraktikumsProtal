@@ -8,12 +8,27 @@ GET		/startseite						controllers.Application.startseite()
 GET		/bewerbungstipps				controllers.Application.tipps()
 GET 	/registrierung1					controllers.Application.register1()
 
+=======
+GET 	/registrierung					controllers.Application.register()
+GET		/impressum						controllers.Application.impressum()
+GET		/kontakt						controllers.Application.kontakt()
+GET		/firmenzeiger					controllers.Application.firmenzeiger()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file             	    controllers.Assets.at(path="/public", file)
 
 
+
 POST	/Registrierung						controllers.Registrierung.register()
+
+#registrierung
+POST	/Registrierung/xyz				controllers.Registrierung.register()
+GET		/registrieren					controllers.Application.register()
+
+#suchen
+GET		/suche 							controllers.Application.suche()
+
 
 #login
 POST	/login/unternehmen				controllers.Login.anmeldenUnternehmen()
@@ -25,6 +40,7 @@ GET		/stelleerstellen				controllers.Stellenverwaltung.auschreiben()
 
 
 
+<<<<<<< HEAD
 #Impressum
 GET    /Impressum						controllers.Application.impressum()
 
@@ -33,4 +49,7 @@ GET    /Kontakt							controllers.Application.kontakt()
 
 #Suche
 GET    /Suche							controllers.Application.suche()
+=======
+
+>>>>>>> fff5a3892c8ddb8c8cee6f83537b2ed4933bce3a
 

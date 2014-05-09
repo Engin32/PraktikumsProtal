@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Bewerber-Registrierung</title>
+	<meta charset="UTF-8">
+	<title>Bewerber-Registrierung</title>
+
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/Suche.css">
+	
 </head>
+
+
+
 <body>
-	<img alt="Logo" src="./images/LogoFertig.jpg">
+<div id="ganzeSeite">
+	<div id="bild">  <img  src="/assets/images/bild.jpg"> </div>
+	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
+	<div id="bild3"> <img  src="/assets/images/bild3.jpg"> </div>
+	
+	<div id="nachobenverschieben">
+	<h1 id="TED">TED</h1>
+	<h2>Einfache Schnelle Praktikumssuche</h2>
+	</div>
+	<hr>
 
-	<table border=1>
-		<tr>
-			<th><a href="">Startseite<a></th>
-			<th><a href="">Impressum<a></th>
-			<th><a href="">Über uns</a></th>
-			<th><a href="./Bewerbungstipps.html">Bewerbungstipps</a></th>
-			<th><a href="">Wie kann ich Stellen anschauen?</a>
-		</tr>
-	</table>
+	<div id="nav">
+		<ul>
+			<li class="first"><a href="/startseite">Home</a></li>
+			<li><a href="/suche">Suche</a></li>
+			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
+				<ul>
+					<li><a href="/bewerbungstipps">Bewerbung</a></li>
+				</ul></li>
+			<li><a href=”#”>Alle Unternehmen</a></li>
+			<li><a href="/impressum">Über Uns</a>
 
+				<ul>
+					<li><a href="/startseite">T.E.D</a></li>
+					<li><a href="/impressum">Impressum</a></li>
+				</ul></li>
+			<li><a href="/kontakt">Kontakt</a></li>
+		</ul>
+	</div>
+	
 	<h1>Bewerber-Registrierung</h1>
 
 	<ul>
-		<li><input type="text" placeholder="Vorname"></input></li>
-		<li><input type="text" placeholder="Nachname"></input></li>
-		<li><input type="text" placeholder="Straße"></input></li>
-		<li><input type="text" placeholder="Ort"></input></li>
-		<li><input type="text" placeholder="Plz"></input></li>
-		<li><input type="text" placeholder="Land"></input></li>
-		<li><input type="text" placeholder="E-Mail"></input></li>
-		<li><input type="text" placeholder="Passwort"></input></li>
-		<li><input type="text" placeholder="Handynummer"></input></li>
-		<li><input type="text" placeholder="Festnetznummer"></input></li>
+		<li><input type="text" placeholder="Vorname" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Nachname" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Straße" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Ort" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Plz" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Land" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="E-Mail" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Passwort" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Handynummer" class="anmeldedaten"></input></li>
+		<li><input type="text" placeholder="Festnetznummer" class="anmeldedaten"></input></li>
 		
 
 

@@ -1,0 +1,67 @@
+.haupttext{
+	text-align: center;
+	font-size: 130%;
+	margin-top: 130px;
+}
+
+#email{
+	width: 400px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+	font-size: 25px;
+}
+
+#psw{
+	width: 400px;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+	font-size: 25px;
+}
+
+#button1{
+	width:350px;
+	padding:15px;
+	font-size:25px;
+	border-radius:25px;
+	margin-left: 550px;
+	background-color: #12aeef;
+	color: #ffffff;
+	margin-bottom: 180px;
+}
+
+#button1verschieben{
+	margin-right: 620px;
+}
+
+#button2{
+	width:350px;
+	padding:15px;
+	font-size:25px;
+	border-radius:25px;
+	margin-left: 550px;
+	background-color: #12aeef;
+	color: #ffffff;
+	margin-bottom: 180px;
+}
+
+#button2verschieben{
+	margin-right: 545px;
+	margin-bottom: -85px;
+}
+
+#button3{
+	width:350px;
+	padding:15px;
+	font-size:25px;
+	border-radius:25px;
+	margin-left: 550px;
+	background-color: #12aeef;
+	color: #ffffff;
+	margin-bottom: 100px;
+}
+
+#button3verschieben{
+	margin-right: 545px;
+}

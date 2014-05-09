@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css"
+	href="/assets/stylesheets/main.css">
+<title>Unternehmen-TED</title>
+
+<script type="text/javascript">
+function ausgeben() {
+	
+	var eingabefeld = document.getElementById("name");	    //Hier wird zuerst die eingabe gelesen
+	var url = "/firmensuchen?unternehmen=" + escape(eingabefeld.value);  //Hier wird entschieden an welchen servelt es geschickt wird
+	var req;												//ein request wird definiert
+	if (window.XMLHttpRequest) {							//Geprüft ob Browser XMLHttpRequest unterstützt
+		req = new XMLHttpRequest();							//wenn ja dann wird eins erzeugt und req zugewiesen
+	} else if (window.ActiveXObject) {						//ansonsten weil altere nicht erkennen
+		req = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	req.onreadystatechange = function() {
+		if (req.readyState == 4) {					//bearbetiung des request ist beendet
+			if (req.status == 200) {				//status ok
+				var ergebnis = req.responseText;		// response wir auf ergebnis gespeichert
+				document.getElementById("ergebnis").innerHTML = ergebnis;
+			}
+		}
+	};
+	req.open("GET", url, true); //request wrid geöffnet Get gibt requestmethode, url wo wollen wir es schicken, true synchron
+	req.send(null);				// request satement wird geschickt
+	
+}
+
+
+
+</script>
+
+
+</head>
+<body>
+<div id="bild"> <img  src="/assets/images/bild.jpg"> </div>
+	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
+<h1 id="TED">TED</h1>
+<div id="nav">
+		<ul>
+			<li class="first"><a href="/startseite">Home</a></li>
+			<li><a href="/suche">Finde dein Praktikum</a></li>
+			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
+				<ul>
+					<li><a href="/bewerbungstipps">Bewerbung</a></li>
+				</ul></li>
+			<li><a href=”#”>Alle Unternehmen</a></li>
+			<li><a href="/impressum">Über Uns</a>
+
+				<ul>
+					<li><a href="/startseite">T.E.D</a></li>
+					<li><a href="/impressum">Impressum</a></li>
+				</ul></li>
+			<li><a href="/kontakt">Kontakt</a></li>
+		</ul>
+	</div>
+	
+
+<h1>Aktuelle Unternehmen bei TED</h1>
+<p>Hier können sie gucken, ob Unternehmen die sie interessieren bei uns registriert sind</p>
+<p>Geben sie dazu, im Textfeld, einfach das Unternehmen an das sie interessiert</p>
+
+
+<form>
+<p>Hier bitte Unternehmensnamen eingeben: <input type="text"  name="unternehmen" id="name" onkeyup="ausgeben()"></p>
+</form>
+
+<div id="ergebnis"></div>
+
+<p>
+					<a href="http://www.facebook.com">Folgen sie uns auf Facebook</a>
+				</p>
+				<p>
+					<a href="http://www.twitter.com">Folgen sie uns auf Twitter</a>
+				</p>
+
+
+
+
+</body>
+</html>
