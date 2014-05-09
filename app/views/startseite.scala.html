@@ -3,24 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title>T.E.D. Startseite</title>
-<link rel="stylesheet" type="text/css"
-	href="/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/Startseite.css">
+<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 </head>
 <body>
-<div id="bild"> <img  src="/assets/images/bild.jpg"> </div>
+	<div id="ganzeSeite">
+	<div id="bild">  <img  src="/assets/images/bild.jpg"> </div>
 	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
+	<div id="bild3"> <img  src="/assets/images/bild3.jpg"> </div>
 	
+	<div id="nachobenverschieben">
 	<h1 id="TED">TED</h1>
+	<h2>Einfache Schnelle Praktikumssuche</h2>
+	</div>
+	<hr>
+
 	<div id="nav">
 		<ul>
 			<li class="first"><a href="/startseite">Home</a></li>
-			<li><a href="/suche">Finde dein Praktikum</a></li>
+			<li><a href="/suche">Suche</a></li>
 			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
 				<ul>
 					<li><a href="/bewerbungstipps">Bewerbung</a></li>
 				</ul></li>
-			<li><a href="/firmenzeiger">Alle Unternehmen</a></li>
+			<li><a href=”#”>Alle Unternehmen</a></li>
 			<li><a href="/impressum">Über Uns</a>
 
 				<ul>
@@ -34,40 +43,34 @@
 
 
 	<h1>Praktikumsbörse Startseite</h1>
+	
+	
+	
 	<div class="haupttext">
 		<p>Hier finden sie die besten Praktikums-Angebote</p>
-
-		<form action="/login/unternehmen" method="POST">
-			<input type="email" placeholder="email" name="email"> <input
-				type="password" placeholder="password" name="password"> <input
-				type="submit" value="anmelden">
-		</form>
-
-
-		<a href="/registrieren">registrieren<a> <br> <a
-				href="/suche">
-					<p>Jobs suchen</p>
-			</a>
-
-
-				<h4>T.E.D Praktikums Portal</h4>
+		<h4>T.E.D Praktikums Portal</h4>
 				<p>T.E.D ist ein unabhängiges Jobportal für Praktikanten.</p>
 				<p>Suchen Sie ein Praktikumsplatz? Dann sind sie genau richtig
 					hier.</p>
 				<p>Hier gibt es zahlreiche Stellen von weltweit bekannten
 					Unternehmen.</p>
 
+		<form action="/login/unternehmen" method="POST">
+			<p><input type="email" placeholder="Email" name="email" id="email"> 
+			<input type="password" placeholder="Password" name="password" id="psw"> </p>
+				<div id="button1verschieben"><p><input type="submit" value="Anmelden" id="button1"></p></div>
+		</form>
 
+		<p>Ist Ihr Unternehmen noch nicht registriert? Dann registrieren Sie sich!
+		<br>Sie können nach der Registrierung Stellenangebote für Praktikanten anbieten und das alles kostenlos </p>
+		<div id="button2verschieben"><input onclick="location.href='/registrieren'" type="button" value="Registrieren" id="button2"></div>
+		
+		<p>Suchen Sie nach einem Praktikum für Ihr Praxissemester? Dann finden Sie schnell und einfach die passende Stelle
+		<div id="button3verschieben"><input onclick="location.href='/suche'" type="button" value="Finde dein Praktikum" id="button3"></div>
+		
+		<p><img src="/assets/images/facebook.jpg"> <img  src="/assets/images/twitter.jpg"> </p>
 
-
-
-
-				<p>
-					<a href="http://www.facebook.com">Folgen sie uns auf Facebook</a>
-				</p>
-				<p>
-					<a href="http://www.twitter.com">Folgen sie uns auf Twitter</a>
-				</p>
+			
 	</div>
 
 
