@@ -30,6 +30,8 @@ public class Registrierung extends Controller {
 		Statement stmt;
 		ResultSet rs;
 		Connection con;
+		
+		
 
 		try {
 			
