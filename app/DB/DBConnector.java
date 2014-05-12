@@ -11,8 +11,6 @@ public class DBConnector {
 	public DBConnector() {
 
 		try {
-			
-			//DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
