@@ -21,6 +21,7 @@ public class Firmensuche extends Controller {
 		
 		ResultSet rs;
 		Connection con;
+		String ergebnis="";
 
 		
 		try {
@@ -36,7 +37,22 @@ public class Firmensuche extends Controller {
 			
 			while(rs.next()){
 				String unternehmen = rs.getString("untname");
+				
+					if(daten.equals(unternehmen)){
+						ergebnis=unternehmen;
+						
+					}else{
+						ergebnis="Kein Ergebnis";
+					}
+				
+				
 			}
+			
+			
+			
+			
+			
+			
 
 		} catch (Exception ex) {
 			System.out.println("Dieser Fehler ist aufgetreten: "
@@ -52,7 +68,7 @@ public class Firmensuche extends Controller {
 		System.out.println("Hier werden die firmen abgerufen");
 		String[] unternehmen = {"Daimler","BMW","Bosch" };
 		System.out.println(daten);
-		String ergebnis="";
+		
 		
 		for(int i =0; i<unternehmen.length; i++){
 			
