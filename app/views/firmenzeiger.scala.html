@@ -2,14 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css"
-	href="/assets/stylesheets/main.css">
+
 <title>Unternehmen-TED</title>
 
 <script type="text/javascript">
 function ausgeben() {
+	
 	var eingabefeld = document.getElementById("name");	    //Hier wird zuerst die eingabe gelesen
-	var url = "/firmensuchen" + escape(eingabefeld.value);  //Hier wird entschieden an welchen servelt es geschickt wird
+	var url = "/firmensuchen?unternehmen=" + escape(eingabefeld.value);  //Hier wird entschieden an welchen servelt es geschickt wird
 	var req;												//ein request wird definiert
 	if (window.XMLHttpRequest) {							//Geprüft ob Browser XMLHttpRequest unterstützt
 		req = new XMLHttpRequest();							//wenn ja dann wird eins erzeugt und req zugewiesen
@@ -21,6 +21,7 @@ function ausgeben() {
 			if (req.status == 200) {				//status ok
 				var ergebnis = req.responseText;		// response wir auf ergebnis gespeichert
 				document.getElementById("ergebnis").innerHTML = ergebnis;
+				
 			}
 		}
 	};
@@ -64,7 +65,7 @@ function ausgeben() {
 
 
 <form>
-<p>Hier bitte Unternehmensnamen eingeben: <input type="text" placeholder="Unternehmen" name="name"></p>
+<p>Hier bitte Unternehmensnamen eingeben: <input type="text"  name="unternehmen" id="name" onkeyup="ausgeben()"></p>
 </form>
 
 <div id="ergebnis"></div>
