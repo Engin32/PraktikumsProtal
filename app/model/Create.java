@@ -22,12 +22,22 @@ public class Create {
 			Class.forName("com.mysql.jdbc.Driver");
 
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
-			con.setAutoCommit(false);
+					"jdbc:mysql://localhost:3306", "root", "");
 			
+			
+			
+			
+			stmt = con.createStatement();
+			stmt.executeUpdate("CREATE OR REPLACE DATABASE `Praktikumsportal`");
+			
+			
+			con = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
+			
+			con.setAutoCommit(false);
 
 			stmt = con.createStatement();
-			stmt.executeUpdate("CREATE TABLE `Praktikumsportal`.`Adresse` ( `adrID` INT NOT NULL, "
+			stmt.executeUpdate("CREATE OR REPLACE TABLE `Praktikumsportal`.`Adresse` ( `adrID` INT NOT NULL, "
 					+ "`land` VARCHAR(45) NOT NULL,"
 					+ "`ort` VARCHAR(45) NOT NULL,"
 					+ "`strasse` VARCHAR(45) NOT NULL,"
@@ -36,7 +46,7 @@ public class Create {
 					+ "PRIMARY KEY (`adrID`));");
 			
 			
-			stmt.executeUpdate("CREATE TABLE `Unternehmen` ("
+			stmt.executeUpdate("CREATE OR REPLACE TABLE `Unternehmen` ("
 					+ "`untID` int(11) NOT NULL,"
 					+ "`untname` varchar(45) NOT NULL,"
 					+ "`passwort` varchar(45) NOT NULL,"
@@ -53,7 +63,7 @@ public class Create {
 			
 			
 			
-			stmt.executeUpdate("CREATE TABLE `Praktikumsportal`.`Stellenausschreibung` ("
+			stmt.executeUpdate("CREATE OR REPLACE TABLE `Praktikumsportal`.`Stellenausschreibung` ("
 					+ "`stellenID` INT NOT NULL,"
 					+ "`beschreibung` VARCHAR(450) NOT NULL,"
 					+ "`dauer` INT NOT NULL,"
@@ -84,6 +94,7 @@ public class Create {
 			
 
 		} catch (Exception e) {
+			System.out.println("Folgendes Problem: " + e.getMessage());
 
 		}
 

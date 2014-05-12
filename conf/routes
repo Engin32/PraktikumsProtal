@@ -20,10 +20,10 @@ GET     /assets/*file             	    controllers.Assets.at(path="/public", fil
 
 
 
-POST	/Registrierung						controllers.Registrierung.register1()
+POST	/Registrierung						controllers.Registrierung.register()
 
 #registrierung
-POST	/Registrierung/xyz				controllers.Registrierung.register1()
+POST	/Registrierung/xyz				controllers.Registrierung.register()
 GET		/registrieren					controllers.Application.register1()
 
 #suchen
