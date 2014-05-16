@@ -4,12 +4,12 @@
 
 # Home page
 GET     /                           	controllers.Application.index()
-GET		/startseite						controllers.Application.startseite()
+GET		/startseite						controllers.Application.startseite() 
 GET		/bewerbungstipps				controllers.Application.tipps()
-GET 	/registrierung1					controllers.Application.register1()
+GET 	/registrierung1					controllers.Application.register()
 
 
-GET 	/registrierung					controllers.Application.register1()
+GET 	/registrierung					controllers.Application.register()
 GET		/impressum						controllers.Application.impressum()
 GET		/kontakt						controllers.Application.kontakt()
 GET		/firmenzeiger					controllers.Application.firmenzeiger()
@@ -20,11 +20,11 @@ GET     /assets/*file             	    controllers.Assets.at(path="/public", fil
 
 
 
-POST	/Registrierung						controllers.Registrierung.register()
+POST	/Registrierung					controllers.Registrierung.register()
 
 #registrierung
 POST	/Registrierung/xyz				controllers.Registrierung.register()
-GET		/registrieren					controllers.Application.register1()
+GET		/registrieren					controllers.Application.register()
 
 #suchen
 GET		/suche 							controllers.Application.suche()

@@ -26,18 +26,22 @@ public class Create {
 			
 			
 			
+		
 			
 			stmt = con.createStatement();
-			stmt.executeUpdate("CREATE OR REPLACE DATABASE `Praktikumsportal`");
+			stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS `Praktikumsportal`");
 			
-			
+			// bei conf application ist praktikumsportal nicht mehr da nur localhost
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
+					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", ""); 
 			
 			con.setAutoCommit(false);
+			
+
 
 			stmt = con.createStatement();
-			stmt.executeUpdate("CREATE OR REPLACE TABLE `Praktikumsportal`.`Adresse` ( `adrID` INT NOT NULL, "
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS `Praktikumsportal`.`Adresse` ( "
+					+ "`adrID` INT NOT NULL AUTO_INCREMENT, "
 					+ "`land` VARCHAR(45) NOT NULL,"
 					+ "`ort` VARCHAR(45) NOT NULL,"
 					+ "`strasse` VARCHAR(45) NOT NULL,"
@@ -46,14 +50,14 @@ public class Create {
 					+ "PRIMARY KEY (`adrID`));");
 			
 			
-			stmt.executeUpdate("CREATE OR REPLACE TABLE `Unternehmen` ("
-					+ "`untID` int(11) NOT NULL,"
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS `Unternehmen` ("
+					+ "`untID` varchar(45) NOT NULL,"
 					+ "`untname` varchar(45) NOT NULL,"
 					+ "`passwort` varchar(45) NOT NULL,"
 					+ "`branche` varchar(45) NOT NULL,"
 					+ "`telefon` varchar(45) NOT NULL,"
 					+ "`homepage` varchar(45) NOT NULL,"
-					+ "`adresse` int(11) NOT NULL,"
+					+ "`adresse` int(11) NOT NULL,"       // hier aufpassen immer die abrID mit sql statement holen und dann einfügen
 					+ "PRIMARY KEY (`untID`),"
 					+ "KEY `adresse_idx` (`adresse`),"
 					+ "CONSTRAINT `Adresse_Unternehmen` FOREIGN KEY (`adresse`) REFERENCES `Adresse` (`adrID`) ON DELETE NO ACTION ON UPDATE NO ACTION"
@@ -63,38 +67,30 @@ public class Create {
 			
 			
 			
-			stmt.executeUpdate("CREATE OR REPLACE TABLE `Praktikumsportal`.`Stellenausschreibung` ("
-					+ "`stellenID` INT NOT NULL,"
+			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS `Praktikumsportal`.`Stellenausschreibung` ("
+					+ "`stellenID` INT NOT NULL AUTO_INCREMENT,"
 					+ "`beschreibung` VARCHAR(450) NOT NULL,"
 					+ "`dauer` INT NOT NULL,"
 					+ "`ansprechpartner` VARCHAR(45) NOT NULL,"
 					+ "`telefon` INT NOT NULL,"
 					+ "`abteilung` VARCHAR(45) NOT NULL,"
-					+ "`von` INT NOT NULL,"
-					+ "`adresse` INT NOT NULL,"
+					+ "`von` varchar(45) NOT NULL,"
+					+ "`adresse` INT NOT NULL ,"       // hier aufpassen immer die abrID mit sql statement holen und dann einfügen
 					+ "`ab` VARCHAR(45) NOT NULL,"
 					+ "PRIMARY KEY (`stellenID`),"
 					+ "INDEX `Stellen_Adresse_idx` (`adresse` ASC),"
 					+ "INDEX `Stellen_Unternehmen_idx` (`von` ASC),"
-					+ "CONSTRAINT `Stellen_Adresse`"
-					+ "FOREIGN KEY (`adresse`)"
-					+ "REFERENCES `Praktikumsportal`.`Adresse` (`adrID`)"
-					+ "ON DELETE NO ACTION"
-					+ "ON UPDATE NO ACTION,"
-					+ "CONSTRAINT `Stellen_Unternehmen`"
-					+ "FOREIGN KEY (`von`)"
-					+ "REFERENCES `Praktikumsportal`.`Unternehmen` (`untID`)"
-					+ "ON DELETE NO ACTION"
-					+ "ON UPDATE NO ACTION);");
+					+ "CONSTRAINT `Stellen_Adresse` FOREIGN KEY (`adresse`) REFERENCES `Adresse` (`adrID`) ON DELETE NO ACTION ON UPDATE NO ACTION,"
+					+ "CONSTRAINT `Stellen_Unternehmen` FOREIGN KEY (`von`) REFERENCES `Praktikumsportal`.`Unternehmen` (`untID`) ON DELETE NO ACTION ON UPDATE NO ACTION);");
 			
+			con.commit();
 			
-			
-			
+			System.out.println("Bin hier durchgegeangen!!!!");
 			
 			
 
 		} catch (Exception e) {
-			System.out.println("Folgendes Problem: " + e.getMessage());
+			System.out.println("Folgendes Problem: " + e.getMessage() );
 
 		}
 
