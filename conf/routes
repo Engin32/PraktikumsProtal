@@ -4,7 +4,7 @@
 
 # Home page
 GET     /                           	controllers.Application.index()
-GET		/startseite						controllers.Application.startseite()
+GET		/startseite						controllers.Application.startseite() 
 GET		/bewerbungstipps				controllers.Application.tipps()
 GET 	/registrierung1					controllers.Application.register()
 
@@ -20,7 +20,7 @@ GET     /assets/*file             	    controllers.Assets.at(path="/public", fil
 
 
 
-POST	/Registrierung						controllers.Registrierung.register()
+POST	/Registrierung					controllers.Registrierung.register()
 
 #registrierung
 POST	/Registrierung/xyz				controllers.Registrierung.register()
@@ -37,9 +37,6 @@ POST	/login/unternehmen				controllers.Login.anmeldenUnternehmen()
 
 #Stellen auschreiben
 GET		/stelleerstellen				controllers.Stellenverwaltung.auschreiben()
-
-
-
 
 
 

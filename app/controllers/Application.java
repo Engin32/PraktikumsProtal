@@ -10,8 +10,9 @@ public class Application extends Controller {
         return ok(index.render("Your new application is ready.."));
     }
     
+
     public static Result startseite(){
-    	
+    	model.Create.erzeuge();  // schau ob es tabellen gibt oder nicht
     	return ok(startseite.render());
     }
     
@@ -40,7 +41,8 @@ public class Application extends Controller {
     public static Result firmenzeiger(){
     	return ok(firmenzeiger.render());
     }
-
+    
+  
  
 
     

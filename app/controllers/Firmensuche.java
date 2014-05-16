@@ -18,7 +18,7 @@ public class Firmensuche extends Controller {
 
 		ResultSet rs;
 		Connection con;
-		String ergebnis = "";
+		String ergebnis = "Kein Ergebnis";
 
 		try {
 
