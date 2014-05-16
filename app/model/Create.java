@@ -41,7 +41,7 @@ public class Create {
 
 			stmt = con.createStatement();
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS `Praktikumsportal`.`Adresse` ( "
-					+ "`adrID` INT NOT NULL AUTO_INCREMENT, "
+					+ "`adrID` INT NOT NULL  AUTO_INCREMENT, "
 					+ "`land` VARCHAR(45) NOT NULL,"
 					+ "`ort` VARCHAR(45) NOT NULL,"
 					+ "`strasse` VARCHAR(45) NOT NULL,"
@@ -68,7 +68,7 @@ public class Create {
 			
 			
 			stmt.executeUpdate("CREATE TABLE IF NOT EXISTS `Praktikumsportal`.`Stellenausschreibung` ("
-					+ "`stellenID` INT NOT NULL AUTO_INCREMENT,"
+					+ "`stellenID` INT NOT NULL  AUTO_INCREMENT,"
 					+ "`beschreibung` VARCHAR(450) NOT NULL,"
 					+ "`dauer` INT NOT NULL,"
 					+ "`ansprechpartner` VARCHAR(45) NOT NULL,"

@@ -5,6 +5,7 @@ import play.mvc.*;
 import views.html.*;
 
 public class Application extends Controller {
+	// hier ein Objetk erzeugen damit einmal datenbank erzeugt wird!!!!!
 
     public static Result index() {
         return ok(index.render("Your new application is ready.."));
@@ -12,7 +13,7 @@ public class Application extends Controller {
     
 
     public static Result startseite(){
-    	model.Create.erzeuge();  // schau ob es tabellen gibt oder nicht
+    	model.Create.erzeuge();             // schau ob es tabellen gibt oder nicht
     	return ok(startseite.render());
     }
     
