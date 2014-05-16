@@ -16,6 +16,9 @@ public class Application extends Controller {
     	return ok(startseite.render());
     }
     
+    public static Result ueberuns(){
+    	return ok(ueberuns.render());
+    }
     
     public static Result tipps(){
     	return ok(bewerbungstipps.render());
@@ -42,7 +45,17 @@ public class Application extends Controller {
     	return ok(firmenzeiger.render());
     }
     
-  
+    public static Result facebook(){
+    	return redirect("http://www.facebook.com");
+    }
+    
+    public static Result twitter(){
+    	return redirect("http://www.twitter.com"); 
+    }
+    
+    public static Result htwg(){
+    	return redirect("http://www.htwg-konstanz.de");
+    }
  
 
     

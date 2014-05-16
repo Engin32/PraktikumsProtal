@@ -15,13 +15,13 @@
 	padding:15px;
 	font-size:25px;
 	border-radius:25px;
-	margin-left: 590px;
+	margin-left: 690px;
 	background-color: #12aeef;
 	color: #ffffff;
 }
 
 #buttonverschieben{
-	margin-top:-600px;
+	margin-top:-610px;
 	margin-left: 280px;
 }
 
@@ -29,14 +29,40 @@ body {
 	margin-bottom: 580px;
 }
 
-.arrow-right {
-	width: 0; 
-	height: 0; 
-	border-top: 60px solid transparent;
-	border-bottom: 60px solid transparent;
-	border-left: 60px solid #12aeef;
-	border-radius:20px;
-	
-	margin-left: 600px;
-	margin-top: -115px;
-}
+
+
+
+
+.generatecssdotcom_arrow {
+	width:95px;
+	height:25px;
+	position:relative;
+	background:#12aeef;
+	border:0px solid #FFCC00;
+	margin:-75px;
+	margin-left: 700px;
+	padding:10px;
+	border-radius:8px;
+	left:0px;s
+} 
+
+.generatecssdotcom_arrow:after, .generatecssdotcom_arrow:before {
+	left:100%;
+	top:50%;
+	border:solid transparent;
+	content:" ";
+	height:5px;
+	width:5px;
+	position:absolute;
+	pointer-events:none;
+	border-radius:8px;
+} 
+.generatecssdotcom_arrow:after {
+	border-left-color:#12aeef;
+	border-width:50px;
+	margin-top:-50px;
+	border-radius:10px;
+} 
+
+
+
