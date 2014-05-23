@@ -11,13 +11,10 @@ GET 	/registrierung1					controllers.Application.register()
 GET		/impressum						controllers.Application.impressum()
 GET		/kontakt						controllers.Application.kontakt()
 GET		/firmenzeiger					controllers.Application.firmenzeiger()
-<<<<<<< HEAD
+
 #GET		/ueberuns						controllers.Application.ueberuns()
 
 GET		/websocket						controllers.Application.socket()
-=======
-
->>>>>>> 14b46fa7f8bf50f6a2a87cbe13f7a016498fa163
 
 
 

@@ -65,14 +65,7 @@ public class Application extends Controller {
 	public static Result htwg() {
 		return redirect("http://www.htwg-konstanz.de");
 	}
-
   
-
- 
-  
- 
-  
-    
     public static Result socket(){
     	return ok(websocket.render());
     }
