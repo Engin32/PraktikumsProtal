@@ -1,3 +1,4 @@
+@(error: String = null)
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +35,10 @@ function verkleinern2(){
 
 </head>
 <body>
+	@if(error != null) {
+	<div>@error</div>
+	}
+
 	<div id="ganzeSeite">
 	<div id="bild">  <img  src="/assets/images/bild.jpg"> </div>
 	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>

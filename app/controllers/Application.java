@@ -13,12 +13,12 @@ public class Application extends Controller {
 
     public static Result startseite(){
     	model.Create.erzeuge();  // schau ob es tabellen gibt oder nicht
-    	return ok(startseite.render());
+    	return ok(startseite.render(null));
     }
     
-    public static Result ueberuns(){
+  /*  public static Result ueberuns(){
     	return ok(ueberuns.render());
-    }
+    }*/
     
     public static Result tipps(){
     	return ok(bewerbungstipps.render());
@@ -55,6 +55,10 @@ public class Application extends Controller {
     
     public static Result htwg(){
     	return redirect("http://www.htwg-konstanz.de");
+    }
+    
+    public static Result socket(){
+    	return ok(websocket.render());
     }
  
 
