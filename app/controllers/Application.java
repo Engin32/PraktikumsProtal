@@ -6,7 +6,7 @@ import play.mvc.*;
 import views.html.*;
 
 public class Application extends Controller {
-	static CreateDatabase daten = new CreateDatabase(); // hier ein Objetk
+	static CreateDatabase daten = new CreateDatabase(); // hier ein Objekt
 														// erzeugen damit einmal
 														// datenbank erzeugt
 														// wird!!!!!
