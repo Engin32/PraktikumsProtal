@@ -8,6 +8,30 @@
 <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+
+function vergroessern(){
+	$("#facebook").width(85);
+}
+
+function verkleinern(){
+	$("#facebook").width(60);
+}
+
+function vergroessern2(){
+	$("#twitter").width(85);
+}
+
+function verkleinern2(){
+	$("#twitter").width(60);
+}
+
+</script>
+
+
+
+
 </head>
 <body>
 	<div id="ganzeSeite">
@@ -33,7 +57,7 @@
 			<li><a href="/impressum">Über Uns</a>
 
 				<ul>
-					<li><a href="/startseite">T.E.D</a></li>
+					<li><a href="/ueberuns">T.E.D</a></li>
 					<li><a href="/impressum">Impressum</a></li>
 				</ul></li>
 			<li><a href="/kontakt">Kontakt</a></li>
@@ -68,7 +92,8 @@
 		<p>Suchen Sie nach einem Praktikum für Ihr Praxissemester? Dann finden Sie schnell und einfach die passende Stelle
 		<div id="button3verschieben"><input onclick="location.href='/suche'" type="button" value="Finde dein Praktikum" id="button3"></div>
 		
-		<p><img src="/assets/images/facebook.jpg"> <img  src="/assets/images/twitter.jpg"> </p>
+		<a href="/facebook"><img id="facebook" onmouseover="vergroessern()" onmouseout="verkleinern()" src="/assets/images/facebook.jpg" ></a>
+		<a href="/twitter"><img id="twitter" onmouseover="vergroessern2()" onmouseout="verkleinern2()" src="/assets/images/twitter.jpg"> </a>
 
 			
 	</div>
