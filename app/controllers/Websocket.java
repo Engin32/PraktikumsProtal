@@ -16,26 +16,17 @@ public class Websocket extends Controller {
 
 		System.out.println("hallo1");
 
-		ResultSet rs;
-		Connection con;
-		String ergebnis = "Kein Ergebnis";
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
-			System.out.println("alles in Ordnung");
-
-		} catch (Exception e) {
-
-		}
+		 
 
 		WebSocket<String> ws = null;
 		ws = new WebSocket<String>() {
 			public void onReady(WebSocket.In<String> in,
 					final WebSocket.Out<String> out) {
-				//Javascript funktion aufrufen neuladen()
-				out.write("<h1>hallo11</h1>");
-
+				//Schickt nichts, sorgt nur das die Funktion recieveEvent() aufgerufen wird
+				//recieveEvent ruft dann die methode laden() auf!!!
+				
+				out.write("");
+				
 				
 
 			}

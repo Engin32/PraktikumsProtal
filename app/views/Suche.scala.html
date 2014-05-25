@@ -53,10 +53,21 @@
  	
  }
 
- 
-function nachladen(){
-	 
+ var webSocket;
+
+ var neu = false; 
+ $(function() {
+ 	var WS = window["MozWebSocket"] ? MozWebSocket : WebSocket;
+ 	webSocket = new WS("@routes.Websocket.websocket().webSocketURL(request)");
+ 	webSocket.onmessage = receiveEvent;
+ })
+
+ function receiveEvent(event) {
+ 	laden();
+ 	$("#ausgeben1").html(event.data);
  }
+
+
  
 
 
@@ -177,5 +188,6 @@ function nachladen(){
  </div>
  
  <div id="ausgeben"></div>
+ <div id="ausgeben1"></div>
 </body>
 </html>
