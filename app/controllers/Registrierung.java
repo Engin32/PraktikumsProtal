@@ -109,7 +109,8 @@ public class Registrierung extends Controller {
 			System.out.println("In db eingefügt");
 			con.commit();
 
-			// hier session erzeugen!!
+			
+			session(uname);  // merke dir das registrierte Unternehmen
 			
 			
 			return ok(afterloginUnternehmen.render());
