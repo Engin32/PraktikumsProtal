@@ -112,7 +112,7 @@ public class Registrierung extends Controller {
 			// hier session erzeugen!!
 			
 			
-			return ok(afterloginUnternehmen.render());
+			return ok(afterloginUnternehmen.render(uname));
 
 		} catch (Exception ex) {
 			System.out.println("Dieser Fehler ist aufgetreten: "

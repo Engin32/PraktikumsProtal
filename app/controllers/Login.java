@@ -20,7 +20,7 @@ public class Login extends Controller {
 	
 	public static Result abmeldenUnternehmen(){
 		
-		
+		System.out.println("abgemeldet");
 		session().clear();
 		return ok(startseite.render(null));
 
@@ -41,6 +41,9 @@ public class Login extends Controller {
 		ResultSet rs;
 		Connection con;
 		boolean regisrtiert = false;
+		String unternehmen="";
+		String passwort="";
+		String name="";
 
 		try {
 
@@ -50,19 +53,22 @@ public class Login extends Controller {
 			System.out.println("alles in Ordnung");
 
 			Statement stmt = con.createStatement();
-			rs = stmt.executeQuery("select untID, passwort from Unternehmen");
+			rs = stmt.executeQuery("select untID,untname, passwort from Unternehmen");
 
 			while (rs.next()) {
-				String unternehmen = rs.getString("untID");
-				String passwort = rs.getString("passwort");
+				
+				 unternehmen = rs.getString("untID");
+				 name = rs.getString("untname");
+				 passwort = rs.getString("passwort");
+				
+				 
 				if (email.equals(unternehmen) && password.equals(passwort)) {
-
-					String user = session(unternehmen);
-					if (user != null) {
-						regisrtiert = true;
-
-					}
-
+						
+					String user = session(email);
+					regisrtiert = true;
+					
+					break;
+					
 				}
 
 			}
@@ -78,9 +84,12 @@ public class Login extends Controller {
 		System.out.println("hallo das ist deine Email: " + email
 				+ "und das dein Password: " + password);
 		if (regisrtiert == true) {
-			return ok(afterloginUnternehmen.render());
+			
+			return ok(afterloginUnternehmen.render(name));
 		} else {
+			
 			return unauthorized(startseite.render("falscher Username oder Passwort"));
+		
 		}
 
 	}

@@ -22,6 +22,7 @@ public class Websocket extends Controller {
 		ws = new WebSocket<String>() {
 			public void onReady(WebSocket.In<String> in,
 					final WebSocket.Out<String> out) {
+				//wenn ein insert getätigt wird, wird diese Methode aufgerufen
 				//Schickt nichts, sorgt nur das die Funktion recieveEvent() aufgerufen wird
 				//recieveEvent ruft dann die methode laden() auf!!!
 				
