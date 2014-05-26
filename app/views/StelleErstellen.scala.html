@@ -35,9 +35,9 @@
 
 
 
-	<form action="" mehtod="POST">
+	<form action="/stellespeichern" method="POST">
 		<p>
-			Fakultät: <select><option>Alle</option>
+			Fakultät: <select name="fakultät">
 				<option>Architektur und Gestaltung</option>
 				<option>Bauningenierwesen</option>
 				<option>Elektro- und Informationstechnik</option>
@@ -48,7 +48,7 @@
 			<option>Wirtschaft und Sozialwissenschaften</option>
 		</p>
 		<p>
-			Bundesland: <select><option>Baden-Würtemberg</option>
+			Bundesland: <select name ="bundesland"><option>Baden-Würtemberg</option>
 				<option>Bayern</option>
 				<option>Saarland</option>
 				<option>Hessen</option>
@@ -56,26 +56,24 @@
 				<option>Sachsen</option></select>
 		</p>
 		<p>
-			Stadt : <input type="text" placeholder="Stadt">
+			Stadt : <input type="text" placeholder="Stadt" name="stadt">
 		</p>
 		<p>
-			Dauer : <select><option>3</option>
+			Dauer : <select name="dauer"><option>3</option>
 				<option>6</option>
 				<option>8</option>
 				<option>12</option></select> Monate
 		</p>
 		<p>
 			Aufgaben :
-			<textarea name="beschreibung">Schreiben sie hier bitte Aufgaben rein Sachen rein </textarea>
+			<textarea name="aufgaben">Schreiben sie hier bitte Aufgaben rein Sachen rein </textarea>
 		</p>
 		<p>
 			Anforderungen :
-			<textarea name="beschreibung">Schreiben sie hier bitte die Anforderungen rein Sachen rein </textarea>
+			<textarea name="anforderungen">Schreiben sie hier bitte die Anforderungen rein Sachen rein </textarea>
 		</p>
-		<p>
-			Beschreibung :
-			<textarea name="beschreibung">Schreiben sie hier bitte allgemeine Sachen rein </textarea>
-		</p>
+		
+		<p>Ab wann? <input type="date"> </p>
 
 
 

@@ -30,6 +30,8 @@
  		if(!eingabe){
  			alert("Bitte die Pflichtfelder ausfüllen");
  			window.location.reload();
+ 		}else{
+ 			laden();
  		}
  	}
  
@@ -37,6 +39,57 @@
  
  
  </script>
+ 
+ <script>
+ 
+ var fakultät
+ var bundesland
+ var stadt
+ var dauer
+ var größe
+ var unternehmen
+ var datum
+ 
+ function laden(){
+ 	
+ 	 fakultät = document.getElementById("select").value;
+ 	 bundesland = document.getElementById("select2").value;
+ 	 stadt = document.getElementById("input1").value;
+ 	 dauer = document.getElementById("select4").value;
+ 	 größe = document.getElementById("select3").value;
+ 	 unternehmen = document.getElementById("input2").value;
+ 	 anfang = document.getElementById("input3").value;
+ 	
+ 	
+ 	
+ 	$("#ausgeben").load("/praktikasuche?fakultät=" +fakultät+"&bundesland="+
+ 			bundesland+"&stadt="+stadt+"&dauer="+dauer+"&größe="+größe+"&unternehmen="+unternehmen+"&anfang"+anfang);
+ 												
+
+ 	
+ }
+
+ var webSocket;
+
+ var neu = false; 
+ $(function() {
+ 	var WS = window["MozWebSocket"] ? MozWebSocket : WebSocket;
+ 	webSocket = new WS("@routes.Websocket.websocket().webSocketURL(request)");
+ 	webSocket.onmessage = receiveEvent;
+ })
+
+ function receiveEvent(event) {
+ 	laden();
+ 	$("#ausgeben1").html(event.data);
+ }
+
+
+ 
+
+
+ </script>
+
+
  
 </head>
 
@@ -134,6 +187,7 @@
 
 		<p>
 			<button id="button1" onclick="ueberpruefen()">Finde dein Praktikum</button>
+
 		</p>
 
 
@@ -142,5 +196,8 @@
 	</form>
 
  </div>
+ 
+ <div id="ausgeben"></div>
+ <div id="ausgeben1"></div>
 </body>
 </html>
