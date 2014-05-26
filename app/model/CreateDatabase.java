@@ -64,6 +64,7 @@ public class CreateDatabase {
 					+ "`Aufgaben` VARCHAR(1000) NOT NULL,"
 					+ "`Qualifikationen` VARCHAR(1000) NOT NULL,"
 					+ "`dauer` INT NOT NULL,"
+					+ "`Identifikator` VARCHAR(30) NOT NULL,"
 					+ "`ansprechpartner` VARCHAR(45) NOT NULL,"
 					+ "`telefon` INT NOT NULL,"
 					+ "`abteilung` VARCHAR(45) NOT NULL,"
@@ -167,11 +168,11 @@ public class CreateDatabase {
 
 				PreparedStatement ps4 = con
 						.prepareStatement("INSERT INTO Praktikumsportal.Stellenausschreibung"
-								+ "(Aufgaben,Qualifikationen,dauer,ansprechpartner,telefon,abteilung,von,adresse,ab)"
+								+ "(Aufgaben,Qualifikationen,dauer,Identifikator,ansprechpartner,telefon,abteilung,von,adresse,ab)"
 								+ "VALUES"
 								+ "('Unterstützung bei der Entwicklung von strategischen und operativen Konzepten.Mitwirkung bei der Koordination, Vor- und Nachbereitung und Durchführung von Projektleitersitzungen inklusive der Erstellung relevanter Dokumentationen.Unterstützung bei der Planung, Vorbereitung, Durchführung und Nachbereitung von Projekt-Workshops',"
 								+ "'Studiengang: Studium der Informatik, Wirtschaftsinformatik, Betriebswirtschaft oder vergleichbare Ausbildung.IT-Kenntnisse: Kenntnisse der Daimler IT-Organisation (Strukturen, Abläufe, Organisation) von Vorteil.Persönliche Kompetenzen: Selbständige und zielgerichtete Arbeitsweise.Sprachkenntnisse: Sehr gute Englisch Kenntnisse, weitere Fremdsprache von Vorteil; Gute Kenntnisse in Projekt Management (Houston); Sehr gute MS-Office-Kenntnisse.',"
-								+ "6,'Frau Maier',1293084084,'IT','hr@daimler.de',?,'01.09.2014');");
+								+ "6,'D1','Frau Maier',1293084084,'IT','hr@daimler.de',?,'01.09.2014');");
 
 				ps4.setInt(1, i4);
 				ps4.executeUpdate();
@@ -207,11 +208,11 @@ public class CreateDatabase {
 
 				PreparedStatement ps5 = con
 						.prepareStatement("INSERT INTO Praktikumsportal.Stellenausschreibung"
-								+ "(Aufgaben,Qualifikationen,dauer,ansprechpartner,telefon,abteilung,von,adresse,ab)"
+								+ "(Aufgaben,Qualifikationen,dauer,Identifikator,ansprechpartner,telefon,abteilung,von,adresse,ab)"
 								+ "VALUES"
 								+ "('Weiterentwicklung von Methoden & Prozessen für Projekt- und Programmmanagement.Ausgestalten von Workshops für die internationale Program- und Projekt Management Community.Operatives Programm- und Projekt Management im Programm Management Office.Support beim Release Management der PM Prozesse und Methoden',"
 								+ "'Studiengang: Wirtschaftsinformatik oder Betriebswirtschaftslehre mit dem Schwerpunkten Business Process Management oder Programm und Projekt Management.Sprachkenntnisse: Sehr gute Deutsch- und Englischkenntnisse in Wort und Schrift.Persönliche Kompetenzen: Analytisches Denken, Teamfähigkeit und Bereitschaft zum selbständigen Arbeiten',"
-								+ "6,'Frau Rau',234522144,'BWL','hr@daimler.de',?,'01.09.2014');");
+								+ "6,'D2','Frau Rau',234522144,'BWL','hr@daimler.de',?,'01.09.2014');");
 
 				ps5.setInt(1, i5);
 				ps5.executeUpdate();
@@ -283,11 +284,11 @@ public class CreateDatabase {
 
 				PreparedStatement ps6 = con
 						.prepareStatement("INSERT INTO Praktikumsportal.Stellenausschreibung"
-								+ "(Aufgaben,Qualifikationen,dauer,ansprechpartner,telefon,abteilung,von,adresse,ab)"
+								+ "(Aufgaben,Qualifikationen,dauer,Identifikator,ansprechpartner,telefon,abteilung,von,adresse,ab)"
 								+ "VALUES"
 								+ "('Während des Praktikums erhalten Sie einen groben Überblick der umfangreichen Toolslandschaft des Fachbereichs Grundauslegung Fahrdynamik. Automatisierung und Vernetzung ist ein bedeutender Aspekt für IT-Systeme und benötigt zukunftsorientierte Systemarchitekturen und Technologien. Hierzu können Sie Themenvorschläge einbringen und Ihre konstruktiven Ideen prototypisch verwirklichen.',"
 								+ "'Studium der Informatik oder ein vergleichbarer Studiengang. Zweite Hälfte Bachelor-, Master- oder Diplomstudiengang.Erste praktische Erfahrung im Bereich der Softwareentwicklung.- Kenntnisse im Programmieren Design Pattern, Software-Architektur mit Datenbankbezug.- Sichere Umgang mit MS Office.',"
-								+ "6,'Herr Meer',234568721,'IT','hr@bmw.de',?,'01.10.2014');");
+								+ "6,'B1','Herr Meer',234568721,'IT','hr@bmw.de',?,'01.10.2014');");
 
 				ps6.setInt(1, i6);
 				ps6.executeUpdate();
@@ -362,11 +363,11 @@ public class CreateDatabase {
 
 				PreparedStatement ps7 = con
 						.prepareStatement("INSERT INTO Praktikumsportal.Stellenausschreibung"
-								+ "(Aufgaben,Qualifikationen,dauer,ansprechpartner,telefon,abteilung,von,adresse,ab)"
+								+ "(Aufgaben,Qualifikationen,dauer,Identifikator,ansprechpartner,telefon,abteilung,von,adresse,ab)"
 								+ "VALUES"
 								+ "('Als Praktikant bei Business Consulting bekommen Sie die Möglichkeit, in einem Zeitraum von mindestens drei Monaten die Arbeit und die Kollegen der internen Managementberatung intensiv kennenzulernen. Sie erhalten einen fundierten Einblick in den Beratungsalltag und können sich gleichzeitig mit Ihrer Kompetenz und Persönlichkeit einbringen. Praktikanten unterstützen als vollwertiges Teammitglied ein oder mehrere Beraterprojekte',"
 								+ "'Studium der Wirtschafts-, Ingenieur- oder Naturwissenschaften.ausgezeichnete akademische Leistungen.erste Praxis- und Auslandserfahrung, beispielsweise durch Praktika, Auslandssemester. herausragende analytische Fähigkeiten',"
-								+ "6,'Herr Werkmann',842987123,'BWL','hr@bayer.de',?,'01.03.2015');");
+								+ "6,'Bayer1','Herr Werkmann',842987123,'BWL','hr@bayer.de',?,'01.03.2015');");
 
 				ps7.setInt(1, i7);
 				ps7.executeUpdate();
