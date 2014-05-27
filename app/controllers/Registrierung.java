@@ -109,7 +109,12 @@ public class Registrierung extends Controller {
 			System.out.println("In db eingefügt");
 			con.commit();
 
-			// hier session erzeugen!!
+			
+			// den user merken da er ja weitergeleitet wird
+			response().setCookie("data", email);
+			session("a",email);
+			String user = session("a");
+			
 			
 			
 			return ok(afterloginUnternehmen.render(uname));

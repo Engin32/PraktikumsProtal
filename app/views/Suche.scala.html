@@ -46,7 +46,6 @@
  var bundesland
  var stadt
  var dauer
- var größe
  var unternehmen
  var datum
  
@@ -56,14 +55,14 @@
  	 bundesland = document.getElementById("select2").value;
  	 stadt = document.getElementById("input1").value;
  	 dauer = document.getElementById("select4").value;
- 	 größe = document.getElementById("select3").value;
+ 	 
  	 unternehmen = document.getElementById("input2").value;
  	 anfang = document.getElementById("input3").value;
  	
  	
  	
  	$("#ausgeben").load("/praktikasuche?fakultät=" +fakultät+"&bundesland="+
- 			bundesland+"&stadt="+stadt+"&dauer="+dauer+"&größe="+größe+"&unternehmen="+unternehmen+"&anfang"+anfang);
+ 			bundesland+"&stadt="+stadt+"&dauer="+dauer+"&unternehmen="+unternehmen+"&anfang"+anfang);
  												
 
  	
@@ -145,9 +144,9 @@
 
 				</select>
 			Welche Fakultät?* <select id="select">
-				<option>Architektur und Gestaltung</option>
+				<option>Architektur/Gestaltung</option>
 				<option>Bauingenieurwesen</option>
-				<option>Elektro - und Informationstechnik</option>
+				<option>Elektro/Informationstechnik</option>
 				<option>IT</option>
 				<option>Maschinenbau</option>
 				<option>BWL</option>

@@ -15,6 +15,11 @@ import views.html.*;
 
 import java.sql.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.http.HttpRequest;
+
 public class Login extends Controller {
 
 	
@@ -63,15 +68,33 @@ public class Login extends Controller {
 				
 				 
 				if (email.equals(unternehmen) && password.equals(passwort)) {
-						
-					String user = session(email);
+					
+					response().setCookie("data", unternehmen);
+					session("a",unternehmen);
+					String user = session("a");
 					regisrtiert = true;
+					
+					
+					
+					System.out.println(user+ "hier ist der user");
+					
+				
+					
+					
+					
+					
 					
 					break;
 					
 				}
 
 			}
+			
+			
+			
+			
+			
+			
 
 		} catch (Exception ex) {
 			System.out.println("Dieser Fehler ist aufgetreten: "
