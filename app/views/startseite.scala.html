@@ -35,9 +35,7 @@ function verkleinern2(){
 
 </head>
 <body>
-	@if(error != null) {
-	<div>@error</div>
-	}
+	
 
 	<div id="ganzeSeite">
 	<div id="bild">  <img  src="/assets/images/bild.jpg"> </div>
@@ -89,6 +87,9 @@ function verkleinern2(){
 			<input type="password" placeholder="Password" name="password" id="psw"> </p>
 				<div id="button1verschieben"><p><input type="submit" value="Anmelden" id="button1"></p></div>
 		</form>
+		@if(error != null) {
+	<div>@error</div>
+	}
 
 		<p>Ist Ihr Unternehmen noch nicht registriert? Dann registrieren Sie sich!
 		<br>Sie können nach der Registrierung Stellenangebote für Praktikanten anbieten und das alles kostenlos </p>

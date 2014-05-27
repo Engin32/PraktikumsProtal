@@ -10,6 +10,7 @@ import java.util.Map;
 import play.*;
 import play.api.mvc.Session;
 import play.mvc.*;
+import play.mvc.Http.Cookie;
 import play.mvc.Http.RequestBody;
 import views.html.*;
 
@@ -23,9 +24,11 @@ import org.apache.http.HttpRequest;
 public class Login extends Controller {
 
 	
+	@SuppressWarnings("deprecation")
 	public static Result abmeldenUnternehmen(){
 		
 		System.out.println("abgemeldet");
+		response().discardCookies("data");
 		session().clear();
 		return ok(startseite.render(null));
 
@@ -33,7 +36,7 @@ public class Login extends Controller {
 	
 	
 	
-	
+
 	
 	public static Result anmeldenUnternehmen() {
 
@@ -106,7 +109,9 @@ public class Login extends Controller {
 
 		System.out.println("hallo das ist deine Email: " + email
 				+ "und das dein Password: " + password);
-		if (regisrtiert == true) {
+		Cookie name1 = request().cookies().get("data");
+
+		if (regisrtiert == true & name1!=null) {
 			
 			return ok(afterloginUnternehmen.render(name));
 		} else {
