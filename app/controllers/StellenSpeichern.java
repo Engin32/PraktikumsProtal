@@ -1,7 +1,12 @@
 package controllers;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Map;
 
+import play.api.mvc.Session;
 import play.mvc.Controller;
 import play.mvc.Result;
 
@@ -22,15 +27,42 @@ public class StellenSpeichern extends Controller {
 		
 		String aufgaben = daten.get("aufgaben")[0];
 		String anforderungen = daten.get("anforderungen")[0];
-		String beschreibung = daten.get("beschreibung")[0];
+				
+		System.out.println(fakultät+ " " + bundesland+ " "+stadt+ " "+dauer+ " " +aufgaben+ " "+anforderungen+ " ");
 		
 		
-		System.out.println(fakultät+ " " + bundesland+ " "+stadt+ " "+dauer+ " " +aufgaben+ " "+anforderungen+ " "+beschreibung);
 		
-		//if bedingung zb wenn was null ist aber vllt mit html pattern !!!!!!!!!!!!!!!!!!!!!!!!!
 		
-		//hier muss auch der websocket aufgerufen werden
-		// die daten müssen hier eingefügt werden 
+		
+		
+		ResultSet rs;
+		Connection con;
+		Statement stmt;
+		String ergebnis = "Kein Ergebnis";
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
+			
+			// hier werden die Daten eingefügt
+			
+			
+			stmt =con.createStatement();
+			stmt.executeUpdate("insert into xxx values();");
+			stmt.executeUpdate("insert into xxx values();");
+			stmt.executeUpdate("insert into xxx values();");
+			
+			
+			
+			
+			
+
+		} catch (Exception e) {
+
+		}
+
+		
+		
 		
 		
 		

@@ -56,8 +56,10 @@ public class Login extends Controller {
 				String unternehmen = rs.getString("untID");
 				String passwort = rs.getString("passwort");
 				if (email.equals(unternehmen) && password.equals(passwort)) {
-
-					String user = session(unternehmen);
+					
+					session("a", unternehmen);
+					String user = session("a");
+					System.out.println(user + "halöööö");
 					if (user != null) {
 						regisrtiert = true;
 

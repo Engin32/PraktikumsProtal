@@ -23,6 +23,24 @@
 	}
  </script>
  
+
+ <script type="text/javascript">
+ 
+ 	function ueberpruefen(){
+ 		var eingabe = document.getElementById("input3").value;
+ 		if(!eingabe){
+ 			alert("Bitte die Pflichtfelder ausfüllen");
+ 			window.location.reload();
+ 		}else{
+ 			laden();
+ 		}
+ 	}
+ 
+ 
+ 
+ 
+ </script>
+
  
  <script>
  
@@ -30,7 +48,7 @@
  var bundesland
  var stadt
  var dauer
- var größe
+
  var unternehmen
  var datum
  
@@ -40,24 +58,35 @@
  	 bundesland = document.getElementById("select2").value;
  	 stadt = document.getElementById("input1").value;
  	 dauer = document.getElementById("select4").value;
- 	 größe = document.getElementById("select3").value;
+ 	 
  	 unternehmen = document.getElementById("input2").value;
  	 anfang = document.getElementById("input3").value;
  	
  	
  	
  	$("#ausgeben").load("/praktikasuche?fakultät=" +fakultät+"&bundesland="+
- 			bundesland+"&stadt="+stadt+"&dauer="+dauer+"&größe="+größe+"&unternehmen="+unternehmen+"&anfang"+anfang);
+ 			bundesland+"&stadt="+stadt+"&dauer="+dauer+"&unternehmen="+unternehmen+"&anfang="+anfang);
  												
 
  	
  }
 
- 
-function nachladen(){
-	 
+
+ var webSocket;
+
+ var neu = false; 
+ $(function() {
+ 	var WS = window["MozWebSocket"] ? MozWebSocket : WebSocket;
+ 	webSocket = new WS("@routes.Websocket.websocket().webSocketURL(request)");
+ 	webSocket.onmessage = receiveEvent;
+ })
+
+ function receiveEvent(event) {
+ 	laden();
+ 	$("#ausgeben1").html(event.data);
  }
- 
+
+
 
 
  </script>
@@ -107,20 +136,31 @@ function nachladen(){
 	<form id="formular1">
 
 		<p id="text1">
-			Wo? <input id="input1" type="text" placeholder="Stadt/PLZ">
-			Welche Fakultät? <select id="select">
-				<option>Alle</option>
+		Bundesland* <select id="select2">
+					<option>Baden-Würtemberg</option>
+					<option>Bayern</option>
+					<option>Saarland</option>
+					<option>Rheinland-Pfalz</option>
+					<option>Hessen</option>
+					<option>Thüringen</option>
+					<option>Sachsen</option>
+
+				</select>
+			Welche Fakultät?* <select id="select">
 				<option>Architektur und Gestaltung</option>
 				<option>Bauingenieurwesen</option>
 				<option>Elektro - und Informationstechnik</option>
-				<option>Informatik</option>
+				<option>IT</option>
 				<option>Maschinenbau</option>
-				<option>Wirtschaft- und Sozialwissenschaften</option>
+				<option>BWL</option>
 
 
 			</select>
 		</p>
 
+			<p id="text1">
+				Anfangsdatum* <input id="input3" type="date" placeholder="TT.MM.JJJJ">
+			</p>
 		<div id="sucheverfeinern">
 			<p>
 				<a href="#" onclick="sucheverf()">Suche verfeinern</a>
@@ -131,26 +171,11 @@ function nachladen(){
 
 
 			<p id="text1">
-				Bundesland <select id="select2">
-					<option>Baden-Württemberg</option>
-					<option>Bayern</option>
-					<option>Saarland</option>
-					<option>Rheinland-Pfalz</option>
-					<option>Hessen</option>
-					<option>Thüringen</option>
-					<option>Sachsen</option>
-
-				</select> Unternhemen <input id="input2" type="text"
-					placeholder="Name des Unternehmen">
+				Wo? <input id="input1" type="text" placeholder="Stadt/PLZ">
+				Unternhemen <input id="input2" type="text" placeholder="Name des Unternehmen"></p>
+			
 			<p id="text1">
-				Unternehmensgröße <select id="select3">
-					<option>beliebig</option>
-					<option>kleines Unternehmen</option>
-					<option>mittelständisches Unternehmen</option>
-					<option>groÃes Unternhemn</option>
-
-
-				</select> Dauer <select id="select4">
+				Dauer <select id="select4">
 					<option>beliebig</option>
 					<option>3</option>
 					<option>6</option>
@@ -158,15 +183,17 @@ function nachladen(){
 					<option>12</option>
 				</select>
 			</p>
-			<p id="text1">
-				Anfangsdatum <input id="input3" type="date" placeholder="TT.MM.JJJJ">
-			</p>
 
 		</div>
 
 
 		<p>
-			<button id="button1" onclick="laden()">Finde dein Praktikum</button>
+
+			
+
+			<button id="button1" onclick="ueberpruefen()">Finde dein Praktikum</button>
+
+
 		</p>
 
 
@@ -176,6 +203,9 @@ function nachladen(){
 
  </div>
  
- <div id="ausgeben"></div>
+<div id="ausgeben"></div>
+
+
+
 </body>
 </html>

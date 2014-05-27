@@ -4,9 +4,29 @@
 <meta charset="UTF-8">
 <title>T.E.D Bewerbungstipps</title>
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/tipps.css">
 <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/Suche.css">
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+
+function vergroessern(){
+	$("#facebook").width(85);
+}
+
+function verkleinern(){
+	$("#facebook").width(60);
+}
+
+function vergroessern2(){
+	$("#twitter").width(85);
+}
+
+function verkleinern2(){
+	$("#twitter").width(60);
+}
+
+</script>
 </head>
 
 
@@ -34,7 +54,7 @@
 			<li><a href="/impressum">Über Uns</a>
 
 				<ul>
-					<li><a href="/startseite">T.E.D</a></li>
+					<li><a href="/ueberuns">T.E.D</a></li>
 					<li><a href="/impressum">Impressum</a></li>
 				</ul></li>
 			<li><a href="/kontakt">Kontakt</a></li>
@@ -45,23 +65,20 @@
 	<div class="haupttext">
 	<h3>Bewerbung</h3>
 	<p>Schreiben sie ihre Bewerbung immer auf ihrer eigenen Spracheweise. <br>Es ist abzuraten standard Sätze zu nehmen, da es sehr unnatürlich wirkt.</p>
-	<p>Nehmen sie sich mindestens eine Stunde Zeit für die Bewerbung. <br>Achten Sie auf Rechtschreibung und Grammatik. </p>
-	<p>In der Bewerbung sollten sie ihr Interesse am Unternehmen zeigen sowie ihre Fähigkeiten schildern.</p>
-
+	<p>Nehmen sie sich Zeit für die Bewerbung, denn der erste Eindruck zählt. <br>Achten Sie auf Rechtschreibung und Grammatik. Geben sie ihre Bewerbung Verwandte oder Freunde, damit eventuelle Fehler rechtzetig erkannt werden </p>
+	<p>In der Bewerbung sollten sie ihr Interesse am Unternehmen zeigen sowie ihre Fähigkeiten schildern. Hier ganz wichtig zu beachten: Lügen haben kurze Beine!!</p>
+	<div id="bewerbungbild"> <img src="/assets/images/bewerbung.jpg"> </div>
 
 	<h3>Vorstellungsgespräch</h3>
 	<p>Im Vorstellungsgespräch sollten sie drauf achten, dass es immer standard Fragen gibt. <br>Man kann sich sehr gut drauf vorbereiten indem man viel übt.<br>Es gibt Fragen wie z.B. "Nennen sie ihre Stärken und Schwächen" oder "Erzählen sie was über sich".</p>
 	<p>Bei solchen Fragen können sie punkten. Üben sie vor Freunden oder vor dem Spiegel und achten Sie drauf das sie immer ehrlich sind.</p>
+	<p>Pünktilichkeit ist das a und o, das sagt schon viel über Ihre Person aus</p>
+	<div id="vgspbild"> <img src="/assets/images/vgsp.jpg"> </div>
 
-
-
-		<p>
-			<a href="http://www.facebook.com">Folgen sie uns auf Facebook</a>
-		</p>
-		<p>
-			<a href="http://www.twitter.com">Folgen sie uns auf Twitter</a>
-		</p>
-
+	<div id="socialNverschieben">
+		<a href="/facebook"><img id="facebook" onmouseover="vergroessern()" onmouseout="verkleinern()" src="/assets/images/facebook.jpg" ></a>
+		<a href="/twitter"><img id="twitter" onmouseover="vergroessern2()" onmouseout="verkleinern2()" src="/assets/images/twitter.jpg"> </a>
+	</div>
 	</div>
 
 
