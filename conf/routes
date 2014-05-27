@@ -43,6 +43,7 @@ POST	/abmelden						controllers.Login.abmeldenUnternehmen()
 #Stellen auschreiben
 GET		/stelleerstellen				controllers.Stellenverwaltung.auschreiben()
 POST	/stellespeichern				controllers.StellenSpeichern.speichern()
+GET		/eigenestellen					controllers.Stellenverwaltung.eigeneStellen()
 
 #Facebook
 GET  	/facebook						controllers.Application.facebook()
