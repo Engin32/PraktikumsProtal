@@ -109,11 +109,16 @@ public class Registrierung extends Controller {
 			System.out.println("In db eingefügt");
 			con.commit();
 
+
 			
-			session(uname);  // merke dir das registrierte Unternehmen
+			// den user merken da er ja weitergeleitet wird
+			response().setCookie("data", email);
+			session("a",email);
+			String user = session("a");
 			
 			
-			return ok(afterloginUnternehmen.render());
+			
+			return ok(afterloginUnternehmen.render(uname));
 
 		} catch (Exception ex) {
 			System.out.println("Dieser Fehler ist aufgetreten: "

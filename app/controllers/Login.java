@@ -10,17 +10,25 @@ import java.util.Map;
 import play.*;
 import play.api.mvc.Session;
 import play.mvc.*;
+import play.mvc.Http.Cookie;
 import play.mvc.Http.RequestBody;
 import views.html.*;
 
 import java.sql.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.http.HttpRequest;
+
 public class Login extends Controller {
 
 	
+	@SuppressWarnings("deprecation")
 	public static Result abmeldenUnternehmen(){
 		
-		
+		System.out.println("abgemeldet");
+		response().discardCookies("data");
 		session().clear();
 		return ok(startseite.render(null));
 
@@ -28,7 +36,7 @@ public class Login extends Controller {
 	
 	
 	
-	
+
 	
 	public static Result anmeldenUnternehmen() {
 
@@ -41,6 +49,9 @@ public class Login extends Controller {
 		ResultSet rs;
 		Connection con;
 		boolean regisrtiert = false;
+		String unternehmen="";
+		String passwort="";
+		String name="";
 
 		try {
 
@@ -50,24 +61,45 @@ public class Login extends Controller {
 			System.out.println("alles in Ordnung");
 
 			Statement stmt = con.createStatement();
-			rs = stmt.executeQuery("select untID, passwort from Unternehmen");
+			rs = stmt.executeQuery("select untID,untname, passwort from Unternehmen");
 
 			while (rs.next()) {
-				String unternehmen = rs.getString("untID");
-				String passwort = rs.getString("passwort");
+				
+				 unternehmen = rs.getString("untID");
+				 name = rs.getString("untname");
+				 passwort = rs.getString("passwort");
+				
+				 
 				if (email.equals(unternehmen) && password.equals(passwort)) {
 					
-					session("a", unternehmen);
-					String user = session("a");
-					System.out.println(user + "halöööö");
-					if (user != null) {
-						regisrtiert = true;
 
-					}
+					response().setCookie("data", unternehmen);
+					session("a",unternehmen);
+					String user = session("a");
+					regisrtiert = true;
+					
+					
+					
+					System.out.println(user+ "hier ist der user");
+					
+				
+					
+					
+					
+					
+					
+					break;
+					
 
 				}
 
 			}
+			
+			
+			
+			
+			
+			
 
 		} catch (Exception ex) {
 			System.out.println("Dieser Fehler ist aufgetreten: "
@@ -79,10 +111,15 @@ public class Login extends Controller {
 
 		System.out.println("hallo das ist deine Email: " + email
 				+ "und das dein Password: " + password);
-		if (regisrtiert == true) {
-			return ok(afterloginUnternehmen.render());
+		Cookie name1 = request().cookies().get("data");
+
+		if (regisrtiert == true & name1!=null) {
+			
+			return ok(afterloginUnternehmen.render(name));
 		} else {
+			
 			return unauthorized(startseite.render("falscher Username oder Passwort"));
+		
 		}
 
 	}

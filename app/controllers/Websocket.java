@@ -22,7 +22,9 @@ public class Websocket extends Controller {
 			public void onReady(WebSocket.In<String> in,
 					final WebSocket.Out<String> out) {
 
+
 			
+
 				out.write("");
 
 				
