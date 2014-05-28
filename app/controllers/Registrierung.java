@@ -1,5 +1,6 @@
 package controllers;
 
+import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +13,10 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.afterloginUnternehmen;
 import views.html.startseite;
+
+import java.security.*;
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class Registrierung extends Controller {
 
@@ -91,14 +96,16 @@ public class Registrierung extends Controller {
 				}
 
 			}
-
+			
+			String hashtext  = DigestUtils.md5Hex(passsw);
+		
 			ps = con.prepareStatement("INSERT INTO Praktikumsportal.Unternehmen"
 					+ "(untID,untname,passwort,branche,telefon,homepage,adresse)"
 					+ "VALUES" + "(?,?,?,?,?,?,?);");
 
 			ps.setString(1, email);
 			ps.setString(2, uname);
-			ps.setString(3, passsw);
+			ps.setString(3, hashtext);
 			ps.setString(4, branche);
 			ps.setString(5, tel);
 			ps.setString(6, homepage);

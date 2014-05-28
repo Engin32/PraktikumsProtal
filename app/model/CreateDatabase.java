@@ -1,10 +1,14 @@
 package model;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 import play.db.ebean.Model;
 import play.mvc.Result;
@@ -129,13 +133,17 @@ public class CreateDatabase {
 					}
 
 				}
+
+				String hashtext = DigestUtils.md5Hex("Daimler");
+
 				PreparedStatement ps1 = con
 						.prepareStatement("INSERT INTO Praktikumsportal.Unternehmen"
 								+ "(untID,untname,passwort,branche,telefon,homepage,adresse)"
 								+ "VALUES"
-								+ "('hr@daimler.de','Daimler','Daimler','Automobil','12345','www.daimler.de',?);");
+								+ "('hr@daimler.de','Daimler',?,'Automobil','12345','www.daimler.de',?);");
 
-				ps1.setInt(1, i1);
+				ps1.setString(1, hashtext);
+				ps1.setInt(2, i1);
 				ps1.executeUpdate();
 				/*
 				 * ############################################################
@@ -245,13 +253,16 @@ public class CreateDatabase {
 
 				}
 
+				hashtext = DigestUtils.md5Hex("Bmw");
+
 				PreparedStatement ps2 = con
 						.prepareStatement("INSERT INTO Praktikumsportal.Unternehmen"
 								+ "(untID,untname,passwort,branche,telefon,homepage,adresse)"
 								+ "VALUES"
-								+ "('hr@bmw.de','BMW','BMW','Automobil','54321','www.bmw.de',?);");
+								+ "('hr@bmw.de','BMW',?,'Automobil','54321','www.bmw.de',?);");
 
-				ps2.setInt(1, i2);
+				ps2.setString(1, hashtext);
+				ps2.setInt(2, i2);
 				ps2.executeUpdate();
 				/*
 				 * ############################################################
@@ -323,13 +334,15 @@ public class CreateDatabase {
 
 				}
 
+				hashtext = DigestUtils.md5Hex("Bayer");
+
 				PreparedStatement ps3 = con
 						.prepareStatement("INSERT INTO Praktikumsportal.Unternehmen"
 								+ "(untID,untname,passwort,branche,telefon,homepage,adresse)"
 								+ "VALUES"
-								+ "('hr@bayer.de','Bayer','Bayer','Arzneimittel','234234','www.bayer.de',?);");
-
-				ps3.setInt(1, i3);
+								+ "('hr@bayer.de','Bayer',?,'Arzneimittel','234234','www.bayer.de',?);");
+				ps3.setString(1, hashtext);
+				ps3.setInt(2, i3);
 				ps3.executeUpdate();
 
 				/*

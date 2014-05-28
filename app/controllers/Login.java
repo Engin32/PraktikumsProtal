@@ -1,5 +1,7 @@
 package controllers;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.security.Policy.Parameters;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,6 +21,7 @@ import java.sql.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.HttpRequest;
 
 public class Login extends Controller {
@@ -45,6 +48,10 @@ public class Login extends Controller {
 		// Daetn rausnehemen von der Map
 		String email = daten.get("email")[0];
 		String password = daten.get("password")[0];
+		
+		
+		
+		
 
 		ResultSet rs;
 		Connection con;
@@ -54,6 +61,11 @@ public class Login extends Controller {
 		String name="";
 
 		try {
+			
+			String hashtext  = DigestUtils.md5Hex(password);
+		
+			
+			
 
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
@@ -70,7 +82,7 @@ public class Login extends Controller {
 				 passwort = rs.getString("passwort");
 				
 				 
-				if (email.equals(unternehmen) && password.equals(passwort)) {
+				if (email.equals(unternehmen) && hashtext.equals(passwort)) {
 					
 
 					response().setCookie("data", unternehmen);
