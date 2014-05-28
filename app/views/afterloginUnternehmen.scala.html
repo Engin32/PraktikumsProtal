@@ -18,9 +18,16 @@
 	
 	
 	function löschen(a){
-		$("#info").load("/loeschen?wert="+a);
-		$("#eigeneStellen").load("/eigenestellen");
-		alert(a);
+		$.ajax(
+				{	url: "/loeschen?wert="+a,
+					type:"GET",
+					dataType : "text",
+					success : function (daten) {
+						alert(daten);
+						$("#eigeneStellen").load("/eigenestellen");
+					}
+				});
+		
 		
 	}
 	

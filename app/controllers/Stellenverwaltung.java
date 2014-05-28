@@ -63,7 +63,7 @@ public class Stellenverwaltung extends Controller {
 		while(rs.next()){
 			
 			
-			ergebnis+="<h3>Ihre "+ zähler +" Stelle </h3>";
+			ergebnis+="<h3>Ihre "+ zähler +". Stelle </h3>";
 			
 			
 			ergebnis+="<p>Identifikator der Stelle :"+ rs.getString("Identifikator")  +"</p>";	
@@ -82,6 +82,11 @@ public class Stellenverwaltung extends Controller {
 				
 
 			}
+		
+		if(zähler==1){
+			ergebnis+="Sie haben keine Stellen";
+			return ok(ergebnis);
+		}
 		
 		
 		

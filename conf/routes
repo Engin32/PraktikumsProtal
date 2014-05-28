@@ -31,7 +31,7 @@ GET		/suche 							controllers.Application.suche()
 
 GET		/websocketsuche					controllers.Websocket.websocket()
 POST	/firmensuchen					controllers.Firmensuche.suche()
-POST		/praktikasuche					controllers.PraktikaSuche.praktikaSuche()
+POST	/praktikasuche					controllers.PraktikaSuche.praktikaSuche()
 
 
 
