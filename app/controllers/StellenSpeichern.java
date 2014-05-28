@@ -12,6 +12,7 @@ import play.api.mvc.Session;
 import play.mvc.Controller;
 import play.mvc.Http.Cookie;
 import play.mvc.Result;
+import views.html.afterloginUnternehmen;
 
 public class StellenSpeichern extends Controller {
 
@@ -122,7 +123,7 @@ public class StellenSpeichern extends Controller {
 			System.out.println("Fehler bei der Stellenspeicherung." + e.getMessage());
 		}
 
-		return ok("OKKK");
+		return ok(afterloginUnternehmen.render(uname));
 
 	}
 	
