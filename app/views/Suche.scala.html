@@ -53,19 +53,25 @@
  var datum
  
  function laden(){
+ 	var daten = {
+ 	 "fakultät" : document.getElementById("select").value,
+ 	 "bundesland" : document.getElementById("select2").value,
+ 	 "stadt" : document.getElementById("input1").value,
+ 	 "dauer" : document.getElementById("select4").value,
+ 	 "unternehmen" : document.getElementById("input2").value,
+ 	 "anfang" : document.getElementById("input3").value,
  	
- 	 fakultät = document.getElementById("select").value;
- 	 bundesland = document.getElementById("select2").value;
- 	 stadt = document.getElementById("input1").value;
- 	 dauer = document.getElementById("select4").value;
- 	 
- 	 unternehmen = document.getElementById("input2").value;
- 	 anfang = document.getElementById("input3").value;
+ 	}
  	
- 	
- 	
- 	$("#ausgeben").load("/praktikasuche?fakultät=" +fakultät+"&bundesland="+bundesland+"&stadt="+stadt+"&dauer="+dauer+"&unternehmen="+unternehmen+"&anfang="+anfang);
-
+ 	$.ajax(
+			{	url: "/praktikasuche",
+				type:"POST",
+				dataType : "text",
+				data : daten,
+				success : function (daten) {
+					$("#ausgeben").html(daten);	
+				}
+			});
  			
 
  												

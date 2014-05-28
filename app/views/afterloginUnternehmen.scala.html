@@ -15,6 +15,15 @@
 	$("#eigeneStellen").load("/eigenestellen");
 	})
 	
+	
+	
+	function löschen(a){
+		$("#info").load("/loeschen?wert="+a);
+		$("#eigeneStellen").load("/eigenestellen");
+		alert(a);
+		
+	}
+	
 	</script>
 	
 	
@@ -74,11 +83,11 @@
 
 		<li><a href="/stelleerstellen">Eine Stellenausschreibung
 				erstellen</a></li>
-		<li><a href="">Eine Stellenausschreibung bearbeiten</a></li>
+		
 
 	</ul>
 
-
+<div id="info"></div>
 <div id="eigeneStellen"></div>
 
 

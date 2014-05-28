@@ -2,10 +2,9 @@ package controllers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
 import java.sql.PreparedStatement;
-
 import java.sql.ResultSet;
+import java.util.Map;
 
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -15,12 +14,24 @@ public class PraktikaSuche extends Controller {
 	public static Result praktikaSuche() {
 		int dauer1 = 0;
 		String beliebig = "beliebig";
+		
+		Map<String, String[]> daten =request().body().asFormUrlEncoded();
+		String fakultät = daten.get("fakultät")[0];
+		String bundesland = daten.get("bundesland")[0];
+		String stadt = daten.get("stadt")[0];
+		String dauer = daten.get("dauer")[0];
+		String unternehmen = daten.get("unternehmen")[0];
+		String anfang = daten.get("anfang")[0];
 
+		
+System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
+		
+		
 		// Werte aus der URL holen
-		String fakultät = request().getQueryString("fakultät");
-		String bundesland = request().getQueryString("bundesland");
-		String stadt = request().getQueryString("stadt");
-		String dauer = request().getQueryString("dauer");
+		//String fakultät = request().getQueryString("fakultät");
+		//String bundesland = request().getQueryString("bundesland");
+	//	String stadt = request().getQueryString("stadt");
+	//	String dauer = request().getQueryString("dauer");
 
 		System.out.println(fakultät + " " + dauer + " hallo" + stadt + "hallo"); // welche
 																					// werte
@@ -37,8 +48,8 @@ public class PraktikaSuche extends Controller {
 
 		System.out.println(stadt + "hallöö"); // ist es null
 
-		String unternehmen = request().getQueryString("unternehmen");
-		String anfang = request().getQueryString("anfang");
+		//String unternehmen = request().getQueryString("unternehmen");
+		//String anfang = request().getQueryString("anfang");
 
 		if (unternehmen.equals("")) {
 			unternehmen = null;
