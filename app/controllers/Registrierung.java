@@ -1,20 +1,16 @@
 package controllers;
 
-import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Map;
-import java.sql.*;
 
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.afterloginUnternehmen;
 import views.html.startseite;
 
-import java.security.*;
 
 import org.apache.commons.codec.digest.DigestUtils;
 

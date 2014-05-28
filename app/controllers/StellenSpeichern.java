@@ -41,8 +41,8 @@ public class StellenSpeichern extends Controller {
 														// quali ändern
 		String ab = daten.get("ab")[0];
 
-		int dauer1 = parseInt(dauer);
-		int telefon1 = parseInt(telefon);
+		int dauer1 = Integer.parseInt(dauer);
+		int telefon1 = Integer.parseInt(telefon);
 
 		ResultSet rs;
 		Connection con;
@@ -125,10 +125,12 @@ public class StellenSpeichern extends Controller {
 		return ok("OKKK");
 
 	}
+	
 
-	private static int parseInt(String dauer) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
+	
+	
+	
+
 
 }
