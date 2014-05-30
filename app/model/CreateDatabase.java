@@ -87,7 +87,7 @@ public class CreateDatabase {
 					.executeQuery("select Praktikumsportal.Adresse.adrID "
 							+ "from Praktikumsportal.Adresse where land='Deutschland' and "
 							+ "ort='Stuttgart' and strasse='Daimlerstraße 10' and "
-							+ "plz='1234'and bundesland='Baden-Würtemberg'");
+							+ "plz='1234'and bundesland='Baden-Württemberg'");
 			
 			
 			System.out.println("Bin da da da da da");
@@ -112,13 +112,13 @@ public class CreateDatabase {
 				stmt.executeUpdate("INSERT INTO Praktikumsportal.Adresse "
 						+ "(land,ort,strasse,plz,bundesland)"
 						+ "VALUES"
-						+ "('Deutschland','Stuttgart','Daimlerstraße 10','1234','Baden-Würtemberg');");
+						+ "('Deutschland','Stuttgart','Daimlerstraße 10','1234','Baden-Württemberg');");
 
 				rs = stmt
 						.executeQuery("select Praktikumsportal.Adresse.adrID "
 								+ "from Praktikumsportal.Adresse where land='Deutschland' and "
 								+ "ort='Stuttgart' and strasse='Daimlerstraße 10' and "
-								+ "plz='1234'and bundesland='Baden-Würtemberg'");
+								+ "plz='1234'and bundesland='Baden-Württemberg'");
 
 				/*
 				 * falls eine adresse doppelt gespeichert ist, stellen wir jetzt
@@ -159,13 +159,13 @@ public class CreateDatabase {
 				stmt.executeUpdate("INSERT INTO Praktikumsportal.Adresse "
 						+ "(land,ort,strasse,plz,bundesland)"
 						+ "VALUES"
-						+ "('Deutschland','Rastatt','Mercedesstraße 1','76437','Baden-Würtemberg');");
+						+ "('Deutschland','Rastatt','Mercedesstraße 1','76437','Baden-Württemberg');");
 
 				rs = stmt
 						.executeQuery("select Praktikumsportal.Adresse.adrID "
 								+ "from Praktikumsportal.Adresse where land='Deutschland' and "
 								+ "ort='Rastatt' and strasse='Mercedesstraße 1' and "
-								+ "plz='76437'and bundesland='Baden-Würtemberg'");
+								+ "plz='76437'and bundesland='Baden-Württemberg'");
 
 				int i4 = 0;
 				int counter4 = 0;
