@@ -375,7 +375,15 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 
 		}
 
+		String keinergebnis="Kein Ergebnis";
+		if(ergebnis.equals("")){//überprüfen ob ncihts drin im suchergebnis
+			System.out.println("nichts drinn");
+			
+			return ok(keinergebnis);
+		}else{System.out.println("etwas drin");
 		return ok(ergebnis);
+		}
+		
 
 	}
 

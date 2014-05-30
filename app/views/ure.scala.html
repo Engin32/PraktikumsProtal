@@ -22,6 +22,21 @@ function bewegung(){
 
 }
 
+function vergleich(){
+	var password1 = document.getElementById("p1").value;
+	var password2 = document.getElementById("p2").value;
+	
+	if(password1==password2){
+		$("#vergleich").html("<p id='richtig'>Passwort ist gleich</p>");
+		
+	}else{
+		$("#vergleich").html("<p id='falsch'>Passwort ist nicht gleich</p>");
+	}
+
+	
+	
+}
+
 
 </script>
 
@@ -61,7 +76,7 @@ function bewegung(){
 
 	<h1>Unternehmen-Registrierung</h1>
 	@if(error != null) {
-	<div>@error</div>
+	<div class="error">@error</div>
 	}
 	<div id="listeverschieben">
 	<form onmouseover="bewegung()"  action="/Registrierung/xyz" method ="POST">
@@ -74,7 +89,9 @@ function bewegung(){
 		<li><input type="text" placeholder="Bundesland" name="Bundesland" class="eingabe"></input></li>
 		<li><input type="text" placeholder="Land" name="Land" class="eingabe"></input></li>
 		<li><input type="text" placeholder="E-Mail" name="E-Mail" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Passwort" name="Passwort" class="eingabe"></input></li>
+		<li><input type="password" placeholder="Passwort" name="Passwort" class="eingabe" id ="p1"></input></li>
+		<li><input type="password" placeholder="Passwort wiederholen" name="Passwort2" class="eingabe" onkeyup="vergleich() " id="p2"></input></li>
+		<div id="vergleich"></div>
 		<li><input type="text" placeholder="Homepage" name="Homepage" class="eingabe"></input></li>
 		<li><input type="text" placeholder="Festnetznummer" name="Festnetznummer" class="eingabe"></input></li>
 		
