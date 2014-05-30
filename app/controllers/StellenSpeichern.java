@@ -48,6 +48,7 @@ public class StellenSpeichern extends Controller {
 		ResultSet rs;
 		Connection con;
 		Statement stmt;
+		String unternehmen ="";
 
 		// hol dir die ID vom Unternehmen, die wir beim login gesetzt haben,
 		Cookie name = request().cookies().get("data");
@@ -112,26 +113,31 @@ public class StellenSpeichern extends Controller {
 			ps.setString(10, ab);
 
 			ps.executeUpdate();
+
+			ps = con.prepareStatement("select untname from unternehmen where untID = ?");
+
+			ps.setString(1, uname);
+
+			rs = ps.executeQuery();
+			
+			while(rs.next()){
+				 unternehmen = rs.getString("untname");
+			}
+			
+			
 			
 			
 
 			con.commit();
 			System.out.println("Stellenspeichern durchgegangen");
 
-
 		} catch (Exception e) {
-			System.out.println("Fehler bei der Stellenspeicherung." + e.getMessage());
+			System.out.println("Fehler bei der Stellenspeicherung."
+					+ e.getMessage());
 		}
 
-		return ok(afterloginUnternehmen.render(uname));
+		return ok(afterloginUnternehmen.render(unternehmen));
 
 	}
-	
-
-	
-	
-	
-	
-
 
 }
