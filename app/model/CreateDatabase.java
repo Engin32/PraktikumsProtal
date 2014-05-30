@@ -88,6 +88,9 @@ public class CreateDatabase {
 							+ "from Praktikumsportal.Adresse where land='Deutschland' and "
 							+ "ort='Stuttgart' and strasse='Daimlerstraße 10' and "
 							+ "plz='1234'and bundesland='Baden-Würtemberg'");
+			
+			
+			System.out.println("Bin da da da da da");
 
 			int counter8 = 0;
 			while (rs.next()) {
@@ -95,8 +98,10 @@ public class CreateDatabase {
 				counter8++;
 
 			}
+			System.out.println("Bin da da da da da2");
 
 			if (counter8 == 0) {
+				System.out.println("Bin da da da da da3");
 
 				/*
 				 * ############################################################

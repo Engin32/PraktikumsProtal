@@ -64,7 +64,7 @@ public class Login extends Controller {
 			
 			String hashtext  = DigestUtils.md5Hex(password);
 		
-			
+			System.out.println("Bin beim logging");
 			
 
 			Class.forName("com.mysql.jdbc.Driver");
