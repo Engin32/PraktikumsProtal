@@ -1,21 +1,61 @@
-#anschriftenverschieben{
-	margin-right: 350px;	
+.haupttext{
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: -15%;
+}
+
+#anTugrul{
+	float: left;
+	margin-top: 4%;
+}
+
+#bild1{
+	width: 110px;
+	margin-top: 8%;
 }
 
 #tugrulbild{
-	margin-left: 850px;
-	margin-top:-200px;
-	margin-bottom: 150px;
+	clear:both;
+	float: left;
+	margin-left: 2%;
+}
+
+#anEngin{
+	margin-top: 4%;	
+	margin-left:31%;
+	float: left;
+}
+
+#bild2{
+	width: 110px;
+	margin-top: -23%;
 }
 
 #enginbild{
-	margin-left: 850px;
-	margin-top:-200px;
-	margin-bottom: 150px;	
+	clear: both;
+	margin-left: 46%;
+}
+
+
+#anDani{
+	margin-top: 4%;
+	margin-right:8%;
+	float: right;
+	margin-bottom: 5%;
+}
+
+#bild3{
+	width: 104px;
 }
 
 #danielebild{
-	margin-left: 850px;
-	margin-top:-200px;
-	margin-bottom: 150px;	
+	clear: both;
+	float: right;
+	margin-right: 9.5%;
+	margin-top: -13%;
+	
+}
+
+ol{
+	margin-top: 10%;
 }

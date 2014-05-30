@@ -1,69 +1,70 @@
 .haupttext{
 	text-align: center;
-	font-size: 130%;
-	margin-top: 130px;
+	font-size: 0.8em;
+	margin-top: -8%;
+}
+
+#einloggenformular{
 }
 
 #email{
-	width: 400px;
+	width: 20%;;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
-	font-size: 25px;
+	font-size: 1.2em;
+	margin-top: -5%;
+	margin-left: -7%;
 }
 
 #psw{
-	width: 400px;
+	width: 20%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
-	font-size: 25px;
+	font-size: 1.2em;
 }
 
 #button1{
-	width:350px;
+	width:14%;
 	padding:15px;
-	font-size:25px;
+	font-size:1.2em;
 	border-radius:25px;
-	margin-left: 550px;
+	margin-left: 24px;
 	background-color: #12aeef;
 	color: #ffffff;
-	margin-bottom: 180px;
-}
-
-#button1verschieben{
-	margin-right: 620px;
+	margin-top: 5%;
+	margin-bottom:8%;
+	margin-left: -6%;
 }
 
 #button2{
-	width:350px;
+	width:14%;
 	padding:15px;
-	font-size:25px;
+	font-size:1.0em;
 	border-radius:25px;
-	margin-left: 550px;
 	background-color: #12aeef;
 	color: #ffffff;
-	margin-bottom: 180px;
-}
-
-#button2verschieben{
-	margin-right: 545px;
-	margin-bottom: -85px;
+	margin-bottom: 8%;
+	margin-top: 2%;
 }
 
 #button3{
-	width:350px;
+	width:14%;
 	padding:15px;
-	font-size:25px;
+	font-size:1.0em;
 	border-radius:25px;
-	margin-left: 550px;
 	background-color: #12aeef;
 	color: #ffffff;
-	margin-bottom: 100px;
+	margin-bottom: 10%;
 }
 
-#button3verschieben{
-	margin-right: 545px;
+#facebook{
+	width:32px;
+}
+
+#twitter{
+	width:32px;
 }
 
 

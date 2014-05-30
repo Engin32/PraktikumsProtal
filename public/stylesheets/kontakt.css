@@ -1,0 +1,62 @@
+.haupttext{
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: -13%;
+}
+
+.radiob{
+	margin-bottom: 0.8%;
+	margin-left: 2%;
+}
+
+.input{
+	margin-left: 5%;
+	margin-bottom: 0.7%;
+	width: 20.3%;;
+	border-radius: 25px;
+	padding:8px;
+	font-family:  font-family: arial, sans-serif;
+	font-size: 1.2em;
+}
+
+#kontaktformular{
+	margin-top: -6%;
+	margin-right: 15%;
+}
+
+#verschieben1{
+	margin-left: 4%;
+}
+
+#verschieben2{
+	margin-left: 1.4%;
+}
+
+#verschieben3{
+	margin-left: 3.9%;
+}
+
+#verschieben4{
+	margin-left: 3.8%;
+}
+
+#textfeld{
+	margin-left: 5%;
+	font-family: arial, sans-serif;
+	font-size: 1.1em;
+
+	
+}
+
+#button{
+	width:14%;
+	padding:10px;
+	font-size:1.2em;
+	border-radius:25px;
+	margin-left: 24px;
+	background-color: #12aeef;
+	color: #ffffff;
+	margin-top: -23%;
+	margin-bottom:8%;
+	margin-left: 80%;
+}

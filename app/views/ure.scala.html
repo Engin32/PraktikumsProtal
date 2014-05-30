@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Bewerber-Registrierung</title>
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main2.css">
 <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/ure.css">
@@ -17,10 +17,8 @@ function bewegung(){
 	$(".generatecssdotcom_arrow").animate({left:"180px"}, 1500);
 	$(".generatecssdotcom_arrow").animate({left:"-100px"}, 3000);
 	$("#button").css("background","#6dc7ec");
-	
-	
-
 }
+
 
 function vergleich(){
 	var password1 = document.getElementById("p1").value;
@@ -38,72 +36,92 @@ function vergleich(){
 }
 
 
-</script>
 
+</script>
 </head>
 
 
 <body>
 <div id="ganzeSeite">
-	<div id="bild">  <img  src="/assets/images/bild.jpg"> </div>
-	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
-	<div id="bild3"> <img  src="/assets/images/bild3.jpg"> </div>
 	
-	<div id="nachobenverschieben">
-	<h1 id="TED">TED</h1>
-	<h2>Einfache Schnelle Praktikumssuche</h2>
+	<!-- Kopfbereich der Seite -->
+	
+	<div id="kopfbereich">
+		<div id="alleBilder">
+			<div id="bild">  <img  src="/assets/images/bild.jpg" class="bilder" > </div>
+			<div id="bild3"> <img  src="/assets/images/bild3.jpg" class="bilder"> </div>
+			<div id="bild2"> <img  src="/assets/images/bild2.jpg" class="bilder"> </div>
+		</div>
+		
+		<div class="clear"></div>
+	
+		<h2>Einfache Schnelle Praktikumssuche</h2>
+		<h1 id="TED">TED</h1>
+		<hr>
+		<div id="nav">
+			<ul>
+				<li class="first"><a href="/startseite">Home</a></li>
+				<li><a href="/suche">Suche</a></li>
+				<li><a href="/bewerbungstipps">Tipps</a>
+					<ul>
+						<li><a href="/bewerbungstipps">Bewerbung</a></li>
+					</ul></li>
+				<li><a href="/firmenzeiger">Unternehmen</a></li>
+				<li><a href="/impressum">Über Uns</a>
+
+					<ul>
+						<li><a href="/ueberuns">T.E.D</a></li>
+						<li><a href="/impressum">Impressum</a></li>
+					</ul></li>
+				<li><a href="/kontakt">Kontakt</a></li>
+			</ul>
+		</div>
+
 	</div>
-	<hr>
+	
+	
+	<!-- Linke Seite  -->
+	<div id="linkeSeite">  </div>
 
-	<div id="nav">
-		<ul>
-			<li class="first"><a href="/startseite">Home</a></li>
-			<li><a href="/suche">Suche</a></li>
-			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
-				<ul>
-					<li><a href="/bewerbungstipps">Bewerbung</a></li>
-				</ul></li>
-			<li><a href=”#”>Alle Unternehmen</a></li>
-			<li><a href="/impressum">Über Uns</a>
+	<!-- Rechte Seite -->
+	<div id="rechteSeite"> </div>
+	
+	<!-- Inhalt -->
+	<div id="inhalt">
 
-				<ul>
-					<li><a href="/ueberuns">T.E.D</a></li>
-					<li><a href="/impressum">Impressum</a></li>
-				</ul></li>
-			<li><a href="/kontakt">Kontakt</a></li>
-		</ul>
-	</div>
-
-	<h1>Unternehmen-Registrierung</h1>
+	<h1 class="ueberschrift">Unternehmen-Registrierung</h1>
 	@if(error != null) {
 	<div class="error">@error</div>
 	}
-	<div id="listeverschieben">
-	<form onmouseover="bewegung()"  action="/Registrierung/xyz" method ="POST">
-	<ul>
-		<li><input type="text" placeholder="Unternehmensname" name="Unternehmensname" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Branche" name="Branche" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Straße" name="Strasse" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Ort" name="Ort" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Plz" name="Plz" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Bundesland" name="Bundesland" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Land" name="Land" class="eingabe"></input></li>
-		<li><input type="text" placeholder="E-Mail" name="E-Mail" class="eingabe"></input></li>
-		<li><input type="password" placeholder="Passwort" name="Passwort" class="eingabe" id ="p1"></input></li>
-		<li><input type="password" placeholder="Passwort wiederholen" name="Passwort2" class="eingabe" onkeyup="vergleich() " id="p2"></input></li>
-		<div id="vergleich"></div>
-		<li><input type="text" placeholder="Homepage" name="Homepage" class="eingabe"></input></li>
-		<li><input type="text" placeholder="Festnetznummer" name="Festnetznummer" class="eingabe"></input></li>
-		
-		<div id="buttonverschieben">
-		<input type="submit" value="Registrieren" id="button">
-	   </div>
-	   
-	</ul>
 	
-</form>
-<div  class="generatecssdotcom_arrow"></div><div class="generatecssdotcom_arrowpoint"></div>
+	<div id="listeverschieben">
+		<form onmouseover="bewegung()"  action="/Registrierung/xyz" method ="POST">
+			<ul>
+				<li><input type="text" placeholder="Unternehmensname" name="Unternehmensname" class="eingabe"></input></li>
+				<li><input type="text" placeholder="Branche" name="Branche" class="eingabe"></input></li>
+				<li><input type="text" placeholder="Straße" name="Strasse" class="eingabe"></input></li>
+				<li><input type="text" placeholder="Ort" name="Ort" class="eingabe"></input></li>
+				<li><input type="text" placeholder="Plz" name="Plz" class="eingabe"></input></li>
+				<li><input type="text" placeholder="Bundesland" name="Bundesland" class="eingabe"></input></li>
+				<li><input type="text" placeholder="Land" name="Land" class="eingabe"></input></li>
+				<li><input type="text" placeholder="E-Mail" name="E-Mail" class="eingabe"></input></li>
+				<li><input type="password" placeholder="Passwort" name="Passwort" class="eingabe" id ="p1"></input></li>
+				<li><input type="password" placeholder="Passwort wiederholen" name="Passwort2" class="eingabe" onkeyup="vergleich() " id="p2"></input></li>
+				<div id="vergleich"></div><br>
+				<li><input type="text" placeholder="Homepage" name="Homepage" class="eingabe"></input></li>
+				<li><input type="text" placeholder="Festnetznummer" name="Festnetznummer" class="eingabe"></input></li>
 
+		
+	   		</ul>
+	
+				<div id="buttonverschieben">
+					<input type="submit" value="Registrieren" id="button">
+	  			 </div>
+		</form>
+		<div  class="generatecssdotcom_arrow"></div><div class="generatecssdotcom_arrowpoint"></div>
+	</div>
+ </div>	
+ </div>
 
 
 

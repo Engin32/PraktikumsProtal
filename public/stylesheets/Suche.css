@@ -1,79 +1,88 @@
 @CHARSET "ISO-8859-1";
 
 #text1{
-	font-size: 25px;
+	font-size: 1.1em;
+}
+
+#formular1{
+	margin-left: 30%;
+	margin-top: -20%;
+	clear: both;
 }
 
 
-
 form p input{
-	margin-right: 180px;
-	margin-left:20px;
-	font-size: 25px;
+	font-size: 0.8em;
 	font-family:  font-family: arial, sans-serif;
 }
 
 #input1{
-	width: 400px;
+	width: 20%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
+	margin-left: 11%;
+	margin-right: 7.8%;
 }
 
 #input2{
-	width: 400px;
+	width: 20%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
+	margin-left: 10px;
 }
 
 #input3{
-	width: 380px;
+	width: 20%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
-	margin-left: 83px;
+	margin-left: 10px;
+	margin-top: 15px;
 }
 
 
 
 #select{
-	margin-left: 20px;
-	font-size: 25px;
-	width: 420px;
+	font-size: 0.8em;
+	width: 25%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
-	
+	margin-left: 10px;
 }
 
 #select2{
-	margin-left: 123px;
-	margin-right:123px;
-	font-size: 25px;
-	width: 400px;
+	font-size: 0.8em;
+	width: 22.8%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
+	margin-left: 35px;
+	margin-right: 25px;
 }
 
 #select3{
 	margin-left: 20px;
 	margin-right: 210px;
-	font-size: 25px;
-	width: 400px;
+	font-size: 0.8em;
+	width: 20%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
+	margin-left: 10px;
 }
 
 #select4{
-	margin-left: 20px;
-	font-size: 25px;
-	width: 420px;
+	font-size: 0.8em;
+	width: 23%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
+	margin-left: 9.6%;
+	margin-top: 15px;
+	
 }
 
 option{
@@ -86,19 +95,20 @@ option{
 }
 
 #button1{
-	margin-top: 200px;
-	width:350px;
+	margin-top: 8%;
+	width:22%;
 	padding:15px;
-	font-size:25px;
+	font-size:0.9em;
 	border-radius:25px;
-	margin-left: 550px;
+	margin-left:32%;
 	background-color: #12aeef;
 	color: #ffffff;
 }
 
 #sucheverfeinern{
-	margin-left: 945px;
-	font-size: 20px;
+	margin-left: 60.2%;
+	margin-top: -2%;
+	font-size: 1.1em;
 }
 
 a{
@@ -112,5 +122,5 @@ a:hover{
 }
 
 #sucheverfeinernformular{
-	margin-top: 150px;
+	margin-top: 4%;
 }

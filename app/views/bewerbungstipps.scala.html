@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>T.E.D Bewerbungstipps</title>
-<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main2.css">
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/tipps.css">
 <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
@@ -11,19 +11,19 @@
 <script type="text/javascript">
 
 function vergroessern(){
-	$("#facebook").width(85);
+	$("#facebook").width(40);
 }
 
 function verkleinern(){
-	$("#facebook").width(60);
+	$("#facebook").width(32);
 }
 
 function vergroessern2(){
-	$("#twitter").width(85);
+	$("#twitter").width(40);
 }
 
 function verkleinern2(){
-	$("#twitter").width(60);
+	$("#twitter").width(32);
 }
 
 </script>
@@ -32,54 +32,82 @@ function verkleinern2(){
 
 <body>
 	<div id="ganzeSeite">
-	<div id="bild">  <img  src="/assets/images/bild.jpg"> </div>
-	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
-	<div id="bild3"> <img  src="/assets/images/bild3.jpg"> </div>
 	
-	<div id="nachobenverschieben">
-	<h1 id="TED">TED</h1>
-	<h2>Einfache Schnelle Praktikumssuche</h2>
+	<!-- Kopfbereich der Seite -->
+	
+	<div id="kopfbereich">
+		<div id="alleBilder">
+			<div id="bild">  <img  src="/assets/images/bild.jpg" class="bilder" > </div>
+			<div id="bild3"> <img  src="/assets/images/bild3.jpg" class="bilder"> </div>
+			<div id="bild2"> <img  src="/assets/images/bild2.jpg" class="bilder"> </div>
+		</div>
+		
+		<div class="clear"></div>
+	
+		<h2>Einfache Schnelle Praktikumssuche</h2>
+		<h1 id="TED">TED</h1>
+		<hr>
+		<div id="nav">
+			<ul>
+				<li class="first"><a href="/startseite">Home</a></li>
+				<li><a href="/suche">Suche</a></li>
+				<li><a href="/bewerbungstipps">Tipps</a>
+					<ul>
+						<li><a href="/bewerbungstipps">Bewerbung</a></li>
+					</ul></li>
+				<li><a href="/firmenzeiger">Unternehmen</a></li>
+				<li><a href="/impressum">Über Uns</a>
+
+					<ul>
+						<li><a href="/ueberuns">T.E.D</a></li>
+						<li><a href="/impressum">Impressum</a></li>
+					</ul></li>
+				<li><a href="/kontakt">Kontakt</a></li>
+			</ul>
+		</div>
+
 	</div>
-	<hr>
+	
+	
+	<!-- Linke Seite  -->
+	<div id="linkeSeite">  </div>
 
-	<div id="nav">
-		<ul>
-			<li class="first"><a href="/startseite">Home</a></li>
-			<li><a href="/suche">Suche</a></li>
-			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
-				<ul>
-					<li><a href="/bewerbungstipps">Bewerbung</a></li>
-				</ul></li>
-			<li><a href=”#”>Alle Unternehmen</a></li>
-			<li><a href="/impressum">Über Uns</a>
+	<!-- Rechte Seite -->
+	<div id="rechteSeite"> </div>
+	
+	<!-- Inhalt -->
+	<div id="inhalt">
 
-				<ul>
-					<li><a href="/ueberuns">T.E.D</a></li>
-					<li><a href="/impressum">Impressum</a></li>
-				</ul></li>
-			<li><a href="/kontakt">Kontakt</a></li>
-		</ul>
-	</div>
-
-	<h1>Bewerbungstipps</h1>
+	<h1 class="ueberschrift">Bewerbungstipps</h1>
 	<div class="haupttext">
-	<h3>Bewerbung</h3>
-	<p>Schreiben sie ihre Bewerbung immer auf ihrer eigenen Spracheweise. <br>Es ist abzuraten standard Sätze zu nehmen, da es sehr unnatürlich wirkt.</p>
-	<p>Nehmen sie sich Zeit für die Bewerbung, denn der erste Eindruck zählt. <br>Achten Sie auf Rechtschreibung und Grammatik. Geben sie ihre Bewerbung Verwandte oder Freunde, damit eventuelle Fehler rechtzetig erkannt werden </p>
-	<p>In der Bewerbung sollten sie ihr Interesse am Unternehmen zeigen sowie ihre Fähigkeiten schildern. Hier ganz wichtig zu beachten: Lügen haben kurze Beine!!</p>
-	<div id="bewerbungbild"> <img src="/assets/images/bewerbung.jpg"> </div>
+		<h3>Bewerbung</h3>
+		<p>Schreiben sie ihre Bewerbung immer auf ihrer eigenen Spracheweise. 
+			<br>Es ist abzuraten standard Sätze zu nehmen, da es sehr unnatürlich wirkt.
+		</p>
+		<p>Nehmen sie sich Zeit für die Bewerbung, denn der erste Eindruck zählt. 
+			<br>Achten Sie auf Rechtschreibung und Grammatik. Geben sie ihre Bewerbung Verwandte oder Freunde, damit eventuelle Fehler rechtzetig erkannt werden 
+		</p>
+		<p>In der Bewerbung sollten sie ihr Interesse am Unternehmen zeigen sowie ihre Fähigkeiten schildern. Hier ganz wichtig zu beachten: Lügen haben kurze Beine!!</p>
+		<div id="bewerbungbild"> 
+			<img src="/assets/images/bewerbung.jpg">
+		</div>
 
-	<h3>Vorstellungsgespräch</h3>
-	<p>Im Vorstellungsgespräch sollten sie drauf achten, dass es immer standard Fragen gibt. <br>Man kann sich sehr gut drauf vorbereiten indem man viel übt.<br>Es gibt Fragen wie z.B. "Nennen sie ihre Stärken und Schwächen" oder "Erzählen sie was über sich".</p>
-	<p>Bei solchen Fragen können sie punkten. Üben sie vor Freunden oder vor dem Spiegel und achten Sie drauf das sie immer ehrlich sind.</p>
-	<p>Pünktilichkeit ist das a und o, das sagt schon viel über Ihre Person aus</p>
-	<div id="vgspbild"> <img src="/assets/images/vgsp.jpg"> </div>
+		<h3>Vorstellungsgespräch</h3>
+		<p>Im Vorstellungsgespräch sollten sie drauf achten, dass es immer standard Fragen gibt. 
+			<br>Man kann sich sehr gut drauf vorbereiten indem man viel übt.<br>Es gibt Fragen wie z.B. "Nennen sie ihre Stärken und Schwächen" oder "Erzählen sie was über sich".
+		</p>
+		<p>Bei solchen Fragen können sie punkten. Üben sie vor Freunden oder vor dem Spiegel und achten Sie drauf das sie immer ehrlich sind.</p>
+		<p>Pünktilichkeit ist das a und o, das sagt schon viel über Ihre Person aus</p>
+		<div id="vgspbild"> 
+			<img src="/assets/images/vgsp.jpg"> 
+		</div>
 
-	<div id="socialNverschieben">
+		
 		<a href="/facebook"><img id="facebook" onmouseover="vergroessern()" onmouseout="verkleinern()" src="/assets/images/facebook.jpg" ></a>
 		<a href="/twitter"><img id="twitter" onmouseover="vergroessern2()" onmouseout="verkleinern2()" src="/assets/images/twitter.jpg"> </a>
+	
 	</div>
-	</div>
+</div>
 
 
 </body>

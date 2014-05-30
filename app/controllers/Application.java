@@ -3,6 +3,7 @@ package controllers;
 import model.CreateDatabase;
 import play.*;
 import play.mvc.*;
+import play.mvc.Http.Cookie;
 import views.html.*;
 
 public class Application extends Controller {
@@ -25,7 +26,10 @@ public class Application extends Controller {
 
 		daten = null; // daten werden für immer auf null gesetzt damit die
 						// methode nicht mehr aufgerufen wird
-
+		
+		
+		
+	
 		return ok(startseite.render(null));
 	}
 
@@ -48,6 +52,10 @@ public class Application extends Controller {
 	public static Result kontakt() {
 		return ok(Kontakt.render());
 	}
+	
+	/*public static Result wir(){
+		return ok(ueberuns.render());
+	}*/
 
 	public static Result firmenzeiger() {
 		return ok(firmenzeiger.render());
@@ -65,8 +73,7 @@ public class Application extends Controller {
 	public static Result htwg() {
 		return redirect("http://www.htwg-konstanz.de");
 	}
-
-	
+  
 }
  
 

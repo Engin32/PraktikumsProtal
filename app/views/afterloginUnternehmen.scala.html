@@ -1,104 +1,118 @@
-@(unternehmen: String)
+@(unternehmen: String)(error:String)
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>AfterLogin </title>
-	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main.css">
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main2.css">
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/afterlogin.css">
 	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/Suche.css">
-	
 	<script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
+	
 	<script>
-	$(function() {
-	$("#eigeneStellen").load("/eigenestellen");
-	})
+		$(function() {
+			$("#eigeneStellen").load("/eigenestellen");
+		})
 	
 	
 	
-	function löschen(a){
-		$.ajax(
-				{	url: "/loeschen?wert="+a,
-					type:"GET",
-					dataType : "text",
-					success : function (daten) {
-						alert(daten);
-						$("#eigeneStellen").load("/eigenestellen");
-					}
-				});
-		
-		
-	}
+		function löschen(a){
+			$.ajax(
+					{	url: "/loeschen?wert="+a,
+						type:"GET",
+						dataType : "text",
+						success : function (daten) {
+							alert(daten);
+							$("#eigeneStellen").load("/eigenestellen");
+								}
+			});
+		}
 	
 	</script>
-	
-	
-	
 </head>
 
 
 
 <body>
 <div id="ganzeSeite">
-	<div id="bild">  <img  src="/assets/images/bild.jpg"> </div>
-	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
-	<div id="bild3"> <img  src="/assets/images/bild3.jpg"> </div>
 	
-	<div id="nachobenverschieben">
-	<h1 id="TED">TED</h1>
-	<h2>Einfache Schnelle Praktikumssuche</h2>
-	</div>
-	<hr>
-
-	<div id="nav">
-		<ul>
-			<li class="first"><a href="/startseite">Home</a></li>
-			<li><a href="/suche">Suche</a></li>
-			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
-				<ul>
-					<li><a href="/bewerbungstipps">Bewerbung</a></li>
-				</ul></li>
-			<li><a href=”#”>Alle Unternehmen</a></li>
-			<li><a href="/impressum">Über Uns</a>
-
-				<ul>
-					<li><a href="/startseite">T.E.D</a></li>
-					<li><a href="/impressum">Impressum</a></li>
-				</ul></li>
-			<li><a href="/kontakt">Kontakt</a></li>
-		</ul>
-	</div>
+	<!-- Kopfbereich der Seite -->
 	
-	
-	
-
-
-	<h1>Sie sind das Unternehmen @unternehmen</h1>
-
-	<form action="/abmelden" method="post">
-	<input type="submit" id="abmelden" value="abmelden"></input>
-	</form>
-
-	
-	<form action="/unternehmenLoeschen" method="post">
-	<input type="submit" id="unternehmenLöschen" value="Unternehmen löschen"></input>
-	</form>
-	
-
-	<p>was möchten sie tun?</p>
-	
-	<ul>
-
-		<li><a href="/stelleerstellen">Eine Stellenausschreibung
-				erstellen</a></li>
+	<div id="kopfbereich">
+		<div id="alleBilder">
+			<div id="bild">  <img  src="/assets/images/bild.jpg" class="bilder" > </div>
+			<div id="bild3"> <img  src="/assets/images/bild3.jpg" class="bilder"> </div>
+			<div id="bild2"> <img  src="/assets/images/bild2.jpg" class="bilder"> </div>
+		</div>
 		
+		<div class="clear"></div>
+	
+		<h2>Einfache Schnelle Praktikumssuche</h2>
+		<h1 id="TED">TED</h1>
+		<hr>
 
-	</ul>
 
-<div id="info"></div>
-<div id="eigeneStellen"></div>
 
+	
+
+	</div>
+
+	
+	
+	<!-- Linke Seite  -->
+	<div id="linkeSeite">  </div>
+
+	<!-- Rechte Seite -->
+	<div id="rechteSeite"> </div>
+	
+	<!-- Inhalt -->
+	<div id="inhalt">
+		<div id="nav">
+			<ul>
+				<li class="first"><a href="/startseite">Home</a></li>
+				<li><a href="/suche">Suche</a></li>
+				<li><a href="/bewerbungstipps">Tipps</a>
+					<ul>
+						<li><a href="/bewerbungstipps">Bewerbung</a></li>
+					</ul></li>
+				<li><a href="/firmenzeiger">Unternehmen</a></li>
+				<li><a href="/impressum">Über Uns</a>
+
+					<ul>
+						<li><a href="/startseite">T.E.D</a></li>
+						<li><a href="/impressum">Impressum</a></li>
+					</ul></li>
+				<li><a href="/kontakt">Kontakt</a></li>
+			</ul>
+		</div>
+	
+		<h1 class="ueberschrift">Sie sind das Unternehmen @unternehmen</h1>
+		@if(error!=null){
+		<div>@error</div>
+		}
+		<div class="haupttext">
+			<form action="/abmelden" method="post">
+				<div id="buttonverschieben"><input type="submit" id="abmelden" value="Abmelden"></input></div>
+			</form>
+
+			<form action="/unternehmenLoeschen" method="post">
+				<div id="buttonverschieben"><input type="submit" id="abmelden" value="Unternehmen löschen"></input></div>
+			</form>
+
+
+	
+			<p>Was möchten Sie tun?</p>
+	
+			
+			<p><a href="/stelleerstellen">Eine Stellenausschreibung erstellen</a></p>
+			
+
+			<div id="info"></div>
+			<div id="eigeneStellen"></div>
+		</div>
+   </div>
+</div>
 
 
 

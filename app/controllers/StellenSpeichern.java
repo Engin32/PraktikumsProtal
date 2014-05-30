@@ -136,7 +136,7 @@ public class StellenSpeichern extends Controller {
 					+ e.getMessage());
 		}
 
-		return ok(afterloginUnternehmen.render(unternehmen));
+		return ok(afterloginUnternehmen.render(unternehmen,null));
 
 	}
 
