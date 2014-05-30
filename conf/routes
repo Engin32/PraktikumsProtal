@@ -14,6 +14,8 @@ GET		/firmenzeiger					controllers.Application.firmenzeiger()
 
 #GET	/ueberuns						controllers.Application.wir()
 
+#GET		/websocket						controllers.Application.socket()
+
 
 
 
@@ -28,8 +30,8 @@ GET		/registrieren					controllers.Application.register()
 GET		/suche 							controllers.Application.suche()
 
 GET		/websocketsuche					controllers.Websocket.websocket()
-GET		/firmensuchen					controllers.Firmensuche.suche(unternehmen:String)
-GET		/praktikasuche					controllers.PraktikaSuche.praktikaSuche()
+POST	/firmensuchen					controllers.Firmensuche.suche()
+POST	/praktikasuche					controllers.PraktikaSuche.praktikaSuche()
 
 
 
@@ -41,7 +43,10 @@ POST	/abmelden						controllers.Login.abmeldenUnternehmen()
 
 #Stellen auschreiben
 GET		/stelleerstellen				controllers.Stellenverwaltung.auschreiben()
+#POST	/stellespeichern				controllers.StellenSpeichern.speichern()
 POST	/stellespeichern				controllers.StellenSpeichern.speichern()
+GET		/eigenestellen					controllers.Stellenverwaltung.eigeneStellen()
+GET		/loeschen						controllers.Stellenverwaltung.löschen()
 
 #Facebook
 GET  	/facebook						controllers.Application.facebook()

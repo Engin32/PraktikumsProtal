@@ -1,4 +1,4 @@
-@(error: String = null)
+@(error: String)
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,9 +35,7 @@ function verkleinern2(){
 
 </head>
 <body>
-	@if(error != null) {
-	<div>@error</div>
-	}
+	
 
 	<div id="ganzeSeite">
 	
@@ -109,6 +107,9 @@ function verkleinern2(){
 				</p>
 			</div>
 		</form>
+		@if(error != null) {
+	<div>@error</div>
+	}
 
 		<p>Ist Ihr Unternehmen noch nicht registriert? Dann registrieren Sie sich!
 			<br>Sie können nach der Registrierung Stellenangebote für Praktikanten anbieten und das alles kostenlos 

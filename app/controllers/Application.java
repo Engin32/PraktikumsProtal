@@ -70,7 +70,6 @@ public class Application extends Controller {
 		return redirect("http://www.htwg-konstanz.de");
 	}
   
-   
 }
  
 

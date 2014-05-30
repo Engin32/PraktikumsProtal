@@ -4,14 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Map;
-import java.sql.*;
 
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.afterloginUnternehmen;
 import views.html.startseite;
+
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class Registrierung extends Controller {
 
@@ -91,14 +92,16 @@ public class Registrierung extends Controller {
 				}
 
 			}
-
+			
+			String hashtext  = DigestUtils.md5Hex(passsw);
+		
 			ps = con.prepareStatement("INSERT INTO Praktikumsportal.Unternehmen"
 					+ "(untID,untname,passwort,branche,telefon,homepage,adresse)"
 					+ "VALUES" + "(?,?,?,?,?,?,?);");
 
 			ps.setString(1, email);
 			ps.setString(2, uname);
-			ps.setString(3, passsw);
+			ps.setString(3, hashtext);
 			ps.setString(4, branche);
 			ps.setString(5, tel);
 			ps.setString(6, homepage);
@@ -109,10 +112,16 @@ public class Registrierung extends Controller {
 			System.out.println("In db eingefügt");
 			con.commit();
 
-			// hier session erzeugen!!
+
+			
+			// den user merken da er ja weitergeleitet wird
+			response().setCookie("data", email);
+			session("a",email);
+			String user = session("a");
 			
 			
-			return ok(afterloginUnternehmen.render());
+			
+			return ok(afterloginUnternehmen.render(uname));
 
 		} catch (Exception ex) {
 			System.out.println("Dieser Fehler ist aufgetreten: "

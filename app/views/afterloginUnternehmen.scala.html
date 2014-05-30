@@ -1,3 +1,4 @@
+@(unternehmen: String)
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,33 @@
 	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/Suche.css">
+	
+	<script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
+	<script>
+	$(function() {
+	$("#eigeneStellen").load("/eigenestellen");
+	})
+	
+	
+	
+	function löschen(a){
+		$.ajax(
+				{	url: "/loeschen?wert="+a,
+					type:"GET",
+					dataType : "text",
+					success : function (daten) {
+						alert(daten);
+						$("#eigeneStellen").load("/eigenestellen");
+					}
+				});
+		
+		
+	}
+	
+	</script>
+	
+	
+	
 </head>
 
 
@@ -44,27 +72,30 @@
 	
 	
 	
-	<h1>Sie sind das Unternehmen</h1>
-<<<<<<< HEAD
-	<form action="/abmelden">
-	<input type="button" id="abmelden" value="abmelden?"></input>
+
+
+	<h1>Sie sind das Unternehmen @unternehmen</h1>
+
+	<form action="/abmelden" method="post">
+	<input type="submit" id="abmelden" value="abmelden?"></input>
 	</form>
-=======
+
 	
 	
 	
-	
-	
->>>>>>> 14b46fa7f8bf50f6a2a87cbe13f7a016498fa163
+
 	<p>was möchten sie tun?</p>
+	
 	<ul>
 
 		<li><a href="/stelleerstellen">Eine Stellenausschreibung
 				erstellen</a></li>
-		<li><a href="">Eine Stellenausschreibung bearbeiten</a></li>
+		
 
 	</ul>
 
+<div id="info"></div>
+<div id="eigeneStellen"></div>
 
 
 

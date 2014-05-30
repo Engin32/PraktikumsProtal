@@ -11,14 +11,24 @@ import play.mvc.Result;
 import views.html.*;
 
 import java.sql.*;
+import java.util.Map;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 public class Firmensuche extends Controller {
 
-	public static Result suche(String daten) throws SQLException {
+	public static Result suche() throws SQLException {
 
 		ResultSet rs;
 		Connection con;
-		String ergebnis = "Kein Ergebnis";
+		String daten="";
+		String ergebnis = "<p>Kein Ergebnis</p>";
+		Map<String, String[]> a =request().body().asFormUrlEncoded();
+		daten = a.get("unternehmen")[0];
+		
+		
+		System.out.println("nicht null" + a.size() + daten);
+		
 
 		try {
 
@@ -28,13 +38,19 @@ public class Firmensuche extends Controller {
 			System.out.println("alles in Ordnung");
 
 			Statement stmt = con.createStatement();
-			rs = stmt.executeQuery("select untname from Unternehmen");
+			rs = stmt.executeQuery("select untname, branche, homepage, telefon from Unternehmen");
 
 			while (rs.next()) {
 				String unternehmen = rs.getString("untname");
+				String branche = rs.getString("branche");
+				String homepage = rs.getString("homepage");
+				int telefon = rs.getInt("telefon");
 
 				if (daten.equals(unternehmen)) {
-					ergebnis = unternehmen +" ist bei uns registriert!";
+					ergebnis = "<p>"+unternehmen +" ist bei uns registriert!</p>";
+					ergebnis+="<p>Branche des Unternehmens : "+branche+"</p>";
+					ergebnis+="<p>Homepage des Unternehmens : "+homepage+"</p>";
+					ergebnis+="<p>Telefon des Unternehmens : "+telefon+"</p>";
 					break;
 				} else {
 					ergebnis = "Kein Ergebnis";
@@ -48,23 +64,15 @@ public class Firmensuche extends Controller {
 
 		}
 
+		
 		System.out.println("Hier werden die firmen abgerufen");
-		/*
-		String[] unternehmen = { "Daimler", "BMW", "Bosch" };
-		System.out.println(daten);
-
-		for (int i = 0; i < unternehmen.length; i++) {
-
-			if (daten.equals(unternehmen[i])) {
-				ergebnis = unternehmen[i] +" ist bei uns regisrtiert!";
-				break;
-			} else {
-				ergebnis = "kein Ergebnis";
-			}
-
-		}*/
-
-		return ok("Hier ist das gesuchte Ergbenis: " + ergebnis);
+		
+		System.out.println(ergebnis);
+		
+		
+		
+		
+		return ok(ergebnis);
 
 	}
 

@@ -7,9 +7,13 @@
 	href="/assets/stylesheets/main.css">
 </head>
 <body>
-<div id="bild"> <img  src="/assets/images/bild.jpg"> </div>
-	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
-<h1 id="TED">TED</h1>
+	<div id="bild">
+		<img src="/assets/images/bild.jpg">
+	</div>
+	<div id="bild2">
+		<img src="/assets/images/bild2.jpg">
+	</div>
+	<h1 id="TED">TED</h1>
 	<div id="nav">
 		<ul>
 			<li class="first"><a href="/startseite">Home</a></li>
@@ -36,19 +40,26 @@
 
 
 	<form action="/stellespeichern" method="POST">
+
+		<p>
+			Geben Sie eine Stellennr. ein<input type="text"
+				placeholder="Stellennummer" name="stellennummer">
+		</p>
 		<p>
 			Fakultät: <select name="fakultät">
-				<option>Architektur und Gestaltung</option>
-				<option>Bauningenierwesen</option>
-				<option>Elektro- und Informationstechnik</option>
-				<option>Informatik</option>
-				<option>Alle</option>Maschinenbau
+			<option>Architektur/Gestaltung</option>
+				<option>Bauingenieurwesen</option>
+				<option>Elektro/Informationstechnik</option>
+
+				<option>IT</option>
+				<option>Maschinenbau</option>
+				<option>BWL</option>
 			</select>
 			<option>Alle</option>
 			<option>Wirtschaft und Sozialwissenschaften</option>
 		</p>
 		<p>
-			Bundesland: <select name ="bundesland"><option>Baden-Würtemberg</option>
+			Bundesland: <select name="bundesland"><option>Baden-Würtemberg</option>
 				<option>Bayern</option>
 				<option>Saarland</option>
 				<option>Hessen</option>
@@ -72,10 +83,32 @@
 			Anforderungen :
 			<textarea name="anforderungen">Schreiben sie hier bitte die Anforderungen rein Sachen rein </textarea>
 		</p>
-		
-		<p>Ab wann? <input type="date"> </p>
 
+		<p>
+			Ab wann? <input type="text" name="ab">
+		</p>
 
+		<p>
+			Ansprechpartner<input type="text" placeholder="Ansprechpartner"
+				name="ansprechpartner">
+		</p>
+
+		<p>
+			Telefonnummer<input type="text" placeholder="Telefonnummer"
+				name="telefonnummer">
+		</p>
+		<p>
+			Straße<input type="text" placeholder="Straße"
+				name="strasse">
+		</p>
+		<p>
+			PLZ<input type="text" placeholder="PLZ"
+				name="plz">
+		</p>
+		<p>
+			Land<input type="text" placeholder="Land"
+				name="land">
+		</p>
 
 		<input type="submit" value="Stelle erstellen">
 
