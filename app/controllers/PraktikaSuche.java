@@ -25,9 +25,11 @@ public class PraktikaSuche extends Controller {
 		String ergebnis = model.Model.getInstance().getSuche().suchen(fakultät, bundesland, stadt, dauer, unternehmen, anfang);
 		
 
-		
 
+		
 		return ok(ergebnis);
+		
+		
 
 	}
 

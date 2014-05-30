@@ -8,8 +8,13 @@ import java.util.Map;
 
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Http.Cookie;
+import views.html.StelleErstellen;
 import views.html.afterloginUnternehmen;
 import views.html.startseite;
+
+import views.html.ure;
+
 
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -22,6 +27,7 @@ public class Registrierung extends Controller {
 		String uname = daten.get("Unternehmensname")[0];
 		String branche = daten.get("Branche")[0];
 		String passsw = daten.get("Passwort")[0];
+		String passsw2 = daten.get("Passwort2")[0];
 		String tel = daten.get("Festnetznummer")[0];
 		String email = daten.get("E-Mail")[0];
 		String land = daten.get("Land")[0];
@@ -31,6 +37,12 @@ public class Registrierung extends Controller {
 		String bld = daten.get("Bundesland")[0];
 		String homepage = daten.get("Homepage")[0];
 
+		if(!passsw.equals(passsw2)){
+			return ok(ure.render("Passwort stimmt nicht überein!"));
+			
+		}
+		
+		
 		
 		boolean ergebnis =model.Model.getInstance().getRegistrieren().registrieren(uname,branche,passsw,tel,email,land,ort,str,plz,bld,homepage);
 		
@@ -40,10 +52,10 @@ public class Registrierung extends Controller {
 		session("a",email);
 		String user = session("a");
 		
-		return ok(afterloginUnternehmen.render(uname));
+		return ok(afterloginUnternehmen.render(email));
 		}else{
 		
-		return ok("Fehler: Gehen Sie zurück und versuchen Sie es erneut.");
+		return ok(ure.render("Fehler versuchen sie es erneut"));
 		}
 
 	}

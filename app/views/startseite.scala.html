@@ -55,13 +55,18 @@ function verkleinern2(){
 		<hr>
 		<div id="nav">
 			<ul>
-				<li class="first"><a href="/startseite">Home</a></li>
+				<li class="first"><a href="/startseite">Home</a>
+					
+				
+				</li>
+				
+				
 				<li><a href="/suche">Suche</a></li>
 				<li><a href="/bewerbungstipps">Tipps</a>
 					<ul>
 						<li><a href="/bewerbungstipps">Bewerbung</a></li>
 					</ul></li>
-				<li><a href=”#”>Unternehmen</a></li>
+				<li><a href="/firmenzeiger">Unternehmen</a></li>
 				<li><a href="/impressum">Über Uns</a>
 
 					<ul>
@@ -108,7 +113,7 @@ function verkleinern2(){
 			</div>
 		</form>
 		@if(error != null) {
-	<div>@error</div>
+	<div class="error">@error</div>
 	}
 
 		<p>Ist Ihr Unternehmen noch nicht registriert? Dann registrieren Sie sich!

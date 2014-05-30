@@ -75,8 +75,9 @@ public String suchen(String fakultät, String bundesland, String stadt, String d
 						System.out.println("Bin hier bei 1");
 						
 						ergebnis="";
-						
+						System.out.println("suche nach wo dauer fakultät");
 						while(rs.next()){
+							
 						
 						ergebnis+="<h2>Gefundene Stellen</h2>";
 						ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
@@ -344,7 +345,7 @@ public String suchen(String fakultät, String bundesland, String stadt, String d
 					}
 
 				}
-
+					System.out.println(ergebnis+"ist das ergebnissssssssss");
 				System.out.println("Bin durch gegangen bei der Praktikumssuche");
 				return ergebnis;
 			} catch (Exception e) {

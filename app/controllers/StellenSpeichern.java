@@ -42,6 +42,7 @@ public class StellenSpeichern extends Controller {
 														// quali ändern
 		String ab = daten.get("ab")[0];
 
+
 		Cookie name = request().cookies().get("data");
 		String uname = name.value();
 		
@@ -54,13 +55,7 @@ public class StellenSpeichern extends Controller {
 		System.out.println("Nicht gespeicher!!!!");
 		return ok(afterloginUnternehmen.render(uname));
 
+
 	}
-	
-
-	
-	
-	
-	
-
 
 }

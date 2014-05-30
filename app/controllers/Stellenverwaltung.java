@@ -36,6 +36,7 @@ public class Stellenverwaltung extends Controller {
 		
 		Cookie name = request().cookies().get("data");
 		String name1= name.value();
+
 		
 		
 		String ergebnis = model.Model.getInstance().getLaden().ladeStellen(name1);

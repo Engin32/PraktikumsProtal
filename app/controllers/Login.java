@@ -26,21 +26,17 @@ import org.apache.http.HttpRequest;
 
 public class Login extends Controller {
 
-	
 	@SuppressWarnings("deprecation")
-	public static Result abmeldenUnternehmen(){
-		
+	public static Result abmeldenUnternehmen() {
+
 		System.out.println("abgemeldet");
 		response().discardCookies("data");
 		session().clear();
-		return ok(startseite.render(null));
+
+		return ok(startseite.render("Sie haben sich erfolgreich abgemeldet"));
 
 	}
-	
-	
-	
 
-	
 	public static Result anmeldenUnternehmen() {
 
 		// Daten rausholen und in Map reinspeichern
@@ -48,6 +44,8 @@ public class Login extends Controller {
 		// Daetn rausnehemen von der Map
 		String email = daten.get("email")[0];
 		String password = daten.get("password")[0];
+
+
 		
 		boolean ergebnis= model.Model.getInstance().getAnmelden().login(email, password);
 		
@@ -56,14 +54,12 @@ public class Login extends Controller {
 			session("a",email);
 			String user = session("a");
 			return ok(afterloginUnternehmen.render(email));
+
 			
 		}else{
 			return unauthorized(startseite.render("Falsches Passwort oder Email"));
 		}
-		
-		
 
-		
 
 	}
 
