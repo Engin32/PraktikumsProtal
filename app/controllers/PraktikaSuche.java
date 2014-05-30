@@ -92,7 +92,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis="";
 					
 					while(rs.next()){
-					
+						ergebnis+="<div class='stelle'>";
 					ergebnis+="<h2>Gefundene Stellen</h2>";
 					ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 					ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -107,7 +107,8 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis+="<p>Mehr erfahren sie unter: "+ rs.getString("homepage")  +"</p>";
 					ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 					
-					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";
+					ergebnis+="<div/>";
 
 					}
 					
@@ -132,7 +133,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis="";
 					
 					while(rs.next()){
-					
+					ergebnis+="<div class='stelle'>";
 					ergebnis+="<h2>Gefundene Stellen</h2>";
 					ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 					ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -148,6 +149,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 					
 					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+					ergebnis+="<div/>";
 
 					}
 
@@ -166,7 +168,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis="";
 					
 					while(rs.next()){
-					
+					ergebnis+="<div class='stelle'>";
 					ergebnis+="<h2>Gefundene Stellen</h2>";
 					ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 					ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -182,6 +184,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 					
 					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+					ergebnis+="<div/>";
 
 					}
 
@@ -199,7 +202,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis="";
 					
 					while(rs.next()){
-					
+						ergebnis+="<div class='stelle'>";
 					ergebnis+="<h2>Gefundene Stellen</h2>";
 					ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 					ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -215,6 +218,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 					
 					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+					ergebnis+="<div/>";
 
 					}
 
@@ -233,7 +237,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis="";
 					
 					while(rs.next()){
-					
+						ergebnis+="<div class='stelle'>";
 					ergebnis+="<h2>Gefundene Stellen</h2>";
 					ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 					ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -249,6 +253,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 					
 					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+					ergebnis+="<div/>";
 
 					}
 
@@ -267,7 +272,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis="";
 					
 					while(rs.next()){
-					
+						ergebnis+="<div class='stelle'>";
 					ergebnis+="<h2>Gefundene Stellen</h2>";
 					ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 					ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -283,6 +288,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 					
 					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+					ergebnis+="<div/>";
 
 					}
 
@@ -301,7 +307,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis="";
 					
 					while(rs.next()){
-					
+						ergebnis+="<div class='stelle'>";
 					ergebnis+="<h2>Gefundene Stellen</h2>";
 					ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 					ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -317,6 +323,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 					ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 					
 					ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+					ergebnis+="<div/>";
 
 					}
 
@@ -339,7 +346,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 				ergebnis="";
 				
 				while(rs.next()){
-				
+					ergebnis+="<div class='stelle'>";
 				ergebnis+="<h2>Gefundene Stellen</h2>";
 				ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
 				ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
@@ -355,6 +362,7 @@ System.out.println(fakultät+bundesland+stadt+dauer+unternehmen+anfang);
 				ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 				
 				ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+				ergebnis+="<div/>";
 
 				}
 

@@ -10,8 +10,10 @@ import java.sql.*;
 
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.StelleErstellen;
 import views.html.afterloginUnternehmen;
 import views.html.startseite;
+import views.html.ure;
 
 public class Registrierung extends Controller {
 
@@ -123,7 +125,7 @@ public class Registrierung extends Controller {
 		} catch (Exception ex) {
 			System.out.println("Dieser Fehler ist aufgetreten: "
 					+ ex.getMessage());
-			return ok("Fehler: Gehen Sie zurück und versuchen Sie es erneut.");
+			return ok(ure.render("Ein Fehler ist aufgetreten! Versuchen Sie es nochmal."));
 
 		}
 

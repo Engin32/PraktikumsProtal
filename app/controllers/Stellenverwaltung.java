@@ -62,7 +62,8 @@ public class Stellenverwaltung extends Controller {
 		String id = "stellenID";
 		while(rs.next()){
 			
-			
+			ergebnis+="<div class='stelle'>";
+
 			ergebnis+="<h3>Ihre "+ zähler +". Stelle </h3>";
 			
 			
@@ -78,6 +79,8 @@ public class Stellenverwaltung extends Controller {
 			ergebnis+="<p>Homepage: "+ rs.getString("homepage")  +"</p>";
 			ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
 			ergebnis+="<input type='button' value='löschen' onclick=löschen("+rs.getInt(id)+")>";
+			ergebnis+="<div/>";
+
 			zähler++;
 				
 

@@ -34,7 +34,7 @@ public class Application extends Controller {
 	}
 
 	public static Result register() {
-		return ok(ure.render());
+		return ok(ure.render(null));
 	}
 
 	public static Result suche() {
