@@ -1,28 +1,35 @@
 @CHARSET "ISO-8859-1";
 
+.ueberschrift{
+	margin-bottom: -15%;
+}
+
 .eingabe{
-	width: 400px;
+	width: 20%;
 	border-radius: 25px;
 	padding:10px;
 	font-family:  font-family: arial, sans-serif;
-	font-size: 25px;
+	font-size: 0.9em;
 	margin-bottom: 15px;
+	margin-top: -10%
+	
 }
 
 #button{
 	margin-top: 200px;
-	width:350px;
-	padding:15px;
-	font-size:25px;
+	width:22%;
+	padding:10px;
+	font-size:1.0em;
 	border-radius:25px;
-	margin-left: 690px;
+	margin-left: 380px;
 	background-color: #12aeef;
 	color: #ffffff;
 }
 
 #buttonverschieben{
-	margin-top:-610px;
-	margin-left: 280px;
+	margin-top:-480px;
+	margin-bottom:-85px;
+	margin-left: 330px;
 }
 
 body {
@@ -34,25 +41,25 @@ body {
 
 
 .generatecssdotcom_arrow {
-	width:95px;
-	height:25px;
+	width:35px;
+	height:10px;
 	position:relative;
 	background:#12aeef;
 	border:0px solid #FFCC00;
-	margin:-75px;
-	margin-left: 700px;
+	margin: 50px;
+	margin-left: 500px;
 	padding:10px;
 	border-radius:8px;
 	left:0px;s
 } 
 
 .generatecssdotcom_arrow:after, .generatecssdotcom_arrow:before {
-	left:100%;
-	top:50%;
+	left:80%;
+	top:35%;
 	border:solid transparent;
 	content:" ";
-	height:5px;
-	width:5px;
+	height:2px;
+	width:2px;
 	position:absolute;
 	pointer-events:none;
 	border-radius:8px;

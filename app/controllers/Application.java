@@ -48,6 +48,10 @@ public class Application extends Controller {
 	public static Result kontakt() {
 		return ok(Kontakt.render());
 	}
+	
+	public static Result wir(){
+		return ok(ueberuns.render());
+	}
 
 	public static Result firmenzeiger() {
 		return ok(firmenzeiger.render());
@@ -66,9 +70,7 @@ public class Application extends Controller {
 		return redirect("http://www.htwg-konstanz.de");
 	}
   
-    public static Result socket(){
-    	return ok(websocket.render());
-    }
+   
 }
  
 

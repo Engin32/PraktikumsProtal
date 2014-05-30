@@ -1,73 +1,86 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<title>Kontakt-T.E.D</title>
-	<link rel="stylesheet" type="text/css" href="Design2.css">
-
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main2.css">
+	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/kontakt.css">
+	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+	<script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
 </head>
+
 <body>
-<div id="bild"> <img  src="/assets/images/bild.jpg"> </div>
-	<div id="bild2"> <img  src="/assets/images/bild2.jpg"> </div>
-<h1 id="TED">TED</h1>
-	<h2>Einfache     Schnelle     Praktikumssuche</h2>	
-	<hr>
+<div id="ganzeSeite">
 	
-	<div id="nav">
-		<ul>
-			<li class="first"><a href="/startseite">Home</a></li>
-			<li><a href="/suche">Finde dein Praktikum</a></li>
-			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
-				<ul>
-					<li><a href="/bewerbungstipps">Bewerbung</a></li>
-				</ul></li>
-			<li><a href=”#”>Alle Unternehmen</a></li>
-			<li><a href="/impressum">Über Uns</a>
+	<!-- Kopfbereich der Seite -->
+	
+	<div id="kopfbereich">
+		<div id="alleBilder">
+			<div id="bild">  <img  src="/assets/images/bild.jpg" class="bilder" > </div>
+			<div id="bild3"> <img  src="/assets/images/bild3.jpg" class="bilder"> </div>
+			<div id="bild2"> <img  src="/assets/images/bild2.jpg" class="bilder"> </div>
+		</div>
+		
+		<div class="clear"></div>
+	
+		<h2>Einfache Schnelle Praktikumssuche</h2>
+		<h1 id="TED">TED</h1>
+		<hr>
 
-				<ul>
-					<li><a href="/startseite">T.E.D</a></li>
-					<li><a href="/impressum">Impressum</a></li>
-				</ul></li>
-			<li><a href="/kontakt">Kontakt</a></li>
-		</ul>
 	</div>
-	<h1>Kontakt</h1>
 	
-	<div class="haupttext">
-	  
 	
-	<br id="herrvorheben">Haben Sie noch Fragen oder Anmerkungen? Dann senden Sie uns eine Nachricht mit Ihren persönlichen Anliegen.</br>
+	<!-- Linke Seite  -->
+	<div id="linkeSeite">  </div>
 
-	<form>
-		<p class="eingabeformular">
-			<input name="sex" type="radio" value="m">
-			Herr
-			<input name="sex" type="radio" value="w">
-			Frau
-		</p>
-		<p class="eingabeformular">
-			Name
-			<input id="verschieben1" name="user" type="text">
-		</p>
-		<p class="eingabeformular">
-			Nachname
-			<input id="verschieben2" name="usersecondname" type="text">
-		</p>
-		<p class="eingabeformular">
-			E-Mail
-			<input id="verschieben3" name="email" type=>
-		</p>
+	<!-- Rechte Seite -->
+	<div id="rechteSeite"> </div>
+	
+	<!-- Inhalt -->
+	<div id="inhalt">
+		<div id="nav">
+			<ul>
+				<li class="first"><a href="/startseite">Home</a></li>
+				<li><a href="/suche">Suche</a></li>
+				<li><a href="/bewerbungstipps">Tipps</a>
+					<ul>
+						<li><a href="/bewerbungstipps">Bewerbung</a></li>
+					</ul></li>
+				<li><a href=”#”>Unternehmen</a></li>
+				<li><a href="/impressum">Über Uns</a>
 
-		<p class="eingabeformular">
-			Betreff
-			<input id="verschieben4" name="betreff" type="text">
-
-		<p class="eingabeformular">
-			Nachricht:
-			<br class="eingabeformular">
-			<textarea id="textfeld" rows="10" cols="70"></textarea>
-		<p class="eingabeformular">
-			<input name="send" type="button" value="Senden">
-		</p>
-
-	</form>
+					<ul>
+						<li><a href="/startseite">T.E.D</a></li>
+						<li><a href="/impressum">Impressum</a></li>
+					</ul></li>
+				<li><a href="/kontakt">Kontakt</a></li>
+			</ul>
+		</div>
+		
+		<h1 class="ueberschrift">Kontakt</h1>
+	
+		<div class="haupttext">
+			<p id="herrvorheben">Haben Sie noch Fragen oder Anmerkungen? Dann senden Sie uns eine Nachricht mit Ihren persönlichen Anliegen.</p>
+			<form id=kontaktformular>
+				<p class="eingabeformular"><input class="radiob" name="sex" type="radio" value="m">Herr<input class="radiob" name="sex" type="radio" value="w">Frau</p>
+				<div id="verschieben1">
+					<p class="eingabeformular">Name<input class="input" name="user" type="text"></p>
+				</div>
+				<div id="verschieben2">
+					<p class="eingabeformular">Nachname<input class="input" name="usersecondname" type="text"></p>
+				</div>
+				<div id="verschieben3">
+					<p class="eingabeformular">E-Mail<input class="input" name="email" type=></p>
+				</div>
+				<div id="verschieben4">
+					<p class="eingabeformular">Betreff<input class="input" name="betreff" type="text"></p>
+				</div>
+				<p class="eingabeformular">
+					<br class="eingabeformular"><textarea id="textfeld" rows="10" cols="70" ></textarea>
+				</p>
+				<p class="eingabeformular"><input id="button" name="send" type="button" value="Senden"></p>
+			</form>
+		</div>	
+	</div>
+	<div id="unten"></div>
 </div>
 </body>

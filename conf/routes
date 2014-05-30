@@ -12,9 +12,8 @@ GET		/impressum						controllers.Application.impressum()
 GET		/kontakt						controllers.Application.kontakt()
 GET		/firmenzeiger					controllers.Application.firmenzeiger()
 
-#GET		/ueberuns						controllers.Application.ueberuns()
+#GET	/ueberuns						controllers.Application.wir()
 
-GET		/websocket						controllers.Application.socket()
 
 
 
