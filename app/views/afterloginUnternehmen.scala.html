@@ -1,4 +1,4 @@
-@(unternehmen: String)(error:String)
+@(unternehmen: String)
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,9 +88,7 @@
 		</div>
 	
 		<h1 class="ueberschrift">Sie sind das Unternehmen @unternehmen</h1>
-		@if(error!=null){
-		<div>@error</div>
-		}
+		
 		<div class="haupttext">
 			<form action="/abmelden" method="post">
 				<div id="buttonverschieben"><input type="submit" id="abmelden" value="Abmelden"></input></div>

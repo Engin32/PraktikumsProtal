@@ -42,101 +42,19 @@ public class StellenSpeichern extends Controller {
 														// quali ändern
 		String ab = daten.get("ab")[0];
 
-		int dauer1 = Integer.parseInt(dauer);
-		int telefon1 = Integer.parseInt(telefon);
 
-		ResultSet rs;
-		Connection con;
-		Statement stmt;
-		String unternehmen ="";
-
-		// hol dir die ID vom Unternehmen, die wir beim login gesetzt haben,
 		Cookie name = request().cookies().get("data");
 		String uname = name.value();
-
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
-
-			con.setAutoCommit(false);
-			PreparedStatement ps = con
-					.prepareStatement("INSERT INTO Praktikumsportal.Adresse "
-							+ "(land,ort,strasse,plz,bundesland)" + "VALUES"
-							+ "(?,?,?,?,?);");
-
-			ps.setString(1, land);
-			ps.setString(2, ort);
-			ps.setString(3, str);
-			ps.setString(4, plz);
-			ps.setString(5, bld);
-
-			ps.execute();
-
-			ps = con.prepareStatement("select Praktikumsportal.Adresse.adrID "
-					+ "from Praktikumsportal.Adresse where land=? and "
-					+ "ort=? and strasse=? and " + "plz=? and bundesland=?");
-
-			ps.setString(1, land);
-			ps.setString(2, ort);
-			ps.setString(3, str);
-			ps.setString(4, plz);
-			ps.setString(5, bld);
-
-			rs = ps.executeQuery();
-
-			int i = 0;
-			int counter = 0;
-			while (rs.next()) {
-				if (counter == 0) {
-					i = rs.getInt(1);
-					counter++;
-				} else {
-					break;
-				}
-
-			}
-
-			ps = con.prepareStatement("INSERT INTO Praktikumsportal.Stellenausschreibung"
-					+ "(Aufgaben,Qualifikationen,dauer,Identifikator,ansprechpartner,telefon,abteilung,von,adresse,ab)"
-					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?);");
-
-			ps.setString(1, aufgaben);
-			ps.setString(2, quali);
-			ps.setInt(3, dauer1);
-			ps.setString(4, stellennummer);
-			ps.setString(5, ansprechparnter);
-			ps.setInt(6, telefon1);
-			ps.setString(7, fakultät);
-			ps.setString(8, uname);
-			ps.setInt(9, i);
-			ps.setString(10, ab);
-
-			ps.executeUpdate();
-
-			ps = con.prepareStatement("select untname from unternehmen where untID = ?");
-
-			ps.setString(1, uname);
-
-			rs = ps.executeQuery();
+		
+		boolean ergebnis = model.Model.getInstance().getSpeichern().speichern(bld, ort, str, land, plz, stellennummer, fakultät, dauer, ansprechparnter, telefon, aufgaben, quali, ab, uname);
+		
+		if(ergebnis == true){
 			
-			while(rs.next()){
-				 unternehmen = rs.getString("untname");
-			}
-			
-			
-			
-			
-
-			con.commit();
-			System.out.println("Stellenspeichern durchgegangen");
-
-		} catch (Exception e) {
-			System.out.println("Fehler bei der Stellenspeicherung."
-					+ e.getMessage());
+			return ok(afterloginUnternehmen.render(uname));
 		}
+		System.out.println("Nicht gespeicher!!!!");
+		return ok(afterloginUnternehmen.render(uname));
 
-		return ok(afterloginUnternehmen.render(unternehmen,null));
 
 	}
 

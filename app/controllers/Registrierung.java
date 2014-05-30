@@ -12,7 +12,9 @@ import play.mvc.Http.Cookie;
 import views.html.StelleErstellen;
 import views.html.afterloginUnternehmen;
 import views.html.startseite;
+
 import views.html.ure;
+
 
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -35,148 +37,25 @@ public class Registrierung extends Controller {
 		String bld = daten.get("Bundesland")[0];
 		String homepage = daten.get("Homepage")[0];
 
-		if (!passsw.equals(passsw2)) {
-			return ok(ure.render("Passwörter stimmen nicht überein!"));
-
+		if(!passsw.equals(passsw2)){
+			return ok(ure.render("Passwort stimmt nicht überein!"));
+			
 		}
-
-		ResultSet rs;
-		Connection con;
-
-		try {
-
-			Class.forName("com.mysql.jdbc.Driver");
-
-			System.out.println("hier");
-			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
-
-			System.out.println("alles in Ordnung");
-
-			con.setAutoCommit(false);
-			PreparedStatement ps = con
-					.prepareStatement("INSERT INTO Praktikumsportal.Adresse "
-							+ "(land,ort,strasse,plz,bundesland)" + "VALUES"
-							+ "(?,?,?,?,?);");
-
-			ps.setString(1, land);
-			ps.setString(2, ort);
-			ps.setString(3, str);
-			ps.setString(4, plz);
-			ps.setString(5, bld);
-
-			ps.execute();
-
-			ps = con.prepareStatement("select Praktikumsportal.Adresse.adrID "
-					+ "from Praktikumsportal.Adresse where land=? and "
-					+ "ort=? and strasse=? and " + "plz=? and bundesland=?");
-
-			ps.setString(1, land);
-			ps.setString(2, ort);
-			ps.setString(3, str);
-			ps.setString(4, plz);
-			ps.setString(5, bld);
-
-			rs = ps.executeQuery();
-
-			System.out.println("alles in Ordnung2");
-
-			int i = 0;
-			int counter = 0;
-			while (rs.next()) {
-				if (counter == 0) {
-					i = rs.getInt(1);
-					counter++;
-				} else {
-					break;
-				}
-
-			}
-
-			String hashtext = DigestUtils.md5Hex(passsw);
-
-			ps = con.prepareStatement("INSERT INTO Praktikumsportal.Unternehmen"
-					+ "(untID,untname,passwort,branche,telefon,homepage,adresse)"
-					+ "VALUES" + "(?,?,?,?,?,?,?);");
-
-			ps.setString(1, email);
-			ps.setString(2, uname);
-			ps.setString(3, hashtext);
-			ps.setString(4, branche);
-			ps.setString(5, tel);
-			ps.setString(6, homepage);
-			ps.setInt(7, i);
-
-			ps.executeUpdate();
-
-			System.out.println("In db eingefügt");
-			con.commit();
-
-			// den user merken da er ja weitergeleitet wird
-			response().setCookie("data", email);
-			session("a", email);
-			String user = session("a");
-
-			return ok(afterloginUnternehmen.render(uname,null));
-
-		} catch (Exception ex) {
-			System.out.println("Dieser Fehler ist aufgetreten: "
-					+ ex.getMessage());
-			return ok(ure
-					.render("Ein Fehler ist aufgetreten! Versuchen Sie es nochmal."));
-
-		}
-
-	}
-
-	public static Result löschen() {
-
-		Connection con;
-
-		try {
-
-			Class.forName("com.mysql.jdbc.Driver");
-
-			System.out.println("hier");
-			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
-			con.setAutoCommit(false);
-
-			Cookie name = request().cookies().get("data");
-			String uname = name.value();
-
-			PreparedStatement ps = con
-					.prepareStatement("delete from Praktikumsportal.Stellenausschreibung where von = ?");
-
-			ps.setString(1, uname);
-			ps.executeUpdate();
-			System.out.println("hab das unternhemen gelöscht1");
-
-			PreparedStatement ps1 = con
-					.prepareStatement("delete from Praktikumsportal.unternehmen where untID =? ");
-
-			ps1.setString(1, uname);
-			ps1.executeUpdate();
-
-			System.out.println("hab das unternhemen gelöscht2");
-
-			con.commit();
-
-			System.out.println("hab das unternhemen gelöscht3");
-			
-			
-			
-
-			return ok(startseite.render("<p>Sie haben sich erfolgreich gelöscht<p>"));
-
-		} catch (Exception e) {
-
-			System.out
-					.println("Beim löschen des Unternehmens ist folgender Fehler aufgetreten: "
-							+ e.getMessage());
-
-			return ok(afterloginUnternehmen.render(null,"Fehler sie konnten sich nicht löschen"));
-
+		
+		
+		
+		boolean ergebnis =model.Model.getInstance().getRegistrieren().registrieren(uname,branche,passsw,tel,email,land,ort,str,plz,bld,homepage);
+		
+		if(ergebnis==true){
+		// den user merken da er ja weitergeleitet wird
+		response().setCookie("data", email);
+		session("a",email);
+		String user = session("a");
+		
+		return ok(afterloginUnternehmen.render(email));
+		}else{
+		
+		return ok(ure.render("Fehler versuchen sie es erneut"));
 		}
 
 	}
