@@ -25,7 +25,7 @@ GET     /assets/*file             	    controllers.Assets.at(path="/public", fil
 #registrierung
 POST	/Registrierung/xyz				controllers.Registrierung.register()
 GET		/registrieren					controllers.Application.register()
-#POST	/unternehmenLoeschen				controllers.Registrierung.löschen()
+POST	/unternehmenLoeschen				controllers.Registrierung.löschen()
 
 #suchen
 GET		/suche 							controllers.Application.suche()
