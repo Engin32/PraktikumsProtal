@@ -95,11 +95,11 @@
 		<p>Aufgaben :</p> <textarea name="aufgaben" placeholder="Schreiben Sie hier bitte die Anforderungen rein"></textarea>
 		<p>Anforderungen :</p><textarea name="anforderungen" placeholder="Schreiben Sie hier bitte die Aufgaben rein"></textarea>
 
-		<p>Ab wann? <input id="zeitraum" placeholder="01.MM.JJJJ" type="text" name="ab"></p>
+		<p>Ab wann? <input id="zeitraum" placeholder="01.MM.JJJJ" type="text" name="ab" pattern="[0][1].([0][1-9]|[1][0-2]).[2][0][0-9][0-9]"></p>
 		<p>Ansprechpartner<input id="ansprechP" type="text" placeholder="Ansprechpartner" name="ansprechpartner"></p>
-		<p>Telefonnummer<input id="tel" type="text" placeholder="Telefonnummer" name="telefonnummer"></p>
+		<p>Telefonnummer<input id="tel" type="text" placeholder="Telefonnummer (nur Zahlen)" name="telefonnummer" pattern ="[0-9]+"></p>
 		<p>Straße<input id="strasse" type="text" placeholder="Straße" name="strasse"></p>
-		<p>PLZ<input id="plz" type="text" placeholder="PLZ" name="plz"></p>
+		<p>PLZ<input id="plz" type="text" placeholder="PLZ (nur Zahlen)" name="plz" pattern ="[0-9]+"></p>
 		<p>Land<input id="land" type="text" placeholder="Land" name="land"></p>
 		<input id="buttonErstellen" type="submit" value="Stelle erstellen">
 		<p><a href="">zurück zur Hauptseite</a></p>

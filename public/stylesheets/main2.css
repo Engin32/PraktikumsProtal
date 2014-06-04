@@ -219,3 +219,12 @@ form{
 	position: inherit;
 	clear: both;
 }
+
+.error{
+	text-align: center;
+	font-size: 1.2em;
+	margin-top: 2%;
+	color: red;
+	font-family:  font-family: arial, sans-serif;
+	margin-left: -5%;
+}

@@ -32,6 +32,18 @@
 		}
 	
 	</script>
+	
+	<script>
+	
+		function wirklichloeschen(){
+			var x = window.confirm("Wollen Sie sich bzw. das Unternehmen wirklich löschen?");
+			return x;
+		}
+	
+	
+	
+	
+	</script>
 </head>
 
 
@@ -89,7 +101,7 @@
 			<form action="/abmelden" method="post">
 				<div id="buttonverschieben1"><input type="submit" id="abmelden" value="Abmelden"></input></div>
 			</form>
-			<form action="/unternehmenLoeschen" method="post">
+			<form name="uloeschen" action="/unternehmenLoeschen" method="post" onsubmit="return wirklichloeschen()">
 				<div id="buttonverschieben"><input type="submit" id="abmelden" value="Unternehmen löschen"></input></div>
 			</form>
 			
