@@ -34,7 +34,7 @@ public class EigeneStellenLaden {
 		rs = ps.executeQuery();
 
 		System.out.println("Bin da bei zeige unt seine stelle");
-		String ergebnis ="<h2>Ihre Stellen</h2>";
+		String ergebnis ="<h1 id='ihreStellen'>Ihre Stellen</h1>";
 		int zähler=1;
 		String id = "stellenID";
 		while(rs.next()){
@@ -43,18 +43,22 @@ public class EigeneStellenLaden {
 			ergebnis+="<h3>Ihre "+ zähler +". Stelle </h3>";
 			
 			
-			ergebnis+="<p>Identifikator der Stelle :"+ rs.getString("Identifikator")  +"</p>";	
-			ergebnis+="<p> Ihre Aufgaben sind: "+ rs.getString("Aufgaben")  +"</p>";	
-			ergebnis+="<p>Das sollten sie mitbringen: "+ rs.getString("Qualifikationen")  +"</p>";	
-			ergebnis+="<p>Die Dauer beträgt: "+ rs.getString("dauer")  +"</p>";	
+			ergebnis+="<p><span>Identifikator der Stelle : </span>"+ rs.getString("Identifikator")  +"</p>";	
+			ergebnis+="<p><span> Ihre Aufgaben sind: </span> "+ rs.getString("Aufgaben")  +"</p>";	
+			ergebnis+="<p><span>Das sollten sie mitbringen: </span> "+ rs.getString("Qualifikationen")  +"</p>";	
+			ergebnis+="<p><span>Die Dauer beträgt: </span> "+ rs.getString("dauer")  +"</p>";	
 				
-			ergebnis+="<p>Ihr Ansprechpartner/in"+ rs.getString("ansprechpartner")  +"</p>";	
-			ergebnis+="<p>Die Abteilung:  "+ rs.getString("abteilung")  +"</p>";		
-			ergebnis+="<p>Das Praktikum fängt an am:"+ rs.getString("ab")  +"</p>";
-			ergebnis+="<p>Telefonnr: "+ rs.getString("telefon")  +"</p>";
-			ergebnis+="<p>Homepage: "+ rs.getString("homepage")  +"</p>";
-			ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
-			ergebnis+="<input type='button' value='löschen' onclick=löschen("+rs.getInt(id)+")>";
+			ergebnis+="<p><span>Ihr Ansprechpartner/in: </span>"+ rs.getString("ansprechpartner")  +"</p>";	
+			ergebnis+="<p><span>Die Abteilung </span>:  "+ rs.getString("abteilung")  +"</p>";		
+			ergebnis+="<p><span>Das Praktikum fängt an am: </span>"+ rs.getString("ab")  +"</p>";
+			ergebnis+="<p><span>Telefonnr: </span> "+ rs.getString("telefon")  +"</p>";
+			ergebnis+="<p><span>Homepage: </span> "+ rs.getString("homepage")  +"</p>";
+			ergebnis+="<p><span>Ort: </span> "+ rs.getString("ort")+"</p>";
+			ergebnis+="<p><span>PLZ: </span> "+ rs.getString("plz")+"</p>";
+			ergebnis+="<p><span>Straße: </span> "+ rs.getString("strasse")+"</p>";
+			ergebnis+="<p><span>Bundesland: </span> "+ rs.getString("bundesland")+"</p>";
+			ergebnis+="<p><span>Land: </span> "+ rs.getString("land")+"</p>";
+			ergebnis+="<input id='loeschen' type='button' value='löschen' onclick=löschen("+rs.getInt(id)+")>";
 			zähler++;
 				
 

@@ -1,8 +1,10 @@
 package controllers;
 
 import java.sql.*;
+import java.util.HashSet;
 import java.util.Observable;
 import java.util.Observer;
+
 
 import play.mvc.Controller;
 import play.mvc.WebSocket;
@@ -12,7 +14,7 @@ import play.libs.F.Callback0;
 
 public class Websocket extends Controller implements Observer {
 
-	
+	private static HashSet<WebSocket.Out<String>> outs = new HashSet<WebSocket.Out<String>>();
 	
 	
 	public static WebSocket<String> websocket() {
@@ -25,6 +27,7 @@ public class Websocket extends Controller implements Observer {
 			public void onReady(WebSocket.In<String> in, final WebSocket.Out<String> out) {
 				
 				System.out.println("----------websocket----------");
+				outs.add(out);
 				out.write("");
 
 			}
@@ -45,10 +48,10 @@ public class Websocket extends Controller implements Observer {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		System.out.println("---------update---------- " + arg1);
-		
-		
-		
-		
+		for(WebSocket.Out<String> out : outs){
+			out.write("");
+		}
+			
 	}
 
 }

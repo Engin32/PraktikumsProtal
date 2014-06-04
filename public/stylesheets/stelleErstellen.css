@@ -1,0 +1,113 @@
+.haupttext{
+	font-size: 0.8em;
+	margin-left: 5%;
+	margin-top: -10%;
+}
+
+form{
+	overflow: scroll;
+	margin-top: -5%;
+}
+
+p{
+	font-style: italic;
+
+}
+
+input{
+	margin-left: 8%;
+}
+
+#buttonErstellen{
+width:14%;
+	padding:15px;
+	font-size:1.2em;
+	border-radius:25px;
+	margin-left: 24%;
+	background-color: #12aeef;
+	color: #ffffff;
+	margin-top: 5%;
+	margin-bottom:8%;
+}
+
+#absatz{
+	margin-bottom: 3%;
+}
+
+select {
+	font-size: 1.1em;
+	width: 22.8%;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+	margin-left: 18%;
+	margin-right: 25px;
+	margin-bottom: 2%;
+}
+
+input {
+	font-size: 1.1em;
+	width: 21%;
+	border-radius: 25px;
+	padding:10px;
+	font-family:  font-family: arial, sans-serif;
+	margin-left: 18p%;
+	margin-right: 25px;
+	margin-bottom: 2%;
+}
+
+#stellennummer{
+	margin-left: 9%;
+}
+
+#fakultaet{
+	margin-left: 21%;
+}
+
+#bl{
+	margin-left: 19%;
+}
+
+#stadt{
+	margin-left: 21.6%;
+}
+
+#dauer{
+	margin-left: 21.3%;
+}
+
+#zeitraum{
+	margin-left: 20%;
+}
+
+#ansprechP{
+	margin-left: 17%;
+}
+
+#tel{
+	margin-left: 17.5%;
+}
+
+#strasse{
+	margin-left: 22%;
+}
+
+#plz{
+	margin-left: 23.3%;
+}
+
+#land{
+	margin-left: 22.5%;
+}
+
+textarea {
+	width: 26%;
+	margin-bottom: 2%;
+	margin-left: 25%;
+	margin-top: -2%;
+	padding: 3%;
+	border-radius: 25px;
+	font-family:  font-family: arial, sans-serif;
+	
+	
+}

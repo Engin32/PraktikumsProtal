@@ -1,0 +1,25 @@
+.haupttext{
+	overflow: scroll;
+	margin-left: 20%;
+}
+
+#ergebnis{
+	margin-top: 4%;
+	margin-bottom: 5%;
+	
+}
+
+span{
+	font-style:oblique;
+	margin-right: 1%;
+	color: highlight;
+}
+
+
+#gefunden{
+	color:green;
+}
+
+#keinErgebnis{
+	color: red;
+}

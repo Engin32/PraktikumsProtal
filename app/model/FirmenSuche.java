@@ -36,13 +36,13 @@ public class FirmenSuche {
 				int telefon = rs.getInt("telefon");
 
 				if (daten.equals(unternehmen)) {
-					ergebnis = "<p>"+unternehmen +" ist bei uns registriert!</p>";
-					ergebnis+="<p>Branche des Unternehmens : "+branche+"</p>";
-					ergebnis+="<p>Homepage des Unternehmens : "+homepage+"</p>";
-					ergebnis+="<p>Telefon des Unternehmens : "+telefon+"</p>";
+					ergebnis = "<p>"+unternehmen +" <span id='gefunden'>ist bei uns registriert!</span></p>";
+					ergebnis+="<p><span>Branche des Unternehmens:</span> "+branche+"</p>";
+					ergebnis+="<p><span>Homepage des Unternehmens:</span> "+homepage+"</p>";
+					ergebnis+="<p><span>Telefon des Unternehmens:</span> "+telefon+"</p>";
 					break;
 				} else {
-					ergebnis = "Kein Ergebnis";
+					ergebnis = "<span id='keinErgebnis'>Kein Ergebnis</span>";
 				}
 
 			}

@@ -1,6 +1,7 @@
 @(unternehmen: String)
 <!DOCTYPE html>
 <html>
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>AfterLogin </title>
@@ -8,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/stylesheets/afterlogin.css">
 	<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favcon_TED.ico")">
 	<script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
 	
 	<script>
@@ -40,11 +42,6 @@
 	<!-- Kopfbereich der Seite -->
 	
 	<div id="kopfbereich">
-		<div id="alleBilder">
-			<div id="bild">  <img  src="/assets/images/bild.jpg" class="bilder" > </div>
-			<div id="bild3"> <img  src="/assets/images/bild3.jpg" class="bilder"> </div>
-			<div id="bild2"> <img  src="/assets/images/bild2.jpg" class="bilder"> </div>
-		</div>
 		
 		<div class="clear"></div>
 	
@@ -77,10 +74,9 @@
 						<li><a href="/bewerbungstipps">Bewerbung</a></li>
 					</ul></li>
 				<li><a href="/firmenzeiger">Unternehmen</a></li>
-				<li><a href="/impressum">Über Uns</a>
+				<li><a>Über Uns</a>
 
 					<ul>
-						<li><a href="/startseite">T.E.D</a></li>
 						<li><a href="/impressum">Impressum</a></li>
 					</ul></li>
 				<li><a href="/kontakt">Kontakt</a></li>
@@ -91,18 +87,14 @@
 		
 		<div class="haupttext">
 			<form action="/abmelden" method="post">
-				<div id="buttonverschieben"><input type="submit" id="abmelden" value="Abmelden"></input></div>
+				<div id="buttonverschieben1"><input type="submit" id="abmelden" value="Abmelden"></input></div>
 			</form>
-
 			<form action="/unternehmenLoeschen" method="post">
 				<div id="buttonverschieben"><input type="submit" id="abmelden" value="Unternehmen löschen"></input></div>
 			</form>
-
-
-	
-			<p>Was möchten Sie tun?</p>
-	
 			
+			
+
 			<p><a href="/stelleerstellen">Eine Stellenausschreibung erstellen</a></p>
 			
 

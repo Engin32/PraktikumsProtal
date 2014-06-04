@@ -1,13 +1,18 @@
 @CHARSET "ISO-8859-1";
 
+.haupttext{
+	font-family:  font-family: arial, sans-serif;
+}
+
 #text1{
 	font-size: 1.1em;
 }
 
 #formular1{
 	margin-left: 30%;
-	margin-top: -20%;
 	clear: both;
+	margin-top: -12%;
+	font-size: 0.8em;
 }
 
 
@@ -124,3 +129,31 @@ a:hover{
 #sucheverfeinernformular{
 	margin-top: 4%;
 }
+
+#ausgeben{
+	overflow: scroll;
+	font-size: 0.8em;
+	margin-left: 5%;
+}
+
+span{
+	font-style:oblique;
+	margin-right: 1%;
+	color: highlight;
+}
+
+#gefundeneStelle{
+	font-size: 1.2em;
+	margin-top: 5%;
+	font-family:  font-family: arial, sans-serif;
+}
+
+#gefundeneStellen{
+	font-size: 1.2em;
+}
+
+#ausgeben{
+	overflow: scroll;
+	margin-bottom: 4%;
+}
+

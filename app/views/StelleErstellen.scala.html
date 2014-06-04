@@ -3,129 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <title>Stelle erstellen</title>
-<link rel="stylesheet" type="text/css"
-	href="/assets/stylesheets/main.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/main2.css">
+<link rel="stylesheet" type="text/css" href="/assets/stylesheets/stelleErstellen.css">
+<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favcon_TED.ico")">
+<script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+
 </head>
+
 <body>
-	<div id="bild">
-		<img src="/assets/images/bild.jpg">
-	</div>
-	<div id="bild2">
-		<img src="/assets/images/bild2.jpg">
-	</div>
-	<h1 id="TED">TED</h1>
-	<div id="nav">
-		<ul>
-			<li class="first"><a href="/startseite">Home</a></li>
-			<li><a href="/suche">Finde dein Praktikum</a></li>
-			<li><a href="/bewerbungstipps">Tipps und Tricks</a>
-				<ul>
-					<li><a href="/bewerbungstipps">Bewerbung</a></li>
-				</ul></li>
-			<li><a href=”#”>Alle Unternehmen</a></li>
-			<li><a href="/impressum">Über Uns</a>
-
-				<ul>
-					<li><a href="/startseite">T.E.D</a></li>
-					<li><a href="/impressum">Impressum</a></li>
-				</ul></li>
-			<li><a href="/kontakt">Kontakt</a></li>
-		</ul>
-	</div>
-	<h1>Stelle erstellen als Unternehmen</h1>
-	<p>Erstellen sie eine Stelle. Füllen sie dabei das untere Fomular
-		aus und klicken sie dann auf Stelle erstellen</p>
-
-
-
+	<div id="ganzeSeite">
 	
-	<form action="/stellespeichern" method="POST">
+	<!-- Kopfbereich der Seite -->
+	
+	<div id="kopfbereich">
+		
+		<div class="clear"></div>
+	
+		<h2>Einfache Schnelle Praktikumssuche</h2>
+		<h1 id="TED">TED</h1>
+		<hr>
 
-		<p>
-			Geben Sie eine Stellennr. ein<input type="text"
-				placeholder="Stellennummer" name="stellennummer">
-		</p>
-		<p>
-			Fakultät: <select name="fakultät">
-			<option>Architektur/Gestaltung</option>
-				<option>Bauingenieurwesen</option>
-				<option>Elektro/Informationstechnik</option>
+	</div>
+	
+	
+	<!-- Linke Seite  -->
+	<div id="linkeSeite">  </div>
 
-				<option>IT</option>
-				<option>Maschinenbau</option>
-				<option>BWL</option>
-			</select>
-			<option>Alle</option>
-			<option>Wirtschaft und Sozialwissenschaften</option>
-		</p>
-		<p>
-			Bundesland/Kanton: <select name="bundesland"><option>Baden-Würtemberg</option>
-				<option>Bayern</option>
-				<option>Saarland</option>
-				<option>Hessen</option>
-				<option>Thüringen</option>
-				<option>Sachsen</option>
-				<option>Zürich</option>
-				<option>Thurgau</option>
-				</select>
-		</p>
-		<p>
-			Stadt : <input type="text" placeholder="Stadt" name="stadt">
-		</p>
-		<p>
-			Dauer : <select name="dauer"><option>3</option>
-				<option>6</option>
-				<option>8</option>
-				<option>12</option></select> Monate
-		</p>
-		<p>
-			Aufgaben :
-			<textarea name="aufgaben">Schreiben sie hier bitte Aufgaben rein Sachen rein </textarea>
-		</p>
-		<p>
-			Anforderungen :
-			<textarea name="anforderungen">Schreiben sie hier bitte die Anforderungen rein Sachen rein </textarea>
-		</p>
+	<!-- Rechte Seite -->
+	<div id="rechteSeite"> </div>
+	
+	<!-- Inhalt -->
+	<div id="inhalt">
+		<div id="nav">
+			<ul>
+				<li class="first"><a href="/startseite">Home</a></li>
+				<li><a href="/suche">Suche</a></li>
+				<li><a href="/bewerbungstipps">Tipps</a>
+					<ul>
+						<li><a href="/bewerbungstipps">Bewerbung</a></li>
+					</ul></li>
+				<li><a href="/firmenzeiger">Unternehmen</a></li>
+				<li><a>Über Uns</a>
 
-		<p>
-			Ab wann? <input type="text" name="ab">
-		</p>
+					<ul>
+						<li><a href="/impressum">Impressum</a></li>
+					</ul></li>
+				<li><a href="/kontakt">Kontakt</a></li>
+				<li><a href="/profil">Profil-Menü</a></li>
+			</ul>
+		</div>
+		<h1 class="ueberschrift">Stelle erstellen als Unternehmen</h1>
+		
+		<div class="haupttext">
+		<p>Erstellen sie eine Stelle. Füllen sie dabei das untere Fomular aus und klicken sie dann auf Stelle erstellen</p>
 
-		<p>
-			Ansprechpartner<input type="text" placeholder="Ansprechpartner"
-				name="ansprechpartner">
-		</p>
+		<form action="/stellespeichern" method="POST">
+			<p>Geben Sie eine Stellennummer ein
+				<input id="stellennummer" type="text" placeholder="Stellennummer" name="stellennummer">
+		    </p>
+			<p>Fakultät: 
+						<select id="fakultaet" name="fakultät">
+							<option>Architektur/Gestaltung</option>
+							<option>Bauingenieurwesen</option>
+							<option>Elektro/Informationstechnik</option>
+							<option>IT</option>
+							<option>Maschinenbau</option>
+							<option>BWL</option>
+						</select>
+			</p>
+			<p>Bundesland: 
+						<select id="bl" name="bundesland">
+							<option>Baden-Würtemberg</option>
+							<option>Bayern</option>
+							<option>Saarland</option>
+							<option>Hessen</option>
+							<option>Thüringen</option>
+							<option>Sachsen</option>
+						</select>
+			</p>
+			
+			<p>Stadt : <input id="stadt" type="text" placeholder="Stadt" name="stadt"></p>
+			<p>Dauer : 
+						<select id="dauer" name="dauer">
+							<option>3</option>
+							<option>6</option>
+							<option>8</option>
+							<option>12</option></select> Monate
+			</p>
+		<p>Aufgaben :</p> <textarea name="aufgaben" placeholder="Schreiben Sie hier bitte die Anforderungen rein"></textarea>
+		<p>Anforderungen :</p><textarea name="anforderungen" placeholder="Schreiben Sie hier bitte die Aufgaben rein"></textarea>
 
-		<p>
-			Telefonnummer<input type="text" placeholder="Telefonnummer"
-				name="telefonnummer">
-		</p>
-		<p>
-			Straße<input type="text" placeholder="Straße"
-				name="strasse">
-		</p>
-		<p>
-			PLZ<input type="text" placeholder="PLZ"
-				name="plz">
-		</p>
-		<p>
-			Land<input type="text" placeholder="Land"
-				name="land">
-		</p>
-
-		<input type="submit" value="Stelle erstellen">
-
-		<p>
-			<a href="">zurück zur Hauptseite</a>
-		</p>
-
-
+		<p>Ab wann? <input id="zeitraum" placeholder="01.MM.JJJJ" type="text" name="ab"></p>
+		<p>Ansprechpartner<input id="ansprechP" type="text" placeholder="Ansprechpartner" name="ansprechpartner"></p>
+		<p>Telefonnummer<input id="tel" type="text" placeholder="Telefonnummer" name="telefonnummer"></p>
+		<p>Straße<input id="strasse" type="text" placeholder="Straße" name="strasse"></p>
+		<p>PLZ<input id="plz" type="text" placeholder="PLZ" name="plz"></p>
+		<p>Land<input id="land" type="text" placeholder="Land" name="land"></p>
+		<input id="buttonErstellen" type="submit" value="Stelle erstellen">
+		<p><a href="">zurück zur Hauptseite</a></p>
+		<div id="absatz"></div>
 
 	</form>
-
-
-
-
-
+	</div>
+  </div>
+</div>
 </body>
 </html>

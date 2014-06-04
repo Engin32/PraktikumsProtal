@@ -65,6 +65,15 @@ public class Application extends Controller {
 	public static Result firmenzeiger() {
 		return ok(firmenzeiger.render());
 	}
+	public static Result profil() {
+		Cookie name = request().cookies().get("data");
+		if(name!=null){
+		String uname = name.value();
+	
+		return ok(afterloginUnternehmen.render(uname));
+		}else{ return ok(startseite.render("Melden Sie sich bitte an"));}
+	}
+	
 
 
 	public static Result facebook() {

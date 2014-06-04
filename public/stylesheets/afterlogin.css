@@ -1,3 +1,9 @@
+.haupttext{
+	font-size: 0.8em;
+	margin-left: 5%;
+}
+
+
 #eigeneStellen{
 	overflow:scroll;
 }
@@ -16,5 +22,38 @@
 }
 
 #buttonverschieben{
-	top:-15%;
+	margin-right: 15%;
+	margin-top: -18%;
+	margin-bottom: 5%;
+}
+
+#buttonverschieben1{
+	margin-right: 2%;
+	margin-top: -14%;
+}
+
+#ihreStellen{
+	font-size: 1.2em;
+}
+
+span{
+	font-style:oblique;
+	margin-right: 1%;
+	color: highlight;
+}
+
+#loeschen{
+	width:12%;
+	padding:3px;
+	font-size:0.8em;
+	border-radius:25px;
+	margin-left: 24px;
+	background-color: #12aeef;
+	color: #ffffff;
+	margin-top: 2%;
+	margin-bottom: 4%;
+}
+
+p a{
+	font-style: italic;
 }

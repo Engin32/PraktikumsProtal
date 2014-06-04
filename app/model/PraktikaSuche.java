@@ -79,22 +79,27 @@ public String suchen(String fakultät, String bundesland, String stadt, String d
 						while(rs.next()){
 							
 						
-						ergebnis+="<h2>Gefundene Stellen</h2>";
-						ergebnis+="<p>Das Unternehmen: "+ rs.getString("untname")  +"</p>";	
-						ergebnis+="<p>Identifikator der Stelle "+ rs.getString("Identifikator")  +"</p>";	
-						ergebnis+="<p> Ihre Aufgaben sind: "+ rs.getString("Aufgaben")  +"</p>";	
-						ergebnis+="<p>Das sollten sie mitbringen: "+ rs.getString("Qualifikationen")  +"</p>";	
-						ergebnis+="<p>Die Dauer beträgt: "+ rs.getString("dauer")  +"</p>";	
+						ergebnis+="<h1 id='gefundeneStellen'>Gefundene Stellen</h1>";
+						ergebnis+="<p><span>Das Unternehmen:</span> "+ rs.getString("untname")  +"</p>";	
+						ergebnis+="<p><span>Identifikator der Stelle : </span>"+ rs.getString("Identifikator")  +"</p>";	
+						ergebnis+="<p><span> Ihre Aufgaben sind: </span> "+ rs.getString("Aufgaben")  +"</p>";	
+						ergebnis+="<p><span>Das sollten sie mitbringen:</span> "+ rs.getString("Qualifikationen")  +"</p>";	
+						ergebnis+="<p><span>Die Dauer beträgt:</span> "+ rs.getString("dauer")  +"</p>";	
 							
-						ergebnis+="<p>Ihr Ansprechpartner/in"+ rs.getString("ansprechpartner")  +"</p>";	
-						ergebnis+="<p>Die Abteilung:  "+ rs.getString("abteilung")  +"</p>";		
-						ergebnis+="<p>Das Praktikum fängt an am:"+ rs.getString("ab")  +"</p>";
-						ergebnis+="<p>Bei Rückfragen können Sie uns anrufen: "+ rs.getString("telefon")  +"</p>";
-						ergebnis+="<p>Mehr erfahren sie unter: "+ rs.getString("homepage")  +"</p>";
-						ergebnis+="<p>Die Anschrift:  Ort: "+ rs.getString("ort")+ " PLZ: "  +rs.getString("plz") +" Straße: " +rs.getString("strasse") +" Bundesland " +rs.getString("bundesland") +" Land " +rs.getString("land")  +"</p>";
-						
-						ergebnis+="<p>Senden sie bitte die Bewerbung an: "+ rs.getString("UntID")  +"</p>";	
+						ergebnis+="<p><span>Ihr Ansprechpartner/in: </span>"+ rs.getString("ansprechpartner")  +"</p>";	
+						ergebnis+="<p><span>Die Abteilung </span>:  "+ rs.getString("abteilung")  +"</p>";		
+						ergebnis+="<p><span>Das Praktikum fängt an am:</span>"+ rs.getString("ab")  +"</p>";
+						ergebnis+="<p><span>Bei Rückfragen können Sie uns anrufen:</span> "+ rs.getString("telefon")  +"</p>";
+						ergebnis+="<p><span>Mehr erfahren sie unter:</span> "+ rs.getString("homepage")  +"</p>";
+						ergebnis+="<p><span>Ort: </span> "+ rs.getString("ort")+"</p>";
+						ergebnis+="<p><span>PLZ: </span> "+ rs.getString("plz")+"</p>";
+						ergebnis+="<p><span>Straße: </span> "+ rs.getString("strasse")+"</p>";
+						ergebnis+="<p><span>Bundesland: </span> "+ rs.getString("bundesland")+"</p>";
+						ergebnis+="<p><span>Land: </span> "+ rs.getString("land")+"</p>";
 
+						
+						ergebnis+="<p><span>Senden sie bitte die Bewerbung an:</span> "+ rs.getString("UntID")  +"</p>";	
+						
 						}
 						
 						

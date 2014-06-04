@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>T.E.D. Suche</title>
 
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/main2.css">
 <link rel="stylesheet" type="text/css" href="/assets/stylesheets/Suche.css">
 <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-
+<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favcon_TED.ico")">
 <script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
 
 
@@ -31,8 +31,8 @@
  		var eingabe = document.getElementById("input3").value;
  		if(!eingabe){
  			alert("Bitte die Pflichtfelder ausfüllen");
- 			window.location.reload();
  		}else{
+ 			
  			laden();
  		}
  	}
@@ -49,20 +49,21 @@
  var bundesland
  var stadt
  var dauer
-
  var unternehmen
- var datum
+ var anfang
  
  function laden(){
  	var daten = {
  	 "fakultät" : document.getElementById("select").value,
  	 "bundesland" : document.getElementById("select2").value,
+  	"anfang" : document.getElementById("input3").value,
  	 "stadt" : document.getElementById("input1").value,
  	 "dauer" : document.getElementById("select4").value,
  	 "unternehmen" : document.getElementById("input2").value,
- 	 "anfang" : document.getElementById("input3").value,
+ 	 
  	
  	}
+ 	
  	
  	$.ajax(
 			{	url: "/praktikasuche",
@@ -73,9 +74,10 @@
 					$("#ausgeben").html(daten);	
 				}
 			});
- 			
-
- 												
+ 	
+ 	
+ 	
+ 														
 
  	
  }
@@ -107,11 +109,6 @@
 	<!-- Kopfbereich der Seite -->
 	
 	<div id="kopfbereich">
-		<div id="alleBilder">
-			<div id="bild">  <img  src="/assets/images/bild.jpg" class="bilder" > </div>
-			<div id="bild3"> <img  src="/assets/images/bild3.jpg" class="bilder"> </div>
-			<div id="bild2"> <img  src="/assets/images/bild2.jpg" class="bilder"> </div>
-		</div>
 		
 		<div class="clear"></div>
 	
@@ -139,19 +136,20 @@
 						<li><a href="/bewerbungstipps">Bewerbung</a></li>
 					</ul></li>
 				<li><a href="/firmenzeiger">Unternehmen</a></li>
-				<li><a href="/impressum">Über Uns</a>
+				<li><a>Über Uns</a>
 
 					<ul>
-						<li><a href="/startseite">T.E.D</a></li>
 						<li><a href="/impressum">Impressum</a></li>
 					</ul></li>
 				<li><a href="/kontakt">Kontakt</a></li>
+				<li><a href="/profil">Profil-Menü</a></li>
 			</ul>
 		</div>
 		
 		<h1 class="ueberschrift">Praktikum finden</h1>
 
-		<form id="formular1">
+		<div class=haupttext>
+		<div id="formular1">
 
 			<p id="text1"> Bundesland* <select id="select2">
 											<option>Baden-Württemberg</option>
@@ -165,18 +163,19 @@
 											<option>Thurgau</option>
 										</select>
 					Welche Fakultät?* <select id="select">
-											<option>Architektur und Gestaltung</option>
+											<option>Architektur/Gestaltung</option>
 											<option>Bauingenieurwesen</option>
-											<option>Elektro - und Informationstechnik</option>
+											<option>Elektro/Informationstechnik</option>
 											<option>IT</option>
 											<option>Maschinenbau</option>
 											<option>BWL</option>
 									 </select>
+			
 			</p>
 	
 		
-			<p id="text1"> Anfangsdatum* <input class="calendarSelectDate" id="input3" type="date" placeholder="TT.MM.JJJJ"></p>
-		
+			<p id="text1"> Anfangsdatum* <input class="calendarSelectDate" id="input3" type="date" placeholder="01.MM.JJJJ" pattern="[0][1].([0][1-9]|[1][0-2]).[2][0][0-9][0-9]"></p>
+			
 			<div id="sucheverfeinern">
 				<p>
 					<a href="#" onclick="sucheverf()">Suche verfeinern</a>
@@ -185,7 +184,7 @@
 
 			<div id="sucheverfeinernformular">
 
-				<p id="text1"> Wo? <input id="input1" type="text" placeholder="Stadt/PLZ"> Unternhemen <input id="input2" type="text" placeholder="Name des Unternehmen"></p>
+				<p id="text1"> Wo? <input id="input1" type="text" placeholder="Stadt"> Unternhemen <input id="input2" type="text" placeholder="Name des Unternehmen"></p>
 				<p id="text1"> Dauer <select id="select4">
 										<option>beliebig</option>
 										<option>3</option>
@@ -195,17 +194,18 @@
 									</select>
 				</p>
 			</div>
-
+			
 
 			<p><button id="button1" onclick="ueberpruefen()">Suche</button></p>
-		</form>
+		</div>
 
 
  		<div id="ausgeben"></div>
  	</div>
- 	
+ 	 </div>
  	<div id="unten">  </div>
  </div>
+ 
  
  </body>
 </html>
