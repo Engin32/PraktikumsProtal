@@ -49,8 +49,9 @@ public class StellenSpeichern extends Controller {
 		boolean ergebnis = model.Model.getInstance().getSpeichern().speichern(bld, ort, str, land, plz, stellennummer, fakultät, dauer, ansprechparnter, telefon, aufgaben, quali, ab, uname);
 		
 		if(ergebnis == true){
-			
+			model.Model.getInstance().notifyObservers();
 			return ok(afterloginUnternehmen.render(uname));
+			
 		}
 		System.out.println("Nicht gespeicher!!!!");
 		return ok(afterloginUnternehmen.render(uname));

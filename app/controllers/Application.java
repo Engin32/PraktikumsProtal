@@ -7,6 +7,8 @@ import play.mvc.Http.Cookie;
 import views.html.*;
 
 public class Application extends Controller {
+	
+	
 	static CreateDatabase daten = new CreateDatabase(); // hier ein Objekt
 														// erzeugen damit einmal
 														// datenbank erzeugt
@@ -42,7 +44,10 @@ public class Application extends Controller {
 	}
 
 	public static Result suche() {
+		Websocket socket = new Websocket();
+		socket.registrieren();
 		return ok(Suche.render());
+		
 	}
 
 	public static Result impressum() {

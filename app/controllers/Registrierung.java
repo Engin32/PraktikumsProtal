@@ -12,9 +12,7 @@ import play.mvc.Http.Cookie;
 import views.html.StelleErstellen;
 import views.html.afterloginUnternehmen;
 import views.html.startseite;
-
 import views.html.ure;
-
 
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -59,5 +57,29 @@ public class Registrierung extends Controller {
 		}
 
 	}
+	
+	
+	public static Result löschen(){
+		
+
+		Cookie name = request().cookies().get("data");
+		String uname = name.value();
+		
+		
+		boolean erfolg = model.Model.getInstance().getUntlöschen().löschen(uname);
+		
+		
+		if (erfolg==true){
+		return ok(startseite.render(null));
+		
+		}else{
+			return ok(afterloginUnternehmen.render(uname));
+		}
+		
+		
+	}
+	
+	
+	
 
 }
