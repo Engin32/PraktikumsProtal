@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class Unternehmenlöschen {
+public class Unternehmenloeschen {
 
-	public boolean löschen(String id) {
+	public boolean loeschen(String id) {
 
 		PreparedStatement ps;
 		ResultSet rs;

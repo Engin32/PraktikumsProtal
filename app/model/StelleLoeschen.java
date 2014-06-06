@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-public class StelleLöschen {
+public class StelleLoeschen {
 
-	public boolean löschen(int id1) {
+	public boolean loeschen(int id1) {
 
 		PreparedStatement ps;
 		Connection con;

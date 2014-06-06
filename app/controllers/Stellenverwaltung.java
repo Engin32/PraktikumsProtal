@@ -36,11 +36,11 @@ public class Stellenverwaltung extends Controller {
 
 	}
 
-	public static Result löschen() {
+	public static Result loeschen() {
 		String id = request().getQueryString("wert");
 		int id1 = Integer.parseInt(id);
 
-		boolean ergebnis = model.Model.getInstance().getLöschen().löschen(id1);
+		boolean ergebnis = model.Model.getInstance().getLoeschen().loeschen(id1);
 
 		if (ergebnis == true) {
 			return ok("Wurde gelöscht");

@@ -26,7 +26,7 @@ GET     /assets/*file             	    controllers.Assets.at(path="/public", fil
 #registrierung
 POST	/Registrierung/xyz				controllers.Registrierung.register()
 GET		/registrieren					controllers.Application.register()
-POST	/unternehmenLoeschen				controllers.Registrierung.löschen()
+POST	/unternehmenLoeschen				controllers.Registrierung.loeschen()
 
 #suchen
 GET		/suche 							controllers.Application.suche()
@@ -48,7 +48,7 @@ GET		/stelleerstellen				controllers.Stellenverwaltung.auschreiben()
 #POST	/stellespeichern				controllers.StellenSpeichern.speichern()
 POST	/stellespeichern				controllers.StellenSpeichern.speichern()
 GET		/eigenestellen					controllers.Stellenverwaltung.eigeneStellen()
-GET		/loeschen						controllers.Stellenverwaltung.löschen()
+GET		/loeschen						controllers.Stellenverwaltung.loeschen()
 
 #Facebook
 GET  	/facebook						controllers.Application.facebook()

@@ -68,13 +68,13 @@ public class Registrierung extends Controller {
 
 	}
 
-	public static Result löschen() {
+	public static Result loeschen() {
 
 		Cookie name = request().cookies().get("data");
 		String uname = name.value();
 
-		boolean erfolg = model.Model.getInstance().getUntlöschen()
-				.löschen(uname);
+		boolean erfolg = model.Model.getInstance().getUntloeschen()
+				.loeschen(uname);
 
 		if (erfolg == true) {
 			return ok(startseite.render(null));

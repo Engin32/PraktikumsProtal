@@ -16,7 +16,7 @@ public class Model implements Observerable {
 
 	StelleSpeichern speichern = new StelleSpeichern();
 
-	StelleLöschen löschen = new StelleLöschen();
+	StelleLoeschen loeschen = new StelleLoeschen();
 
 	EigeneStellenLaden laden = new EigeneStellenLaden();
 
@@ -26,15 +26,15 @@ public class Model implements Observerable {
 
 	FirmenSuche firmensuche = new FirmenSuche();
 
-	public Unternehmenlöschen getUntlöschen() {
-		return untlöschen;
+	public Unternehmenloeschen getUntloeschen() {
+		return untloeschen;
 	}
 
-	public void setUntlöschen(Unternehmenlöschen untlöschen) {
-		this.untlöschen = untlöschen;
+	public void setUntloeschen(Unternehmenloeschen untloeschen) {
+		this.untloeschen = untloeschen;
 	}
 
-	Unternehmenlöschen untlöschen = new Unternehmenlöschen();
+	Unternehmenloeschen untloeschen = new Unternehmenloeschen();
 
 	public FirmenSuche getFirmensuche() {
 		return firmensuche;
@@ -68,12 +68,12 @@ public class Model implements Observerable {
 		this.laden = laden;
 	}
 
-	public StelleLöschen getLöschen() {
-		return löschen;
+	public StelleLoeschen getLoeschen() {
+		return loeschen;
 	}
 
-	public void setLöschen(StelleLöschen löschen) {
-		this.löschen = löschen;
+	public void setLoeschen(StelleLoeschen loeschen) {
+		this.loeschen = loeschen;
 	}
 
 	public StelleSpeichern getSpeichern() {
