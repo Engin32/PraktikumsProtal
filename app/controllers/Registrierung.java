@@ -35,57 +35,54 @@ public class Registrierung extends Controller {
 		String bld = daten.get("Bundesland")[0];
 		String homepage = daten.get("Homepage")[0];
 
-		if(!passsw.equals(passsw2)){
+		if (!passsw.equals(passsw2)) {
 			return ok(ure.render("Passwort stimmt nicht überein!"));
-			
+
 		}
 		System.out.println("uname");
-		
-		if(uname.equals("") || branche.equals("") || passsw.equals("") ||tel.equals("") || email.equals("") ||land.equals("")||ort.equals("")||str.equals("")||plz.equals("")|| bld.equals("")||homepage.equals("")){
+
+		if (uname.equals("") || branche.equals("") || passsw.equals("")
+				|| tel.equals("") || email.equals("") || land.equals("")
+				|| ort.equals("") || str.equals("") || plz.equals("")
+				|| bld.equals("") || homepage.equals("")) {
 			return ok(ure.render("Füllen sie alle Feldert aus!"));
 		}
-		
-		
-		
-		
-		boolean ergebnis =model.Model.getInstance().getRegistrieren().registrieren(uname,branche,passsw,tel,email,land,ort,str,plz,bld,homepage);
-		
-		if(ergebnis==true){
-		// den user merken da er ja weitergeleitet wird
-		response().setCookie("data", email);
-		session("a",email);
-		String user = session("a");
-		
-		return ok(afterloginUnternehmen.render(email));
-		}else{
-		
-		return ok(ure.render("Fehler versuchen sie es erneut"));
+
+		boolean ergebnis = model.Model
+				.getInstance()
+				.getRegistrieren()
+				.registrieren(uname, branche, passsw, tel, email, land, ort,
+						str, plz, bld, homepage);
+
+		if (ergebnis == true) {
+			// den user merken da er ja weitergeleitet wird
+			response().setCookie("data", email);
+			session("a", email);
+			String user = session("a");
+
+			return ok(afterloginUnternehmen.render(email));
+		} else {
+
+			return ok(ure.render("Fehler versuchen sie es erneut"));
 		}
 
 	}
-	
-	
-	public static Result löschen(){
-		
+
+	public static Result löschen() {
 
 		Cookie name = request().cookies().get("data");
 		String uname = name.value();
-		
-		
-		boolean erfolg = model.Model.getInstance().getUntlöschen().löschen(uname);
-		
-		
-		if (erfolg==true){
-		return ok(startseite.render(null));
-		
-		}else{
+
+		boolean erfolg = model.Model.getInstance().getUntlöschen()
+				.löschen(uname);
+
+		if (erfolg == true) {
+			return ok(startseite.render(null));
+
+		} else {
 			return ok(afterloginUnternehmen.render(uname));
 		}
-		
-		
+
 	}
-	
-	
-	
 
 }

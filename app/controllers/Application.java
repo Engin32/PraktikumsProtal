@@ -7,8 +7,7 @@ import play.mvc.Http.Cookie;
 import views.html.*;
 
 public class Application extends Controller {
-	
-	
+
 	static CreateDatabase daten = new CreateDatabase(); // hier ein Objekt
 														// erzeugen damit einmal
 														// datenbank erzeugt
@@ -28,10 +27,7 @@ public class Application extends Controller {
 
 		daten = null; // daten werden für immer auf null gesetzt damit die
 						// methode nicht mehr aufgerufen wird
-		
-		
-		
-	
+
 		return ok(startseite.render(null));
 	}
 
@@ -47,7 +43,7 @@ public class Application extends Controller {
 		Websocket socket = new Websocket();
 		socket.registrieren();
 		return ok(Suche.render());
-		
+
 	}
 
 	public static Result impressum() {
@@ -57,24 +53,25 @@ public class Application extends Controller {
 	public static Result kontakt() {
 		return ok(Kontakt.render());
 	}
-	
-	/*public static Result wir(){
-		return ok(ueberuns.render());
-	}*/
+
+	/*
+	 * public static Result wir(){ return ok(ueberuns.render()); }
+	 */
 
 	public static Result firmenzeiger() {
 		return ok(firmenzeiger.render());
 	}
+
 	public static Result profil() {
 		Cookie name = request().cookies().get("data");
-		if(name!=null){
-		String uname = name.value();
-	
-		return ok(afterloginUnternehmen.render(uname));
-		}else{ return ok(startseite.render("Melden Sie sich bitte an"));}
-	}
-	
+		if (name != null) {
+			String uname = name.value();
 
+			return ok(afterloginUnternehmen.render(uname));
+		} else {
+			return ok(startseite.render("Melden Sie sich bitte an"));
+		}
+	}
 
 	public static Result facebook() {
 		return redirect("http://www.facebook.com");
@@ -87,7 +84,5 @@ public class Application extends Controller {
 	public static Result htwg() {
 		return redirect("http://www.htwg-konstanz.de");
 	}
-  
-}
- 
 
+}

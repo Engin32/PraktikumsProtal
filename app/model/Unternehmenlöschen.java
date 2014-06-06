@@ -18,25 +18,19 @@ public class Unternehmenlöschen {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/Praktikumsportal", "root", "");
-			
 
-			
 			ps = con.prepareStatement("delete from Praktikumsportal.stellenausschreibung where von=?");
 
 			ps.setString(1, id);
-			
+
 			ps.executeUpdate();
-			
-			
+
 			ps = con.prepareStatement("delete from Praktikumsportal.unternehmen where untID=?");
 
 			ps.setString(1, id);
-			
+
 			ps.executeUpdate();
-			
-			
-		
-			
+
 			System.out.println("__________gelölscht______________");
 
 			return true; // unternehmen gelöscht

@@ -42,24 +42,33 @@ public class StellenSpeichern extends Controller {
 		String quali = daten.get("anforderungen")[0]; // anforderunngen auf
 														// quali ändern
 		String ab = daten.get("ab")[0];
-		
-		if(bld.equals("")||ort.equals("")||str.equals("")||land.equals("")||plz.equals("")||stellennummer.equals("")||fakultät.equals("")||dauer.equals("")||ansprechparnter.equals("")||telefon.equals("")||aufgaben.equals("")||quali.equals("")||ab.equals("")){
+
+		if (bld.equals("") || ort.equals("") || str.equals("")
+				|| land.equals("") || plz.equals("")
+				|| stellennummer.equals("") || fakultät.equals("")
+				|| dauer.equals("") || ansprechparnter.equals("")
+				|| telefon.equals("") || aufgaben.equals("")
+				|| quali.equals("") || ab.equals("")) {
 			return ok(StelleErstellen.render("Füllen Sie alle Felder aus"));
 		}
 
 		Cookie name = request().cookies().get("data");
 		String uname = name.value();
-		
-		boolean ergebnis = model.Model.getInstance().getSpeichern().speichern(bld, ort, str, land, plz, stellennummer, fakultät, dauer, ansprechparnter, telefon, aufgaben, quali, ab, uname);
-		
-		if(ergebnis == true){
+
+		boolean ergebnis = model.Model
+				.getInstance()
+				.getSpeichern()
+				.speichern(bld, ort, str, land, plz, stellennummer, fakultät,
+						dauer, ansprechparnter, telefon, aufgaben, quali, ab,
+						uname);
+
+		if (ergebnis == true) {
 			model.Model.getInstance().notifyObservers();
 			return ok(afterloginUnternehmen.render(uname));
-			
+
 		}
 		System.out.println("Nicht gespeicher!!!!");
 		return ok(afterloginUnternehmen.render(uname));
-
 
 	}
 

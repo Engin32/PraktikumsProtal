@@ -9,15 +9,15 @@ import java.sql.Statement;
 import play.mvc.Http.Cookie;
 
 public class StelleSpeichern {
-	
-	public boolean speichern(String bld, String ort, String str, String land, String plz, String stellennummer, String fakultät, String dauer, String ansprechparnter, String telefon, String aufgaben, String quali, String ab, String uname){
 
-		
+	public boolean speichern(String bld, String ort, String str, String land,
+			String plz, String stellennummer, String fakultät, String dauer,
+			String ansprechparnter, String telefon, String aufgaben,
+			String quali, String ab, String uname) {
+
 		int dauer1 = Integer.parseInt(dauer);
 		int telefon1 = Integer.parseInt(telefon);
-		
-		
-		
+
 		ResultSet rs;
 		Connection con;
 		Statement stmt;
@@ -81,21 +81,17 @@ public class StelleSpeichern {
 			ps.setString(10, ab);
 
 			ps.executeUpdate();
-			
-			
 
 			con.commit();
 			System.out.println("Stellenspeichern durchgegangen");
 			return true;
 
-
 		} catch (Exception e) {
-			System.out.println("Fehler bei der Stellenspeicherung." + e.getMessage());
+			System.out.println("Fehler bei der Stellenspeicherung."
+					+ e.getMessage());
 			return false;
 		}
-		
-		
+
 	}
-	
 
 }

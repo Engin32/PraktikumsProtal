@@ -45,21 +45,19 @@ public class Login extends Controller {
 		String email = daten.get("email")[0];
 		String password = daten.get("password")[0];
 
+		boolean ergebnis = model.Model.getInstance().getAnmelden()
+				.login(email, password);
 
-		
-		boolean ergebnis= model.Model.getInstance().getAnmelden().login(email, password);
-		
-		if(ergebnis==true){
+		if (ergebnis == true) {
 			response().setCookie("data", email);
-			session("a",email);
+			session("a", email);
 			String user = session("a");
 			return ok(afterloginUnternehmen.render(email));
 
-			
-		}else{
-			return unauthorized(startseite.render("Falsches Passwort oder Email"));
+		} else {
+			return unauthorized(startseite
+					.render("Falsches Passwort oder Email"));
 		}
-
 
 	}
 

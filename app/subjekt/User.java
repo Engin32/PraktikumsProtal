@@ -1,7 +1,7 @@
 package subjekt;
 
 public class User {
-	
+
 	private String uname;
 
 	public String getUname() {
@@ -11,6 +11,5 @@ public class User {
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
-	
-		
+
 }
