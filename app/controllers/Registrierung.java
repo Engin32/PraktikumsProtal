@@ -39,6 +39,12 @@ public class Registrierung extends Controller {
 			return ok(ure.render("Passwort stimmt nicht überein!"));
 			
 		}
+		System.out.println("uname");
+		
+		if(uname.equals("") || branche.equals("") || passsw.equals("") ||tel.equals("") || email.equals("") ||land.equals("")||ort.equals("")||str.equals("")||plz.equals("")|| bld.equals("")||homepage.equals("")){
+			return ok(ure.render("Füllen sie alle Feldert aus!"));
+		}
+		
 		
 		
 		

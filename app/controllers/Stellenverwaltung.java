@@ -23,7 +23,7 @@ public class Stellenverwaltung extends Controller {
 			return ok(startseite.render(null));
 			
 		}else{
-		return ok(StelleErstellen.render());
+		return ok(StelleErstellen.render(null));
 		}
 	}
 	

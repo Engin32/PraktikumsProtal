@@ -1,3 +1,4 @@
+@(error: String)
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,6 +59,9 @@
 		
 		<div class="haupttext">
 		<p>Erstellen sie eine Stelle. Füllen sie dabei das untere Fomular aus und klicken sie dann auf Stelle erstellen</p>
+		@if(error != null) {
+			<div class="error">@error</div>
+		}		
 
 		<form action="/stellespeichern" method="POST">
 			<p>Geben Sie eine Stellennummer ein
@@ -75,7 +79,7 @@
 			</p>
 			<p>Bundesland: 
 						<select id="bl" name="bundesland">
-							<option>Baden-Würtemberg</option>
+							<option>Baden-Württemberg</option>
 							<option>Bayern</option>
 							<option>Saarland</option>
 							<option>Hessen</option>

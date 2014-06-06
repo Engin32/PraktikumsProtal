@@ -12,6 +12,7 @@ import play.api.mvc.Session;
 import play.mvc.Controller;
 import play.mvc.Http.Cookie;
 import play.mvc.Result;
+import views.html.StelleErstellen;
 import views.html.afterloginUnternehmen;
 
 public class StellenSpeichern extends Controller {
@@ -41,7 +42,10 @@ public class StellenSpeichern extends Controller {
 		String quali = daten.get("anforderungen")[0]; // anforderunngen auf
 														// quali ändern
 		String ab = daten.get("ab")[0];
-
+		
+		if(bld.equals("")||ort.equals("")||str.equals("")||land.equals("")||plz.equals("")||stellennummer.equals("")||fakultät.equals("")||dauer.equals("")||ansprechparnter.equals("")||telefon.equals("")||aufgaben.equals("")||quali.equals("")||ab.equals("")){
+			return ok(StelleErstellen.render("Füllen Sie alle Felder aus"));
+		}
 
 		Cookie name = request().cookies().get("data");
 		String uname = name.value();
